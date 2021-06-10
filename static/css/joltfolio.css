@@ -1,0 +1,240 @@
+
+html{
+    background-color:rgb(10, 10, 10);
+    text-transform: uppercase;
+
+    font-family: 'VT323', monospace;
+    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'Press Start 2P', monospace;
+
+    font-size:1.5rem;
+    padding: 2%;
+    letter-spacing:0.3em;
+}
+
+body{
+    height:100vh;
+    background-color:rgb(7, 26, 7);
+    box-shadow: 0px 0px 200px 100px rgb(11, 44, 11) inset;
+    border-style:outset;
+    border-color:rgb(20, 20, 20) rgb(29, 29, 29) rgb(49, 49, 49) rgb(41, 41, 41);
+    border-width:5px;
+    border-radius: 12%;
+}    
+
+.screen{
+    animation:turn-on 5s linear;
+}
+
+.terminal-text{
+    margin:5%;
+    margin-left: 10%;
+    text-shadow: 5px 3px 40px rgb(109, 253, 65);
+}
+.green-black{/**/
+    color: rgb(6, 214, 75);
+}
+.green-black-p{/**/
+    
+    color: rgb(6, 214, 75);
+}
+.white-black{/**/
+    color: whitesmoke;
+    font-size: 2rem;
+}
+.white-black-p{/**/
+    font-family: 'Press Start 2P', monospace;
+    color: whitesmoke;
+}
+.vintage-linux{/*ornage on black*/
+    color: rgb(240, 144, 0);
+    font-size: 2rem;
+    animation:turn-on 3s linear;
+}
+.blue-white{
+    margin:5%;
+    margin-left: 10%;
+    background-color:rgb(77, 52, 241);
+    color: whitesmoke;
+    font-family: 'Press Start 2P', monospace;
+    animation:turn-on 3s linear;
+}
+
+@keyframes turn-on{
+    0%{
+        transform:scale(1,0.8) translate3d(0,0,0);
+        -webkit-filter:brightness(30);
+        filter:brightness(30);
+        opacity:1;
+    }
+    3.5%{
+        transform:scale(1,0.8) translate3d(0,100%,0);
+    }
+    3.6%{
+        transform:scale(1,0.8) translate3d(0,-100%,0);
+        opacity:1;
+    } 
+    9%{
+        transform:scale(1.3,0.6) translate3d(0,100%,0);
+        -webkit-filter:brightness(30);
+        filter:brightness(30);
+        opacity:0;
+    }
+    11%{
+        transform:scale(1,1) translate3d(0,0,0);
+        -webkit-filter:contrast(0) brightness(0) ;
+        filter:contrast(0) brightness(0);
+        opacity:0;
+    }
+    100%{
+        transform:scale(1,1) translate3d(0,0,0);
+        -webkit-filter:contrast(1) brightness(1.2) saturate(1.3);
+        filter:contrast(1) brightness(1.2) saturate(1.3);
+        opacity:1;
+    }
+}
+
+@keyframes turn-off{
+0%{
+transform:scale(1,1.3) translate3d(0,0,0);
+-webkit-filter:brightness(1);
+filter:brightness(1);
+opacity:1;
+}
+60%{
+transform:scale(1.3,0.001) translate3d(0,0,0);
+-webkit-filter:brightness(10);
+filter:brightness(10);
+}
+100%{
+
+transform:scale(0.000,0.0001) translate3d(0,0,0);
+    -webkit-filter:brightness(50);
+    filter:brightness(50);
+    }
+}
+.screen{
+    border:none;
+}
+
+@keyframes overlay-anim{
+    0%{
+        visibility:hidden;
+        }
+        20%{
+        visibility:hidden;
+        }
+        21%{
+        visibility:visible;
+        }
+        100%{
+        visibility:hidden;
+    }
+}
+
+.overlay{
+    color:#00FF00;
+    position:absolute;
+    top:40px;
+    left:60px;
+    font-size:60px;
+    text-shadow:2px 2px black,-2px -2px black, -2px 2px black, 2px -2px black;
+    visibility:hidden;
+    pointer-events:none;
+    font-family: 'Press Start 2P', monospace;
+}
+.overlay{
+    animation:overlay-anim 5s linear;
+    animation-fill-mode:forwards;
+}
+
+
+#crt:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+    to bottom,
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 8px;
+    z-index: 2;
+    pointer-events: none;
+}
+@keyframes textShadow {
+    0% {
+      text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    5% {
+      text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    /** etc */
+}
+
+.scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 8;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(255, 255, 255, 0.2) 10%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    animation: scanline 18s linear infinite;
+}
+
+@keyframes scanline {
+    0% {
+        bottom: 100%;
+    }
+    80% {
+        bottom: 100%;
+    }
+    100% {
+        bottom: 0%;
+    }
+}
+
+#screen {
+    position: relative;
+    height: 67.5vmin;
+    border: 30px solid transparent;
+    overflow: hidden;
+}
+
+#input {
+    outline: none;
+    margin:5%;
+    margin-left: 10%;
+    text-shadow: 5px 3px 40px rgb(109, 253, 65);
+    color: rgb(6, 214, 75);
+    position: relative;
+    caret-color: transparent;
+}
+
+/* Puts a blinking square after the content as replacement for caret */
+#input[contenteditable="true"]:after {
+    content: "_";
+    font-size: 1.5rem;
+    animation: cursor 1s infinite;
+    animation-timing-function: step-end;
+    margin-left: 1px;
+}
+/* Inserts the > before terminal input 
+#input:before {
+    content: ">";
+    position: absolute;
+    padding-left: -2ch;
+    left: 0;
+}
+*/

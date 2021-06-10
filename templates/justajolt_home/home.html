@@ -14,306 +14,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
         {% load static %}
+        <link class="ignore" rel="stylesheet" href="{% static 'css/jolt_home.css' %}" type="text/css">
         <script type="text/javascript" src="{% static 'js/vanilla-tilt.js' %}"></script>
-        
-        <style>
-            *{
-            }
-            body{
-                background:url({% static 'images/doddy.png' %});
-                background-repeat: no-repeat;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
-            .top-banner{
-                display: flex;
-                flex-direction: row;
-                flex: 1 1 0px;
-                align-items:center;
-            }
-
-            .tang-spent-ages{
-                color: white;
-                font-size:1.2rem;
-                line-height: 1.2rem;
-                font-family: 'Press Start 2P', cursive;
-            }
-            .straight{
-                color: white;
-                font-size:1.8rem;
-                line-height: 1rem;
-                font-family: 'Press Start 2P', cursive;
-            }
-
-            .justajolt{
-                height:100%;
-                width:100%;
-                margin-left: auto;
-                margin-right: auto;
-                color: white;
-                font-size: 10rem;
-                font-family: 'Orbitron', sans-serif;
-            }
-
-            .justajolt .container{
-                position: relative;
-                display: flex;
-                justify-content:center;
-                align-items: center;
-                flex-wrap: wrap;
-                z-index: 1;
-            }
-            .justajolt .container .joltcard{
-                position: relative;
-                margin: 10px;
-                box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-                border-radius: 15px;
-                background: rgba(239, 243, 7, 0.096);
-                overflow:hidden;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-top: 1px solid rgba(255, 255, 255, 0.5);
-                border-left: 1px solid rgba(255, 255, 255, 0.5);
-                backdrop-filter: blur(5px);
-            }
-
-            .justajolt .container .joltcard .content{
-                padding: 10px;
-                text-align: center;
-                opacity: 0.5;
-                transition: 0.5s;
-            }
-
-            .justajolt .container .joltcard:hover .content{
-                opacity: 1;
-                transition: 0.5s;
-                background: rgba(243, 7, 7, 0.548);
-            }
-
-            .justajolt .container .joltcard .content a{
-                color:white;
-                text-decoration: none;
-            }
-            .kindly-do-not{
-                display:flex;
-                font-size: 3rem;
-                flex-direction: column;
-                align-items: center;
-
-            }
-            #trigger{
-                color:white;
-                font-family: 'Press Start 2P', cursive;
-                text-shadow: 5px 5px black;
-
-            }
-            #trigger:hover{
-                color:red;
-                animation: shake 0.3s;
-                animation-iteration-count: infinite;
-            }
-            /*Shake effects used with animation:shake time;*/
-            @keyframes shake {
-                0% { transform: translate(2px, 2px) rotate(0deg); }
-                10% { transform: translate(-2px, -3px) rotate(-2deg); }
-                20% { transform: translate(-4px, 0px) rotate(2deg); }
-                30% { transform: translate(3px, 2px) rotate(0deg); }
-                40% { transform: translate(1px, -1px) rotate(1deg); }
-                50% { transform: translate(-1px, 2px) rotate(-1deg); }
-                60% { transform: translate(-3px, 1px) rotate(0deg); }
-                70% { transform: translate(3px, 1px) rotate(-1deg); }
-                80% { transform: translate(-1px, -1px) rotate(1deg); }
-                90% { transform: translate(1px, 2px) rotate(0deg); }
-                100% { transform: translate(1px, -2px) rotate(-1deg); }
-            }    
             
-            /*Creates rival ball firing effect*/
-            body .clickEffect {
-                position:fixed;
-                box-sizing:border-box;
-                border-style:solid;border-color:#FFFFFF;
-                border-radius:50%;
-                animation:clickEffect 0.4s ease-out;
-                z-index:99999;
-            }
-
-            @keyframes clickEffect{
-                0% {
-                opacity:1;
-                width: 100px; 
-                height: 100px;
-                margin:-7px;
-                border-width:100px;
-                border-color: yellow;
-            }
-                100%{
-                opacity:1;
-                width:10px; 
-                height:10px;
-                margin:-1px;
-                border-width:10px;
-                border-color: rgb(94, 94, 66)
-                }
-            }
-            .main-page{
-                display:flex;
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-          
-
-            .left-sidebar{
-                display:block;
-                font-size: 3.5rem;
-                color:white;
-                font-family: 'Orbitron', sans-serif;
-                text-align: center;
-            }
-
-            .item{
-                border-radius: 5px;
-                text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-                
-            }
-            .item a{
-                text-decoration: none;
-                color: white;
-                text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-                
-            }
-            .item a:hover{
-                text-decoration: none;
-                color:rgb(179, 255, 1);
-            }
-            .item:hover{
-                background-color: rgb(18, 18, 19);
-                color:rgb(179, 255, 1);
-                border-radius: 10px;
-                animation: shake 0.5s;
-                animation-iteration-count: infinite;
-            }
-
-            .middle-section{
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .tang-frame{
-                height:max-content;
-                width:max-content;
-            }
-            .tang-pic{
-                height:400px;
-                width:400px;
-
-                background:url({% static 'images/tang.jpg' %});
-                background-position: 50% 0%;
-                background-size: 170%;
-                
-                border-style: solid;
-                border-radius: 5px;
-                border-width:10px;
-                border-color: black;
-
-                transition: 1500ms;    
-            }
-
-            .tang-pic-triggered{
-                background-position: 50% 20%;
-                background-size: 400%;
-                box-shadow: 0px 20px 500px 40px rgba(243, 7, 7, 0.95);
-                
-                animation: shake 0.3s;
-                animation-iteration-count: infinite;
-                
-                transition: 100ms;     
-            }
-
-            
-
-            .right-sidebar{
-                font-size: 1.5rem; 
-                color:white;
-                font-family: 'Orbitron', sans-serif;
-                padding: 20px;
-            }
-            
-            .social-media-row{
-                display:grid;
-                grid-template-columns: 50% 50%;
-                grid-gap:30px;
-            }
-
-            .tiktok{
-                background:url({% static 'images/tiktok.png' %});
-                width: 100%;
-                height:100px; 
-                background-repeat: no-repeat;
-                background-size: contain;
-                
-            }
-            .facebook{
-                background:url({% static 'images/facebook.png' %});
-                width: 100%;
-                height:100px; 
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
-            .instagram{
-                background:url({% static 'images/instagram.png' %});
-                width: 100%;
-                height:100px; 
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
-            .linkedin{
-                background:url({% static 'images/linkedin.png' %});
-                width: 100%;
-                height:100px; 
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
-            .youtube{
-                background:url({% static 'images/youtube.png' %});
-                width: 100%;
-                height:100px; 
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
-            
-            .sm-item{
-            
-                
-            }
-
-            .sm-item:hover{
-                animation: shake 0.5s;
-                animation-iteration-count: infinite;
-            } 
-
-        </style>
-        
     </head>
     <body>
 
         <div class = 'top-banner'>
-            <div class='tang-spent-ages'  id='one'>
-                <p id='one-inner' class = 'tang-trig'>
-                    Tang spent <u>ages</u>
-                    trying to get the
-                    bits on this page 
-                    lined up
+            <div class='tang-straight' id='one'>
+                <p id='one-inner' class = ' tang-spent-ages tang-trig'>
+                    Tang spent <u>ages</u> getting the bits on this page lined up
                 </p>
                 <p id='one-inner' class = ' straight tang-trig'>
                     straight...
                 </p>
-                  
             </div>
             <div class = 'justajolt-logo'>
                 <div class = 'justajolt' onload="myFunction()">
@@ -327,22 +41,22 @@
                 </div> 
             </div>
             <div class='kindly-do-not'>
-                <div class='kindly tang-spent-ages tang-trig' id='two' style='display:none'>
+                <div class='kindly tang-trig' id='two' style='display:none'>
                     <p>Kindly do not</p>
                 </div>
                 <div id='trigger' class='trigger'style='display:none'>
                     TRIGGER
                 </div>
-                <div class='tang-spent-ages tang tang-trig' id='three' style='display:none' >
-                    <p id='two'>Tang...</p>
+                <div class='tang tang-trig' id='three' style='display:none' >
+                    <p id='two'>Tang</p>
                 </div>
             </div>
+
         </div>
 
-        <div class = 'main-page'>
+        <div class = 'main-section'>
+
             <div class = 'left-sidebar'>
-                
-                
                 <div class = 'item coding-portfolio'>Coming soon</div>
                 <div class = 'item nerf-videos'><a href = 'https://www.youtube.com/channel/UC3Bn-Hrh_-U9gEsieL5aQmA' target=”_blank”>Nerf videos</a></div>
                 <div class = 'item grim-up-nerf'><a href='https://www.facebook.com/Grimupnerf/' target=”_blank”>Grim Up Nerf</a></div>
@@ -383,97 +97,93 @@
     </div>
 
     
-    
-    <script type="text/javascript">
-
-            VanillaTilt.init(document.querySelectorAll(".joltcard"), {
-                max: 40,
-                speed: 50,
-                glare:true, 
-                "max-glare":1,
-                reverse:true,
-                reset:false,
-                //gyroscope
-                //gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
-                //gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
-                //gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
-                //gyroscopeMaxAngleY:     80,  
-                perspective:            1000, 
-            });
-
-            VanillaTilt.init(document.querySelectorAll("#one-inner"), {
-                max: 50,
-                speed: 5,
-                glare:false, 
-                "max-glare":1,
-                reverse:true,
-                reset:false,
-                //gyroscope
-                //gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
-                //gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
-                //gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
-                //gyroscopeMaxAngleY:     80,  
-                perspective:            1000, 
-            });
-
-            VanillaTilt.init(document.querySelectorAll("#two"), {
-                max: 30,
-                speed: 500,
-                glare:false, 
-                reverse:true,
-                reset:false,
-                //gyroscope
-                //gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
-                //gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
-                //gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
-                //gyroscopeMaxAngleY:     80,  
-                perspective:            1000, 
-            });
-
-            VanillaTilt.init(document.querySelectorAll("#three"), {
-                max: 80,
-                speed: 200,
-                glare:false, 
-                reverse:true,
-                reset:false,
-                //gyroscope
-                //gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
-                //gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
-                //gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
-                //gyroscopeMaxAngleY:     80,  
-                perspective:            1000, 
-            });
-
-            $(document).ready(function(){
-                $(".kindly").fadeIn(800);
-            });
-            $(document).ready(function(){
-                $(".trigger").fadeIn(1200);
-            });
-            $(document).ready(function(){
-                $(".tang").fadeIn(2000);
-            });
-
-            $(document).ready(function () {
-                $(".tang-trig").hover(function () {
-                $(".tang-pic").toggleClass("tang-pic-triggered");
-                });
-            });
-
-        </script>
     </body>
 
 </html>
-
 <script>
-    jQuery.fn.shake = function() {
-    this.each(function(i) {
-        $(this).css({ "position": "relative" });
-        for (var x = 1; x <= 3; x++) {
-            $(this).animate({ left: -25 }, 10).animate({ left: 0 }, 50).animate({ left: 25 }, 10).animate({ left: 0 }, 50);
-        }
+VanillaTilt.init(document.querySelectorAll(".joltcard"), {
+    max: 40,
+    speed: 8,
+    glare:true, 
+    "max-glare":1,
+    reverse:true,
+    reset:false,
+    //gyroscope
+    //gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
+    //gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
+    //gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
+    //gyroscopeMaxAngleY:     80,  
+    perspective:            1000, 
+});
+
+VanillaTilt.init(document.querySelectorAll("#one-inner"), {
+    max: 50,
+    speed: 5,
+    glare:false, 
+    "max-glare":1,
+    reverse:true,
+    reset:false,
+    //gyroscope
+    //gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
+    //gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
+    //gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
+    //gyroscopeMaxAngleY:     80,  
+    perspective:            1000, 
+});
+
+VanillaTilt.init(document.querySelectorAll("#two"), {
+    max: 30,
+    speed: 10,
+    glare:false, 
+    reverse:true,
+    reset:false,
+    //gyroscope
+    //gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
+    //gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
+    //gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
+    //gyroscopeMaxAngleY:     80,  
+    perspective:            1000, 
+});
+
+VanillaTilt.init(document.querySelectorAll("#three"), {
+    max: 80,
+    speed: 3,
+    glare:false, 
+    reverse:true,
+    reset:false,
+    //gyroscope
+    //gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
+    //gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
+    //gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
+    //gyroscopeMaxAngleY:     80,  
+    perspective:            1000, 
+});
+
+$(document).ready(function(){
+    $(".kindly").fadeIn(800);
+});
+$(document).ready(function(){
+    $(".trigger").fadeIn(1200);
+});
+$(document).ready(function(){
+    $(".tang").fadeIn(2000);
+});
+
+$(document).ready(function () {
+    $(".tang-trig").hover(function () {
+    $(".tang-pic").toggleClass("tang-pic-triggered");
     });
-    return this;
+});
+
+
+jQuery.fn.shake = function() {
+this.each(function(i) {
+$(this).css({ "position": "relative" });
+for (var x = 1; x <= 3; x++) {
+$(this).animate({ left: -25 }, 10).animate({ left: 0 }, 50).animate({ left: 25 }, 10).animate({ left: 0 }, 50);
+}
+});
+return this;
 } 
 $("#one").shake();
 
@@ -488,5 +198,7 @@ function clickEffect(e){
   d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
 }
 document.addEventListener('click',clickEffect);
+
+
 
 </script>

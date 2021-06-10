@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--https://www.masswerk.at/googleBBS/-->
-        <!--https://blog.carbonfive.com/vintage-terminal-effect-in-css3/-->
+        <!--Used :screen on feature https://codepen.io/lbebber/pen/XJRdrV-->
+        <!--Example: google search https://www.masswerk.at/googleBBS/-->
+        <!--vintage terminal tutorial https://blog.carbonfive.com/vintage-terminal-effect-in-css3/-->
         <!--https://dev.to/ekeijl/retro-crt-terminal-screen-in-css-js-4afh-->
+        <!--https://css-tricks.com/old-timey-terminal-styling/-->
+        <!--Example: https://line-mode.cern.ch/www/hypertext/WWW/TheProject.html-->
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio</title>
 
@@ -11,44 +15,113 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Ubuntu+Mono&family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Share+Tech+Mono&family=Ubuntu+Mono&family=VT323&display=swap" rel="stylesheet">
-        <style>
-            *{
-                margin:0;
-            }
-            html{
-                background-color:rgb(77, 52, 241);
-                color: whitesmoke;
-                font-family: 'Roboto Mono', monospace;
-                font-family: 'Share Tech Mono', monospace;
-                font-family: 'Ubuntu Mono', monospace;
-                font-family: 'VT323', monospace;
-            }
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet">
+        
+        <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
 
-            .vintage-linux{/*ornage on black*/
-            }
-            .green-black{/**/
-            }
-            .turquiose-black{/**/
-            }
-            .white-black{/**/
-            }
-
-
-        </style>
+        {% load static %}
+        <link class="ignore" rel="stylesheet" href="{% static 'css/joltfolio.css' %}" type="text/css">
+        
     </head>
     <body>
-        <h1>Active projects</h1>
-        <h2>GCSE and A-level Exam Question Generator</h2>
-        <h2>Comptia A+ practise resource</h2>
-        <h2>Army Cognitive Test practise resource</h2>
-        <br>
-        <h1>Smaller scale web projects</h1>
-        <h2>Prototype form handling app</h2>
-        <h2>Online signup sheet</h2>
-        <br>
-        <h1>Scripts</h1>
-        <h2>Accounting app</h2>
-        <h2>Reciept and postal order handling</h2>
-        <h2>Financial market scraping</h2>
+        <!-- the actual device -->
+        <div id="monitor">
+              <!-- the overlay and horizontal pattern -->
+              <div id="crt" class="on"> 
+                  <!-- slowly moving scanline -->
+                  <div class="scanline"></div>
+                  <!-- the input and output -->
+                  <div class="terminal">
+
+                    <div class="overlay">ON</div>
+
+                    
+                    <div class = 'terminal-text green-black-p type' onload = 'input()'>
+                      <p>LOADING.................</p>
+                      <p>WELCOME TO PORTFOLIO TERMINAL</p>
+                      <p>
+                      <p>PLEASE MAKE YOUR SELECTION:</p>
+                      <p>1. A-LEVEL PHYSICS QUESTION GENERATOR</p>
+                      <p>2. COMPTIA A+ PRACTISE</p>
+                      <p>3. ARMY COGNITIVE TEST PREPPER</p>
+                      <p>4. ONE PAGE SIGNUP SHEET</p>
+                      <p>5. GITHUB</p>
+                    </div>
+                    <!--
+                    <div class = 'terminal-text white-black-p type'>
+                      <p>Enter command:></p>
+                      <p>Online signup sheet</p>
+                    </div>
+                    
+                    <div class = 'terminal-text white-black type'>
+                      <p>Enter command:></p>
+                      <p>Online signup sheet</p>
+                    </div>
+                    <div class = 'terminal-text green-black type'>
+                      <p>Enter command:></p>
+                      <p>Online signup sheet</p>
+                    </div>
+                    -->
+                </div>
+            </div>
+          
+         </div>   
     </body>
 </html>
+
+
+<script>
+
+new TypeIt('.type', {
+    speed: 50,
+    lifeLike: false,
+    startDelay: 5,
+    cursorChar: "_"
+    //cursorChar: "■",
+}).go();
+
+
+async function main() {
+      let command = await input();
+      await parse(command);
+      main();
+  }
+
+async function type(text, container) {
+    await pause(1);
+    let queue = text.split("");
+    while (queue.length) {
+          let char = queue.shift();
+          container.appendChild(char);
+          await pause(0.05);
+    }
+    await pause(0.5);
+    container.classList.remove("active");
+    return;
+}
+
+function pause(s = 1) {
+    return new Promise(resolve => setTimeout(resolve, 1000 * Number(s)));
+}
+
+async function input(pw) {
+    return new Promise(resolve => {
+        const onKeyDown = event => {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                let result = event.target.textContent;
+                resolve(result);
+            }
+        };
+
+        let terminal = document.querySelector(".terminal");
+        let input = document.createElement("div");
+        input.setAttribute("id", "input");
+        input.setAttribute("contenteditable", true);
+        input.addEventListener("keydown", onKeyDown);
+        terminal.appendChild(input);
+        input.focus();
+    });
+}
+input()
+</script>
