@@ -24,10 +24,10 @@
         <div class = 'desktop'>
             <div class = 'top-banner'>
                 <div class='tang-straight' id='one'>
-                    <p id='one-inner' class = ' tang-spent-ages tang-trig'>
+                    <p id='one-a' class = ' tang-spent-ages tang-trig'>
                         Tang spent <u>ages</u> getting the bits on this page lined up
                     </p>
-                    <p id='one-inner' class = ' straight tang-trig'>
+                    <p id='one-b' class = ' straight tang-trig'>
                         straight...
                     </p>
                 </div>
@@ -43,13 +43,13 @@
                     </div> 
                 </div>
                 <div class='kindly-do-not'>
-                    <div class='kindly tang-trig' id='two' style='display:none'>
+                    <div class='kindly tang-trig' id='two-a' style='display:none'>
                         <p>Kindly do not</p>
                     </div>
                     <div id='trigger' class='trigger'style='display:none'>
                         TRIGGER
                     </div>
-                    <div class='tang tang-trig' id='three' style='display:none' >
+                    <div class='tang tang-trig' id='two-b' style='display:none' >
                         <p id='two'>Tang</p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
 
                 <div class = 'right-sidebar'>
                     <div class = 'social-media-row'>
-                        <div id='three' class = 'tang-trig'>Follow me places</div>
+                        <div id='one-c' class = 'tang-trig'>Follow me places</div>
                         <a href = 'https://www.tiktok.com/@justajolt?lang=en' class = 'sm-item tiktok' target=”_blank”></a>
                         <a href = 'https://www.youtube.com/channel/UC3Bn-Hrh_-U9gEsieL5aQmA' class = 'sm-item youtube' target=”_blank”></a>
                         <a href = 'https://www.facebook.com/justajolt/' class = 'sm-item facebook' target=”_blank”></a>
@@ -125,14 +125,14 @@
                 </div> 
             </div>
 
-            <div class='kindly-do-not' id='two'>
-                <p id='one-inner' class = ' tang-spent-ages tang-trig'>
+            <div class='kindly-do-not'>
+                <p id='one-a' class = ' tang-spent-ages tang-trig'>
                     Tang spent <u>ages</u> getting the bits on this page lined up straight.
                 </p>
-                <p id='one-inner' class = ' straight tang-trig'>
+                <p id='one-b' class = ' straight tang-trig'>
                     Please keep your device very still
                 </p>
-                <p id='one-inner' class = ' straight tang-trig'>
+                <p id='one-c' class = ' straight tang-trig'>
                     or his hard work will be for nothing. 
                 </p>
             </div>
@@ -148,14 +148,14 @@
                 </div>
             </div>
 
-            <div class='kindly-do-not'>
-                <div class='kindly tang-trig' id='two' style='display:none'>
+            <div class='kindly-do-not' id='two'>
+                <div class='kindly tang-trig' id='two-a' style='display:none'>
                     <p>Kindly do not</p>
                 </div>
                 <div id='trigger' class='trigger'style='display:none'>
                     TRIGGER
                 </div>
-                <div class='tang tang-trig' id='three' style='display:none' >
+                <div class='tang tang-trig' id='two-b' style='display:none' >
                     <p id='two'>Tang</p>
                 </div>
             </div>
@@ -175,7 +175,7 @@
 
 <script>
 VanillaTilt.init(document.querySelectorAll(".joltcard"), {
-    max: 40,
+    max:50,
     speed: 3,
     glare:true, 
     "max-glare":1,
@@ -189,8 +189,39 @@ VanillaTilt.init(document.querySelectorAll(".joltcard"), {
     perspective:            1000, 
 });
 
-VanillaTilt.init(document.querySelectorAll("#one-inner"), {
+
+VanillaTilt.init(document.querySelectorAll("#one-a"), {
+    max: 40,
+    speed: 2,
+    glare:false, 
+    "max-glare":1,
+    reverse:true,
+    reset:false,
+    //gyroscope
+    gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
+    gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
+    gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
+    gyroscopeMaxAngleY:     80,  
+    perspective:            1000, 
+});
+
+VanillaTilt.init(document.querySelectorAll("#one-b"), {
     max: 50,
+    speed: 1,
+    glare:false, 
+    "max-glare":1,
+    reverse:true,
+    reset:false,
+    //gyroscope
+    gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
+    gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
+    gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
+    gyroscopeMaxAngleY:     80,  
+    perspective:            1000, 
+});
+
+VanillaTilt.init(document.querySelectorAll("#one-c"), {
+    max: 70,
     speed: 2,
     glare:false, 
     "max-glare":1,
@@ -218,9 +249,23 @@ VanillaTilt.init(document.querySelectorAll("#two"), {
     perspective:            1000, 
 });
 
-VanillaTilt.init(document.querySelectorAll("#three"), {
-    max: 80,
+VanillaTilt.init(document.querySelectorAll("#two-a"), {
+    max: 50,
     speed: 3,
+    glare:false, 
+    reverse:false,
+    reset:false,
+    //gyroscope
+    gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
+    gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
+    gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
+    gyroscopeMaxAngleY:     80,  
+    perspective:            1000, 
+});
+
+VanillaTilt.init(document.querySelectorAll("#two-b"), {
+    max: 70,
+    speed: 2,
     glare:false, 
     reverse:true,
     reset:false,
@@ -248,25 +293,7 @@ $(document).ready(function () {
     });
 });
 
-var alpha_base = False;
-var beta_base = False;
-var gamma_base = False;
 
-window.addEventListener('deviceorientation', function(event) {
-    var alpha = event.alpha;
-    var beta = event.beta;
-    var gamma = event.gamma;
-    // Do something
-    if (alpha_base != alpha){
-        $(".tang-pic").toggleClass("tang-pic-triggered");
-    }
-    if (beta_base != beta){
-        $(".tang-pic").toggleClass("tang-pic-triggered");
-    }
-    if (gamma_base != gamma){
-        $(".tang-pic").toggleClass("tang-pic-triggered");
-    }
-}, false);
 
 jQuery.fn.shake = function() {
 this.each(function(i) {
@@ -290,6 +317,15 @@ function clickEffect(e){
   d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
 }
 document.addEventListener('click',clickEffect);
+
+
+
+if (window.DeviceMotionEvent) {
+  window.addEventListener('devicemotion', deviceMotionHandler);
+    $(".tang-pic").toggleClass("tang-pic-triggered");
+
+}
+
 
 
 
