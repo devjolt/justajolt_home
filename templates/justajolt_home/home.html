@@ -248,6 +248,25 @@ $(document).ready(function () {
     });
 });
 
+var alpha_base = False;
+var beta_base = False;
+var gamma_base = False;
+
+window.addEventListener('deviceorientation', function(event) {
+    var alpha = event.alpha;
+    var beta = event.beta;
+    var gamma = event.gamma;
+    // Do something
+    if (alpha_base != alpha){
+        $(".tang-pic").toggleClass("tang-pic-triggered");
+    }
+    if (beta_base != beta){
+        $(".tang-pic").toggleClass("tang-pic-triggered");
+    }
+    if (gamma_base != gamma){
+        $(".tang-pic").toggleClass("tang-pic-triggered");
+    }
+}, false);
 
 jQuery.fn.shake = function() {
 this.each(function(i) {
