@@ -15,10 +15,26 @@
         
         {% load static %}
         <link class="ignore" rel="stylesheet" href="{% static 'css/jolt_home.css' %}" type="text/css">
+        <link class="ignore" rel="stylesheet" href="{% static 'css/target_range.css' %}" type="text/css">
+        <link class="ignore" rel="stylesheet" href="{% static 'css/fling.css' %}" type="text/css">
+        
         <script type="text/javascript" src="{% static 'js/vanilla-tilt.js' %}"></script>
             
     </head>
-    <!--<img src = "{% static 'images/doddy.png' %}">-->
+    <script>
+
+        function switchTo(add) {
+            var div_list = ['allow-elite','allow-mega','allow-vortex', 'allow-rival', 'allow-ultra' ]
+            for (i in div_list){
+                document.getElementsByTagName('body')[0].classList.remove(div_list[i]);
+                console.log(div_list[i])
+            }
+            document.getElementsByTagName('body')[0].classList.add(add);
+            console.log('add')
+            console.log(add)
+        }
+    
+    </script>
     <body>
         
         <div class = 'desktop'>
@@ -54,7 +70,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div>     
 
             <div class = 'main-section'>
 
@@ -88,10 +104,8 @@
                         <a href = 'https://www.linkedin.com/in/tom-michael-warburton-7a559442/?originalSubdomain=uk' class = 'sm-item linkedin' target=”_blank”></a>
                     </div>
                 </div>
-
-                <div class = 'footer'>
-                </div>
             </div>
+                
         </div>
         
     
@@ -167,6 +181,14 @@
                 <a href = 'https://www.facebook.com/justajolt/' class = 'sm-item facebook' target=”_blank”></a>
                 <a href = 'https://www.linkedin.com/in/tom-michael-warburton-7a559442/?originalSubdomain=uk' class = 'sm-item linkedin' target=”_blank”></a>
                 <div id='three' class = 'tang-trig'>Follow me places</div>
+            </div>
+
+            <div class = 'buttons'>
+                <div class = 'elite-button ammo-button' onClick = "switchTo('allow-elite')">Elite</div>
+                <div class = 'mega-button ammo-button' onClick = "switchTo('allow-mega')">Mega</div>
+                <div class = 'vortex-button ammo-button' onClick = "switchTo('allow-vortex')">Vortex</div>
+                <div class = 'rival-button ammo-button' onClick = "switchTo('allow-rival')">Rival</div>
+                <div class = 'ultra-button ammo-button' onClick = "switchTo('allow-ultra')">Ultra</div>  
             </div>
 
         </div>
@@ -304,24 +326,86 @@ return this;
 } 
 $("#one").shake();
 
-function clickEffect(e){
-  var d=document.createElement("div");
-  d.className="clickEffect";
-  d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
-  document.body.appendChild(d);
-  d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+function clickElite(e){
+    if (document.getElementsByClassName('allow-elite')[0]){
+        console.log('elite')
+        var d=document.createElement("div");
+        d.className="click-elite";
+        d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+        document.body.appendChild(d);
+        d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+    }
 }
-document.addEventListener('click',clickEffect);
+document.addEventListener('click',clickElite);
 
-
-
-if (window.DeviceMotionEvent) {
-  window.addEventListener('devicemotion', deviceMotionHandler);
-    $(".tang-pic").toggleClass("tang-pic-triggered");
-
+function clickRival(e){
+    if (document.getElementsByClassName('allow-rival')[0]){        
+        console.log(e)
+        var d=document.createElement("div");
+        d.className="click-rival";
+        d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+        document.body.appendChild(d);
+        d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+    }
 }
+document.addEventListener('click',clickRival);
+
+//use e.clientx and e.clienty to set keyframe values as here:
+//https://github.com/jlongster/css-animations.js/blob/master/examples/create.html
+// rival straight but upwards
+// elite eratic
+// ultra very eratic
+// discs spin off to the side
+//hyper bounce
+//maybe all of them bounce before the end and fall?
 
 
+function clickUltra(e){
+    if (document.getElementsByClassName('allow-ultra')[0]){        
+        console.log(e)
+        var d=document.createElement("div");
+        d.className="click-ultra";
+        d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+        document.body.appendChild(d);
+        d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+    }
+}
+document.addEventListener('click',clickUltra);
+
+function clickVortex(e){
+    if (document.getElementsByClassName('allow-vortex')[0]){        
+        console.log(e)
+        var d=document.createElement("div");
+        d.className="click-vortex";
+        d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+        document.body.appendChild(d);
+        d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+    }
+}
+document.addEventListener('click',clickVortex);
+
+
+function clickMega(e){
+    if (document.getElementsByClassName('allow-mega')[0]){        
+        console.log(e)
+        var d=document.createElement("div");
+        d.className="click-mega";
+        d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+        document.body.appendChild(d);
+        d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+    }
+}
+document.addEventListener('click',clickMega);
+
+
+
+
+//if (window.DeviceMotionEvent) {
+//  window.addEventListener('devicemotion', deviceMotionHandler());
+//    }
+//    function deviceMotionHandler(){
+//        $(".tang-pic").toggleClass("tang-pic-triggered");
+//}
 
 
 </script>

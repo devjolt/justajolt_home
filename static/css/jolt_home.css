@@ -3,34 +3,6 @@ body{
     padding:0%;
 }
 
-/*Creates rival ball firing effect*/
-body .clickEffect {
-    position:fixed;
-    box-sizing:border-box;
-    border-style:solid;border-color:#FFFFFF;
-    border-radius:50%;
-    animation:clickEffect 0.4s ease-out;
-    z-index:99999;
-}
-@keyframes clickEffect{
-    0% {
-    opacity:1;
-    width: 100px;
-    height: 100px;
-    margin:-7px;
-    border-width:100px;
-    border-color: yellow;
-}
-    100%{
-    opacity:1;
-    width:10px;
-    height:10px;
-    margin:-1px;
-    border-width:10px;
-    border-color: rgb(94, 94, 66)
-    }
-}
-
 @media only screen and (min-width: 741px) {
     .mobile{
         display:none;
@@ -39,20 +11,23 @@ body .clickEffect {
         display: grid;
         grid-template-rows: 28% auto;
         row-gap: 3%;
-        background:url('/static/images/doddy.png');
-        background-repeat: no-repeat;
-        background-size: 100vw 120vh;
+        background:url('/static/images/doddy.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         color: white;
         font-family: 'Press Start 2P', cursive;
     }
     .top-banner{
         display: grid;
         grid-template-columns: 25% auto 25%;
+        height:50%;        
+        margin-top:2%;
+        margin-bottom:5%;
         align-items:center;
         text-align:center;
-        padding-top:1.5%;
-        padding-bottom:9%;
-        height:50%;
+        
         font-family: 'Press Start 2P', cursive;
     }
     .tag-straight{
@@ -198,6 +173,7 @@ body .clickEffect {
     width:25vw;
 
     background:url('/static/images/tang.jpg');
+    background-repeat: no-repeat;
     background-position: 50% 0%;
     background-size: 170%;
 
@@ -208,6 +184,8 @@ body .clickEffect {
 
     transition: 1500ms;
 }
+
+
 .tang-pic-triggered{
     background-position: 50% 20%;
     background-size: 400%;
@@ -261,6 +239,9 @@ body .clickEffect {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+
+
 
 @media only screen and (max-width: 740px) {
     .desktop{
@@ -390,4 +371,4 @@ body .clickEffect {
     #hamnav input:checked ~ #hamitems { display: block; }
     }
     
-}
+

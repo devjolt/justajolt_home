@@ -1,0 +1,285 @@
+.click-elite{
+    position:fixed;
+    box-sizing:border-box;
+    background-color: darkblue;
+    border-style:solid;
+    
+    animation:clickElite 0.6s ease-out;
+    z-index:99999;
+}
+
+@keyframes clickElite{
+    0% {
+        opacity:0.5;
+        border-color:#0026ff;
+        border-top:20px solid rgb(252, 122, 0);
+        width: 75px;
+        height: 500px;
+        transform: perspective(200px) rotateX(1deg);
+        margin: 100px; 
+    }
+    25%{
+        opacity:1;
+        border-color:#0026ff;
+        border-top:5px solid rgb(252, 122, 0);
+        width:20px;
+        height: 80px;
+        border-radius:10;
+        transform: perspective(25px) rotateX(1deg);
+        margin: 50px;
+    }
+    75%{
+        opacity:1;
+        border-width:1px;
+        border-color:#021894;
+        border-radius:50%;
+        width: 5px;
+        height: 5px;
+        transform: perspective(4px) rotateX(1deg);
+        margin: 1px;
+    }
+    100%{
+        opacity:0;
+        border-color:#010c4b;
+        width: 1px;
+        height: 2px;
+        transform: perspective(4px) rotateX(1deg);
+        margin: 1px;
+    }
+}
+
+.click-mega{
+    position:fixed;
+    box-sizing:border-box;
+    background-color: darkred;
+    border-style:solid;
+    animation:clickMega 0.6s ease-out;
+    z-index:99999;
+}
+
+@keyframes clickMega{
+    0% {
+        opacity:0.5;
+        border-color:red;
+        border-top:35px solid rgb(252, 122, 0);
+        height: 125px;
+        height: 650px;
+        transform: perspective(275px) rotateX(1deg);
+        margin: 120px; 
+    }
+    25%{
+        opacity:1;
+        border-color:red;
+        border-top:10px solid rgb(252, 122, 0);
+        width:35px;
+        height: 115px;
+        border-radius:10;
+        transform: perspective(35px) rotateX(1deg);
+        margin: 80
+        px;
+    }
+    75%{
+        opacity:1;
+        border-width:2px;
+        border-color:red;
+        border-radius:50%;
+        width: 10px;
+        height: 10px;
+        transform: perspective(7px) rotateX(1deg);
+        margin: 2px;
+    }
+    100%{
+        opacity:0;
+        border-width:1px;
+        border-color:red;
+        width: 1px;
+        height: 3px;
+        transform: perspective(4px) rotateX(1deg);
+        margin: 1px;
+    }
+}
+.click-vortex{
+    position:fixed;
+    box-sizing:border-box;
+    background-color: rgb(0, 163, 35);
+    border-color:rgb(0, 255, 55);
+    border-style:solid;
+    animation:clickVortex 0.7s ease-out;
+    z-index:99999;
+}
+@keyframes clickVortex{
+    0% {
+        opacity:1;
+        width: 500px;
+        height: 100px;
+        border-width:22px;
+        border-color:rgb(0, 255, 55);
+        border-left: 12px solid rgb(0, 163, 35);
+        border-radius:45%;
+        transform: rotate(90deg)
+    }
+    100%{
+        opacity:1;
+        width: 5px;
+        height: 1px;
+        border-width:0px;
+        border-color:rgb(1, 207, 45);
+        border-radius:45%;
+        transform: rotate(90deg)
+    }
+}
+.click-rival {
+    background-color: rgb(230, 245, 18);
+    position:fixed;
+    box-sizing:border-box;
+    border-style:solid;
+    border-color:#FFFFFF;
+    border-radius:50%;
+    animation:clickRival 0.4s ease-out;
+    z-index:99999;
+}
+
+@keyframes clickRival{
+    0% {
+    opacity:1;
+    width: 60px;
+    height: 60px;
+    margin:-6px;
+    border-width:60px;
+    border-color: rgb(251, 255, 0);
+}
+    100%{
+    opacity:1;
+    width:5px;
+    height:5px;
+    margin:-1px;
+    border-width:5px;
+    border-color: rgb(192, 192, 3)
+    }
+}
+.click-ultra{
+    position:fixed;
+    box-sizing:border-box;
+    background-color: rgb(49, 49, 49);
+    border-style:solid;
+    animation:clickUltra 0.6s ease-out;
+    z-index:99999;
+}
+@keyframes clickUltra{
+    0% {
+        opacity:0.5;
+        border-color:rgb(49, 49, 49);
+        border-top:35px solid rgb(252, 122, 0);
+        width: 80px;
+        height: 400px;
+        transform: perspective(275px) rotateX(1deg);
+        margin: 120px;
+    }
+    25%{
+        opacity:1;
+        border-color:rgb(49, 49, 49);
+        border-top:10px solid rgb(252, 122, 0);
+        width:20px;
+        height: 80px;
+        border-radius:30%;
+        transform: perspective(35px) rotateX(1deg);
+        margin: 80px;
+        
+    }
+    75%{
+        opacity:1;
+        border-width:2px;
+        border-color:rgb(49, 49, 49);
+        border-radius:50%;
+        width: 5px;
+        height: 12px;
+        transform: perspective(7px) rotateX(1deg);
+        margin: 2px; 
+    }
+    100%{
+        opacity:0;
+        border-width:1px;
+        border-color:rgb(22, 22, 22);
+        width: 2px;
+        height: 2px;
+        transform: perspective(4px) rotateX(1deg);
+        margin: 1px;
+    }
+}
+.buttons{
+    display:grid;
+    grid-template-columns:auto 12% 12% 12% 12% 12% auto;
+    align-content:center;
+    padding-top:2%;
+    padding-bottom:2%;
+}
+.ammo-button{
+    width:10vw;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2vw;
+    text-align: center;
+    cursor:pointer;
+    transition: 300ms linear;
+    border-style: solid;
+    border-width:2px;
+    border-radius:10px;
+    color: white;
+}
+
+.elite-button{
+    color: blue;
+    background-color:white;
+    border-color: blue;   
+}
+
+.elite-button:hover{
+    color: white;
+    background-color:blue;
+    border-color: orange;
+    transition: 300ms linear;
+}
+.mega-button{
+    color: red;
+    background-color:white;
+    border-color: red;   
+}
+.mega-button:hover{
+    color: white;
+    background-color:red;
+    border-color: grey;
+    transition: 300ms linear;
+}
+.vortex-button{
+    color: green;
+    background-color:white;
+    border:2px solid green;
+}
+.vortex-button:hover{
+    color: greenyellow;
+    background-color:green;
+    border-color: greenyellow;
+    transition: 300ms linear;
+}
+.rival-button{
+    color: rgb(65, 65, 65);
+    background-color:white;
+    border-color:rgb(65, 65, 65);
+    
+}
+.rival-button:hover{
+    color: yellow;
+    background-color:rgb(65, 65, 65);
+    border-color: yellow;
+    transition: 300ms linear;
+}
+.ultra-button{
+    color: goldenrod;
+    background-color:white;
+    border-color: goldenrod;
+}
+.ultra-button:hover{
+    color: goldenrod;
+    background-color:black;
+    border-color: red;
+    transition: 300ms linear;
+}

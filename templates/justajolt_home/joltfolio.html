@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+
+<script>
+
+
+  
+</script>
 <html>
     <head>
         <!--Used :screen on feature https://codepen.io/lbebber/pen/XJRdrV-->
@@ -9,14 +15,14 @@
         <!--Example: https://line-mode.cern.ch/www/hypertext/WWW/TheProject.html-->
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
+        <title>Joltnet</title>
 
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Ubuntu+Mono&family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Share+Tech+Mono&family=Ubuntu+Mono&family=VT323&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet">
-        
+
         <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
 
         {% load static %}
@@ -24,47 +30,33 @@
         
     </head>
     <body>
-        <!-- the actual device -->
-        <div id="monitor">
-              <!-- the overlay and horizontal pattern -->
-              <div id="crt" class="on"> 
-                  <!-- slowly moving scanline -->
-                  <div class="scanline"></div>
-                  <!-- the input and output -->
-                  <div class="terminal">
-
-                    <div class="overlay">ON</div>
-
-                    
-                    <div class = 'terminal-text green-black-p type' onload = 'input()'>
-                      <p>LOADING.................</p>
-                      <p>WELCOME TO PORTFOLIO TERMINAL</p>
-                      <p>
-                      <p>PLEASE MAKE YOUR SELECTION:</p>
-                      <p>1. A-LEVEL PHYSICS QUESTION GENERATOR</p>
-                      <p>2. COMPTIA A+ PRACTISE</p>
-                      <p>3. ARMY COGNITIVE TEST PREPPER</p>
-                      <p>4. ONE PAGE SIGNUP SHEET</p>
-                      <p>5. GITHUB</p>
-                    </div>
+        <div id="monitor"><!-- the actual device -->             
+              <div id="crt" class="on"><!-- the overlay and horizontal pattern -->                 
+                  <div class="scanline"></div><!-- slowly moving scanline -->              
+                  <div class="terminal"><!-- the input and output -->
+                    <div class="overlay">ON</div><!--onload = 'input()'-->
+                    <div id="boot1" class = 'terminal-text green font-share'></div>
+                    <div id="boot2" class = 'terminal-text orange font-press'></div>
                     <!--
-                    <div class = 'terminal-text white-black-p type'>
-                      <p>Enter command:></p>
-                      <p>Online signup sheet</p>
+                    <div id="boot" class = 'terminal-text green-black-p type'></div>
+                    <div id="boot" class = 'terminal-text white-black type'></div>
+                    
+                    <div id="boot" class = 'terminal-text vintage-linux type'></div>
+                    
+                    <div id="boot" class = 'terminal-text vintage-linux-p type'></div>
+                    
+                    <div id="boot" class = 'terminal-text blue-white type'></div>
+
+                    <div id="hack" class = 'terminal-text green-black-p type'>
+                      <div id="1"></div>
+                      <div id="2"></div>
+                      <div id="3"></div>
+                      <div id="4"></div>
                     </div>
                     
-                    <div class = 'terminal-text white-black type'>
-                      <p>Enter command:></p>
-                      <p>Online signup sheet</p>
-                    </div>
-                    <div class = 'terminal-text green-black type'>
-                      <p>Enter command:></p>
-                      <p>Online signup sheet</p>
-                    </div>
                     -->
                 </div>
             </div>
-          
          </div>   
     </body>
 </html>
@@ -72,13 +64,62 @@
 
 <script>
 
-new TypeIt('.type', {
-    speed: 50,
-    lifeLike: false,
-    startDelay: 5,
-    cursorChar: "_"
-    //cursorChar: "■",
-}).go();
+let fonts=['font-share','font-press','font-vt323']
+let colors=[['lime',[['var(--greenbg)','var(--greenshadow)'],['black','var(--blackshadow)'], ['var(--bluebg)','var(--blueshadow)']]],['white',[['var(--bluebg)','var(--blueshadow)'],['black','var(--blackshadow)']]],['orange',[['black','var(--blackshadow)'],['var(--greenbg)','var(--greenshadow)']]]];
+let media=[
+  'insert casette... ... ... ... ...', 
+  'insert floppy disk... ... ... ...',
+  'insert punch card ... ... ... ...',
+  'insert rubber ducky.. ... ... ...',
+  'insert id card... ... ... ... ...',
+  'scanning retina.. ... ... ... ...',
+  'user detected ... ... ... ... ...',
+]
+let actions=[
+  'cracking passwords........',
+  'infiltrating internets....',
+  'uploading algorithms......',
+  'securing mayonaise........',
+  'adding cheese.............',
+  'irradiating spiders.......',
+  'virtualising pickles......',
+  'stamping on spiders.......',
+  'buying bitcoin............',
+  'liquidating bitcoin.......',
+  'downloading RAM...........',
+  'harvesting cores..........',
+  'doing school run..........',
+  'firing accountant.........',
+  'mashing aubergine.........',
+  'slapping thigh............',
+  'reading docs..............',
+  'downloading algorithms....',
+  'authenticating retina.....',
+  'escalating privileges.....',
+  'loading data..............',
+  ]
+
+font = fonts[Math.floor(Math.random() * fonts.length)];
+medium = media[Math.floor(Math.random() * 5)];
+colorvars = colors[Math.floor(Math.random() * 3)];
+color=colorvars[0]
+if (color=='lime'){
+  morecolorvars=colorvars[1][Math.floor(Math.random() * 3)];
+  console.log(morecolorvars)
+  background=morecolorvars[0]
+  shaddow=morecolorvars[1]
+  
+}else{
+  morecolorvars=colorvars[1][Math.floor(Math.random() * 2)];
+  console.log(morecolorvars)
+  background=morecolorvars[0]
+  shaddow=morecolorvars[1]
+}
+
+document.getElementsByTagName("body")[0].style.backgroundColor=background;
+document.getElementsByTagName("body")[0].style.boxShadow=shaddow;
+var class_text = 'terminal-text '+font+' ' +color;
+document.getElementById("boot1").className=class_text;
 
 
 async function main() {
@@ -123,5 +164,213 @@ async function input(pw) {
         input.focus();
     });
 }
-input()
+
+
+/*
+function bootup(){
+  spin(400)
+  spin(300)
+  spin(200)
+  spin(100)
+}
+*/
+function spin(speed){
+  frames = ["-", "/","|","\\"]
+  var thing= new TypeIt("#boot1", {
+  speed: 50,
+  waitUntilVisible: true,
+  lifeLike: true,
+  startDelay: 1000,
+  cursor:false,
+  //cursorChar: "■"
+  })
+  thing.type(frames[0], { delay: speed })
+  thing.empty()
+  thing.type(frames[1], { delay: speed })
+  thing.empty()
+  thing.type(frames[2], { delay: speed })
+  thing.empty()
+  thing.type(frames[3], { delay: speed })
+  thing.empty()
+  thing.type(frames[0], { delay: speed })
+  thing.empty()
+  thing.type(frames[1], { delay: speed })
+  thing.empty()
+  thing.type(frames[2], { delay: speed })
+  thing.empty()
+  thing.type(frames[3], { delay: speed })
+  thing.empty()
+  thing.type(frames[0], { delay: speed })
+  thing.empty()
+  thing.type(frames[1], { delay: speed })
+  thing.empty()
+  thing.type(frames[2], { delay: speed })
+  thing.empty()
+  thing.type(frames[3], { delay: speed })
+  thing.empty()
+  thing.type(frames[0], { delay: speed })
+  thing.empty()
+  thing.type(frames[1], { delay: speed })
+  thing.empty()
+  thing.type(frames[2], { delay: speed })
+  thing.empty()
+  thing.type(frames[3], { delay: speed })
+  thing.empty()
+  thing.go()
+  return
+}
+
+let frames = ["-", "/","|","\\"]
+
+new TypeIt("#boot1", {
+  speed: 40,
+  waitUntilVisible: true,
+  lifeLike: true,
+  startDelay: 1000,
+  cursor:false,
+  //cursorChar: "■"
+})
+
+  .type(medium, { delay: 800 })
+  .empty()
+  .type(medium, { delay: 200 })
+  .empty()
+  .type('...reading...', { delay: 100 })
+  .empty()
+  .type("-", { delay: 150 })
+  .empty()
+  .type("/", { delay: 150 })
+  .empty()
+  .type("|", { delay: 150 })
+  .empty()
+  .type("\\", { delay: 150 })
+  .empty()
+  .type("-", { delay: 150 })
+  .empty()
+  .type("/", { delay: 150 })
+  .empty()
+  .type("|", { delay: 150 })
+  .empty()
+  .type("\\", { delay: 150 })
+  .empty()
+  .type("-", { delay: 150 })
+  .empty()
+  .type("/", { delay: 150 })
+  .empty()
+  .type("|", { delay: 150 })
+  .empty()
+  .type("\\", { delay: 150 })
+  .empty()
+  .type("-", { delay: 150 })
+  .empty()
+  .type("/", { delay: 150 })
+  .empty()
+  .type("|", { delay: 150 })
+  .empty()
+  .type("\\", { delay: 150 })
+  .empty()
+  .type("-", { delay: 150})
+  .empty()
+  .type(actions[Math.floor(Math.random()* 7)],)
+  .break()
+  .type("..........................",)
+  .break()
+  .type("...............completed", { delay: 250 })
+  .empty()
+  .type(actions[Math.floor(Math.random()* 7)], { delay: 400 })
+  .break()
+  .break()
+  .type(actions[Math.floor(Math.random()* 7)], { delay: 400 })
+  .empty()
+  .type("Computing", { delay: 200 })
+  .type(" computer", { delay: 400 })
+  .type(" um...", { delay: 600 })
+  .delete(5)
+  .type(" computations", { delay: 500 })
+  .empty()
+  .type("innitt", { delay: 800 })
+  .delete(1, { delay: 500 })
+  .type("iali", { delay: 600 })
+  .move(-3, { delay: 400 })
+  .move(-4, { delay: 300 })
+  .delete(1, { delay: 500 })
+  .move(5, { delay: 200 })
+  .type("isal", { delay: 400 })
+  .delete(4)
+  .type("liz", { delay: 500 })
+  .move(2, { delay: 200 })
+  .delete(12, { delay: 800 })
+  .type("booting stuff up and spinning spinny thing more", { delay: 400 })
+  .empty()
+  .type("-", { delay: 100 })
+  .empty()
+  .type("/", { delay: 90 })
+  .empty()
+  .type("|", { delay: 80 })
+  .empty()
+  .type("\\", { delay: 70 })
+  .empty()
+  .type("-", { delay: 50 })
+  .empty()
+  .type("/", { delay: 40 })
+  .empty()
+  .type("|", { delay: 30 })
+  .empty()
+  .type("\\", { delay: 30 })
+  .empty()
+  .type("-", { delay: 20 })
+  .empty()
+  .type("/", { delay: 30 })
+  .empty()
+  .type("|", { delay: 20 })
+  .empty()
+  .type("\\", { delay: 50 })
+  .empty()
+  .type("-", { delay: 50 })
+  .empty()
+  .type("/", { delay: 75 })
+  .empty()
+  .type("|", { delay: 100 })
+  .empty()
+  .type("\\", { delay: 75 })
+  .empty()
+  .type("-", { delay: 100 })
+  .empty()
+  .type("/", { delay: 50 })
+  .empty()
+  .type("^", { delay: 100 })
+  .empty()
+  .type("_", { delay: 1000 })
+  .break()
+  .break()
+  .type("WELCOME TO")
+  .break()
+  .type(" &nbsp;___&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;___....")
+  .break()
+  .type(" &nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;&nbsp;|&nbsp;|\\&nbsp;|&nbsp;|_&nbsp;&nbsp;|.....")
+  .break()
+  .type("|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|.....", { delay: 1000 })
+  .break()
+  .break()
+  .break()
+  .type("PLEASE MAKE YOUR SELECTION:")
+  .break()
+  .break()
+  .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/justajolt'>1. Tang's page</a>")
+  .break()
+  .break()
+  .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>2. Army Cognitive Test</a>")
+  .break()
+  .break()
+  .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>3. CISMP practise</a>")
+  .go()
+
+const log = document.getElementById('log');
+document.addEventListener('keydown', logKey);
+
+
+function logKey(e) {
+  spin(100);
+}
+
 </script>

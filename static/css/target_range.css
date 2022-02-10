@@ -1,0 +1,55 @@
+
+
+
+.pano-container{
+    
+}
+
+.pano {
+    height:100vh;
+    width: 50vw;
+    cursor: move;
+}
+.pano .controls {
+    position: relative;
+    top: 40%;
+}
+.pano .controls a {
+    position: absolute;
+    display: inline-block;
+    text-decoration: none;
+    color: #eee;
+    font-size: 3em;
+    width: 100px;
+    height: 100px;
+}
+.pano .controls a.left {
+    left: 10px;
+}
+.pano .controls a.right {
+    right: 10px;
+}
+.pano.moving .controls a {
+    opacity: 0.4;
+    color: #eee;
+}
+
+.container {
+    width:960px;
+    margin: 30px auto;
+}
+header{
+    background-image:url('/static/images/rey.jpg');
+    height:512px;
+    cursor:move;
+    background-position: -4067px 50%;
+}
+.container{
+    display:block;
+    height:75vh;
+    width:75vw;
+}
+
+a-scene{
+    
+}

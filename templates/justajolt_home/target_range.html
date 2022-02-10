@@ -1,0 +1,247 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Flinging foam in your browser</title>
+        
+        <!--extermal-->
+        <!--fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+        <!--js-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+
+
+
+
+        
+        <script src="https://static.kuula.io/embed.js" data-kuula="https://kuula.co/share/collection/7YB2M?fs=1&vr=0&sd=1&thumbs=1&info=1&logo=1" data-width="100%" data-height="640px"></script>
+              
+        <!--local-->
+        <!--js-->
+        <script type="text/javascript" src="{% static 'js/vanilla-tilt.js' %}"></script>
+
+        <script src ="{% static 'js/jquery.3.6.0.min.js' %}"></script>
+        <script src ="{% static 'js/jquery.cyclotron.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'js/pano.js' %}"></script>
+
+        <!--css-->
+        <link class="ignore" rel="stylesheet" href="{% static 'css/fling.css' %}" type="text/css">
+        <link class="ignore" rel="stylesheet" href="{% static 'css/target_range.css' %}" type="text/css">
+
+        <!--https://github.com/jlongster/css-animations.js/blob/master/examples/create.html-->
+    </head>
+    <!--<img src = "{% static 'images/doddy.png' %}">-->
+    <script>
+        function switchTo(add) {
+            var div_list = ['allow-elite','allow-mega','allow-vortex', 'allow-rival', 'allow-ultra' ]
+            for (i in div_list){
+                document.getElementsByTagName('body')[0].classList.remove(div_list[i]);
+                console.log(div_list[i])
+            }
+            document.getElementsByTagName('body')[0].classList.add(add);
+            console.log('add')
+            console.log(add)
+        }
+    </script>
+
+    <body>
+        
+
+
+        <iframe width="100%" height="640" style="width: 100%; height: 640px; border: none; max-width: 100%;" frameborder="0" allowfullscreen allow="xr-spatial-tracking; gyroscope; accelerometer" scrolling="no" src="https://kuula.co/share/collection/7YB2M?fs=1&vr=0&sd=1&thumbs=1&info=1&logo=1"></iframe>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/XQvN5duiumE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fnerfpartiesleeds%2Fvideos%2F194837665180951%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+
+        <div class = 'pano-container'>
+            <div id="myPano" class="pano">
+			    <div class="controls">
+				    <a href="#" class="left">&laquo;</a>
+    				<a href="#" class="right">&raquo;</a>
+	    		</div>
+		    </div>
+        </div>
+
+
+        <header></header>
+        <div class='container'>
+            <h1>Cyclotron</h1>
+        </div>
+        
+        <script>
+            $('header').cyclotron();
+        </script>
+
+        <div class = 'buttons'>
+            <div></div>
+            <div class = 'elite-button ammo-button' onClick = "switchTo('allow-elite')">Elite</div>
+            <div class = 'mega-button ammo-button' onClick = "switchTo('allow-mega')">Mega</div>
+            <div class = 'vortex-button ammo-button' onClick = "switchTo('allow-vortex')">Vortex</div>
+            <div class = 'rival-button ammo-button' onClick = "switchTo('allow-rival')">Rival</div>
+            <div class = 'ultra-button ammo-button' onClick = "switchTo('allow-ultra')">Ultra</div>
+        </div>
+
+
+        <script type="text/javascript">
+            AFRAME.registerComponent('marker', {
+              schema: {
+                default: ''
+              },
+              init() {
+                const sky = document.querySelector('a-sky');
+                var b = false
+                this.el.addEventListener('click', () => {
+                  if (b) {
+                    sky.setAttribute('src', "#entrance");
+                  } else {
+                    sky.setAttribute('src', "#study");
+                  }
+                  b = !b;
+                  console.log('clicked');
+                });
+              }
+            });
+          
+          </script>
+          
+          <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+          
+        <div class='container' cursor="rayOrigin: mouse">
+            <a-scene embedded>
+                cursor="rayOrigin: mouse">.
+                <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
+                    event-set__enter="_event: mouseenter; color: #8FF7FF"
+                    event-set__leave="_event: mouseleave; color: #4CC3D9">
+                </a-box>
+
+                <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"
+                    event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
+                    event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false">
+                    <a-text id="cylinderText" value="This is a cylinder" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"
+                            geometry="primitive: plane; width: 1.75" material="color: #333">
+                    </a-text>
+                </a-cylinder>
+                <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"
+                    event-set__down="_event: mousedown; material.wireframe: true"
+                    event-set__up="_event: mouseup; material.wireframe: false"
+                    event-set__leave="_event: mouseleave; material.wireframe: false">
+                </a-plane>
+
+
+                <a-camera>
+                    <a-cursor></a-cursor>
+                    <!-- Or <a-entity cursor></a-entity> -->
+                  </a-camera>
+                <img id='panorama' src="/static/images/rey.jpg"/>
+                <a-sky src = '#panorama' rotation='0 -90 0'></a-sky>
+                <a-sphere href="http://google.com" id="marker" position="-10 3 -15" radius="0.65" color="#EF2D5E" marker></a-sphere>
+            
+            </a-scene>
+        </div>
+
+
+        
+       
+
+
+    </body>
+</html>
+
+<script>
+
+
+$(function(){
+	var pano = $("#myPano").pano({
+		img: "/static/images/rey.jpg",
+		interval: 100,
+		speed: 50
+	});
+	pano.moveLeft();
+	pano.stopMoving();
+	pano.moveRight();
+	pano.stopMoving();
+});
+
+function clickElite(e){
+    if (document.getElementsByClassName('allow-elite')[0]){
+        console.log('elite')
+        var d=document.createElement("div");
+        d.className="click-elite";
+        d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+        document.body.appendChild(d);
+        d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+    }
+}
+document.addEventListener('click',clickElite);
+
+function clickRival(e){
+    if (document.getElementsByClassName('allow-rival')[0]){        
+        console.log(e)
+        var d=document.createElement("div");
+        d.className="click-rival";
+        d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+        document.body.appendChild(d);
+        d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+    }
+}
+document.addEventListener('click',clickRival);
+
+//use e.clientx and e.clienty to set keyframe values as here:
+//https://github.com/jlongster/css-animations.js/blob/master/examples/create.html
+// rival straight but upwards
+// elite eratic
+// ultra very eratic
+// discs spin off to the side
+//hyper bounce
+//maybe all of them bounce before the end and fall?
+
+
+function clickUltra(e){
+    if (document.getElementsByClassName('allow-ultra')[0]){        
+        console.log(e)
+        var d=document.createElement("div");
+        d.className="click-ultra";
+        d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+        document.body.appendChild(d);
+        d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+    }
+}
+document.addEventListener('click',clickUltra);
+
+function clickVortex(e){
+    if (document.getElementsByClassName('allow-vortex')[0]){        
+        console.log(e)
+        var d=document.createElement("div");
+        d.className="click-vortex";
+        d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+        document.body.appendChild(d);
+        d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+    }
+}
+document.addEventListener('click',clickVortex);
+
+
+function clickMega(e){
+    if (document.getElementsByClassName('allow-mega')[0]){        
+        console.log(e)
+        var d=document.createElement("div");
+        d.className="click-mega";
+        d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+        document.body.appendChild(d);
+        d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+    }
+}
+document.addEventListener('click',clickMega);
+
+</script>

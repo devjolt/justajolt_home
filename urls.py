@@ -3,7 +3,8 @@ from . import views
 
 #justajolt/
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('joltfolio/', views.joltfolio, name='joltfolio'),
-    path('portfolio/', views.portfolio, name='portfolio'),
+    path('', views.joltfolio, name='joltnet'),
+    path('tang/', views.home, name='home'),
+    #path('target_range/', views.target_range, name='target_range'),
+    #path('portfolio/', views.portfolio, name='portfolio'),
 ]
