@@ -19,10 +19,9 @@
         <link class="ignore" rel="stylesheet" href="{% static 'css/fling.css' %}" type="text/css">
         
         <script type="text/javascript" src="{% static 'js/vanilla-tilt.js' %}"></script>
-            
+
     </head>
     <script>
-
         function switchTo(add) {
             var div_list = ['allow-elite','allow-mega','allow-vortex', 'allow-rival', 'allow-ultra' ]
             for (i in div_list){
@@ -38,50 +37,30 @@
     <body>
         
         <div class = 'desktop'>
-            <div class = 'top-banner'>
-                <div class='tang-straight' id='one'>
-                    <p id='one-a' class = ' tang-spent-ages tang-trig'>
-                        Tang spent <u>ages</u> getting the bits on this page lined up
-                    </p>
-                    <p id='one-b' class = ' straight tang-trig'>
-                        straight...
-                    </p>
-                </div>
-                <div class = 'justajolt-logo'>
-                    <div class = 'justajolt' onload="myFunction()">
-                        <div class = 'container'>
-                            <div class = 'joltcard'>
-                                <div class = 'content'>
-                                    <div class = 'jolt tang-trig'><a href ='https://www.youtube.com/channel/UC3Bn-Hrh_-U9gEsieL5aQmA'>justajolt</a></div>
-                                </div>                   
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-                <div class='kindly-do-not'>
-                    <div class='kindly tang-trig' id='two-a' style='display:none'>
-                        <p>Kindly do not</p>
-                    </div>
-                    <div id='trigger' class='trigger'style='display:none'>
-                        TRIGGER
-                    </div>
-                    <div class='tang tang-trig' id='two-b' style='display:none' >
-                        <p id='two'>Tang</p>
-                    </div>
-                </div>
-
-            </div>     
-
-            <div class = 'main-section'>
-
+            <div class="center">
+                <h2 id='one'>v Click below to fling cyber foam v</h2>
+            </div>
+            <div class = 'buttons'>
+                <div></div>
+                <div class = 'elite-button ammo-button item' onClick = "switchTo('allow-elite')">Elite</div>
+                <div class = 'mega-button ammo-button item' onClick = "switchTo('allow-mega')">Mega</div>
+                <div class = 'vortex-button ammo-button item' onClick = "switchTo('allow-vortex')">Vortex</div>
+                <div class = 'rival-button ammo-button item' onClick = "switchTo('allow-rival')">Rival</div>
+                <div class = 'ultra-button ammo-button item' onClick = "switchTo('allow-ultra')">Ultra</div>
+                <div></div>
+            </div>
+            <div></div>
+            
+            <div class="warning-grid">
                 <div class = 'left-sidebar'>
-                    <div class = 'item coding-portfolio'>Coming soon</div>
-                    <div class = 'item nerf-videos'><a href = 'https://www.youtube.com/channel/UC3Bn-Hrh_-U9gEsieL5aQmA' target=”_blank”>Nerf videos</a></div>
                     <div class = 'item grim-up-nerf'><a href='https://www.facebook.com/Grimupnerf/' target=”_blank”>Grim Up Nerf</a></div>
+                    <div class = 'item nerf-videos'><a href = 'https://www.youtube.com/channel/UC3Bn-Hrh_-U9gEsieL5aQmA' target=”_blank”>Nerf videos</a></div>
+                    <div class = 'item joltnet'><a href='/' target=”_blank”>joltnet</a></div>
                     <div class = 'item grim-up-nerf'>Coming soon</div>
                     <div class = 'item grim-up-nerf'>Coming soon</div>
                 </div>
                 
+                    
                 <div class = 'middle-section'>
                     <div class = 'tang-frame'>
                         <div class = 'tang-pic'>
@@ -93,18 +72,67 @@
                         </div>
                     </div>
                 </div>
-
+                <div>
+                    <div class="tang-spent-ages">
+                        <p id='one-a' class =' tang-trig'>
+                            By the way, Tang spent <u>ages</u> getting the bits on this page lined up
+                        </p>
+                        <p id='one-b' class = ' straight tang-trig'>
+                            straight
+                        </p>
+                    </div>
+                    <div class='kindly-do-not'>
+                        <div class='kindly tang-trig' id='two-a' style='display:none'>
+                            <p>Kindly do not</p>
+                        </div>
+                        <div id='trigger' class='trigger'style='display:none'>
+                            TRIGGER
+                        </div>
+                        <div class='tang tang-trig' id='two-b' style='display:none' >
+                            <p id='two'>Tang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='lower'>
+                <div></div>
+                
+                
                 <div class = 'right-sidebar'>
                     <div class = 'social-media-row'>
-                        <div id='one-c' class = 'tang-trig'>Follow me places</div>
+                        <div id='three' class = 'tang-trig'>Follow me places</div>
                         <a href = 'https://www.tiktok.com/@justajolt?lang=en' class = 'sm-item tiktok' target=”_blank”></a>
                         <a href = 'https://www.youtube.com/channel/UC3Bn-Hrh_-U9gEsieL5aQmA' class = 'sm-item youtube' target=”_blank”></a>
                         <a href = 'https://www.facebook.com/justajolt/' class = 'sm-item facebook' target=”_blank”></a>
                         <a href = 'https://www.instagram.com/justajolt/?hl=en-gb' class = 'sm-item instagram' target=”_blank”></a>
                         <a href = 'https://www.linkedin.com/in/tom-michael-warburton-7a559442/?originalSubdomain=uk' class = 'sm-item linkedin' target=”_blank”></a>
+                        
                     </div>
                 </div>
+                
+                <div></div>
+                <div></div>
+                <!--
+                <div class = 'justajolt-logo'>
+                    <div class = 'justajolt' onload="myFunction()">
+                        <div class = 'container'>
+                            <div class = 'joltcard'>
+                                <div class = 'content'>
+                                    <div class = 'jolt tang-trig'><a href ='https://www.youtube.com/channel/UC3Bn-Hrh_-U9gEsieL5aQmA'>justajolt</a></div>
+                                </div>                   
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                -->
+                
+        
             </div>
+
+                
+           
+                
+            
                 
         </div>
         
@@ -119,13 +147,26 @@
                
                 <!-- (C) MENU ITEMS -->
                 <div id="hamitems">
-                    <a href="">coming soon</a>
-                    <a href="https://www.youtube.com/channel/UC3Bn-Hrh_-U9gEsieL5aQmA">Nerf videos</a>
                     <a href="https://www.facebook.com/Grimupnerf/">Grim Up Nerf</a>
+                    <a href="https://www.youtube.com/channel/UC3Bn-Hrh_-U9gEsieL5aQmA">Nerf videos</a>
+                    <a href="/">joltnet</a>
                     <a href="">coming soon</a>
                     <a href="">coming soon</a>
                 </div>
             </nav>
+
+            <div class="center">
+                <h2 id='one'>v Click below to fling cyber foam v</h2>
+            </div>
+            <div class = 'buttons'>
+                <div></div>
+                <div class = 'elite-button ammo-button item' onClick = "switchTo('allow-elite')">Elite</div>
+                <div class = 'mega-button ammo-button item' onClick = "switchTo('allow-mega')">Mega</div>
+                <div class = 'vortex-button ammo-button item' onClick = "switchTo('allow-vortex')">Vortex</div>
+                <div class = 'rival-button ammo-button item' onClick = "switchTo('allow-rival')">Rival</div>
+                <div class = 'ultra-button ammo-button item' onClick = "switchTo('allow-ultra')">Ultra</div>
+                <div></div>
+            </div>
 
             <div class = 'justajolt-logo'>
                 <div class = 'justajolt' onload="myFunction()">
@@ -183,13 +224,7 @@
                 <div id='three' class = 'tang-trig'>Follow me places</div>
             </div>
 
-            <div class = 'buttons'>
-                <div class = 'elite-button ammo-button' onClick = "switchTo('allow-elite')">Elite</div>
-                <div class = 'mega-button ammo-button' onClick = "switchTo('allow-mega')">Mega</div>
-                <div class = 'vortex-button ammo-button' onClick = "switchTo('allow-vortex')">Vortex</div>
-                <div class = 'rival-button ammo-button' onClick = "switchTo('allow-rival')">Rival</div>
-                <div class = 'ultra-button ammo-button' onClick = "switchTo('allow-ultra')">Ultra</div>  
-            </div>
+            
 
         </div>
     </body>

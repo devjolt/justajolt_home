@@ -273,26 +273,13 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
                   <div class="scanline"></div><!-- slowly moving scanline -->              
                   <div class="terminal"><!-- the input and output -->
                     <div class="overlay">ON</div><!--onload = 'input()'-->
-                    <div id="boot1" class = 'terminal-text green font-share'></div>
-                    <div id="boot2" class = 'terminal-text orange font-press'></div>
-                    <!--
-                    <div id="boot" class = 'terminal-text green-black-p type'></div>
-                    <div id="boot" class = 'terminal-text white-black type'></div>
-                    
-                    <div id="boot" class = 'terminal-text vintage-linux type'></div>
-                    
-                    <div id="boot" class = 'terminal-text vintage-linux-p type'></div>
-                    
-                    <div id="boot" class = 'terminal-text blue-white type'></div>
-
-                    <div id="hack" class = 'terminal-text green-black-p type'>
-                      <div id="1"></div>
-                      <div id="2"></div>
-                      <div id="3"></div>
-                      <div id="4"></div>
-                    </div>
-                    
-                    -->
+                    <div id="boot1"></div>
+                    <div id="menu"></div>
+                    <div id="external"></div>
+                    <div id="hack1"></div>
+                    <div id="hack2"></div>
+                    <div id="hack3"></div>
+                    <div id="hack4"></div> 
                 </div>
             </div>
          </div>   
@@ -304,43 +291,59 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
 
 let fonts=['font-share','font-press','font-vt323']
 let colors=[['lime',[['var(--greenbg)','var(--greenshadow)'],['black','var(--blackshadow)'], ['var(--bluebg)','var(--blueshadow)']]],['white',[['var(--bluebg)','var(--blueshadow)'],['black','var(--blackshadow)']]],['orange',[['black','var(--blackshadow)'],['var(--greenbg)','var(--greenshadow)']]]];
-let media=[
-  'insert casette... ... ... ... ...', 
-  'insert floppy disk... ... ... ...',
-  'insert punch card ... ... ... ...',
-  'insert rubber ducky.. ... ... ...',
-  'insert id card... ... ... ... ...',
-  'scanning retina.. ... ... ... ...',
-  'user detected ... ... ... ... ...',
-]
+    let media=[
+    'press play on tape',
+    'insert casette', 
+    'insert floppy disk',
+    'insert punch card',
+    'insert id card',
+    'scanning retina',
+    'insert magnetic tape',
+    'insert laser disc',
+    'insert 8in floppy',
+    'insert dectape',
+    'insert datasette',
+    ]
 let actions=[
-  'cracking passwords........',
-  'infiltrating internets....',
-  'uploading algorithms......',
-  'securing mayonaise........',
-  'adding cheese.............',
-  'irradiating spiders.......',
-  'virtualising pickles......',
-  'stamping on spiders.......',
-  'buying bitcoin............',
-  'liquidating bitcoin.......',
-  'downloading RAM...........',
-  'harvesting cores..........',
-  'doing school run..........',
-  'firing accountant.........',
-  'mashing aubergine.........',
-  'slapping thigh............',
-  'reading docs..............',
-  'downloading algorithms....',
-  'authenticating retina.....',
-  'escalating privileges.....',
-  'loading data..............',
-  ]
+    'recommissioning arpanet...',
+    'accessing backdoor........',
+    'uploading rubber ducky.....',
+    'cracking passwords........',
+    'infiltrating internets....',
+    'uploading algorithms......',
+    'securing mayonaise........',
+    'adding cheese.............',
+    'irradiating spiders.......',
+    'virtualising pickles......',
+    'stamping on spiders.......',
+    'buying bitcoin............',
+    'liquidating bitcoin.......',
+    'downloading RAM...........',
+    'harvesting cores..........',
+    'doing school run..........',
+    'firing accountant.........',
+    'mashing aubergine.........',
+    'reading docs..............',
+    'downloading algorithms....',
+    'authenticating retina.....',
+    'escalating privileges.....',
+    'loading data..............',
+    ]
+let ram=[
+    '4k',
+    '8k',
+    '16k',
+    '32k',
+    '64k',
+    '128k',
+    '265 BYTES',
+    '512 BYTES',
+]
 
 font = fonts[Math.floor(Math.random() * fonts.length)];
-medium = media[Math.floor(Math.random() * 5)];
+medium = media[Math.floor(Math.random() * media.length)];
 colorvars = colors[Math.floor(Math.random() * 3)];
-color=colorvars[0]
+var color=colorvars[0]
 if (color=='lime'){
   morecolorvars=colorvars[1][Math.floor(Math.random() * 3)];
   console.log(morecolorvars)
@@ -357,7 +360,30 @@ if (color=='lime'){
 document.getElementsByTagName("body")[0].style.backgroundColor=background;
 document.getElementsByTagName("body")[0].style.boxShadow=shaddow;
 var class_text = 'terminal-text '+font+' ' +color;
-document.getElementById("boot1").className=class_text;
+var boot1= document.getElementById("boot1");
+var mmenu= document.getElementById("menu");
+var external= document.getElementById("external");
+var hack1= document.getElementById("hack1");
+var hack2= document.getElementById("hack2");
+var hack3= document.getElementById("hack3");
+var hack4= document.getElementById("hack4");
+
+
+boot1.className=class_text;
+mmenu.className=class_text;
+external.className=class_text;
+hack1.className=class_text;
+hack2.className=class_text;
+hack3.className=class_text;
+hack4.className=class_text;
+
+boot1.display='block';
+mmenu.display='none';
+external.display='none';
+hack1.display='none';
+hack2.display='none';
+hack3.display='none';
+hack4.display='none';
 
 
 async function main() {
@@ -404,24 +430,275 @@ async function input(pw) {
 }
 
 
-/*
-function bootup(){
-  spin(400)
-  spin(300)
-  spin(200)
-  spin(100)
+
+let frames = ["-", "/","|","\\"]
+
+var boot1=new TypeIt("#boot1", {
+    speed: 40,
+    waitUntilVisible: true,
+    lifeLike: true,
+    startDelay: 1000,
+    cursor:false,
+    //cursorChar: "■"
+    })
+    boot1.type('checking ststem.............', { delay: 800 })
+    boot1.break()
+    boot1.type('.......'+ram[Math.floor(Math.random() * ram.length)]+' RAM OK', { delay: 50 })
+    boot1.break()
+    boot1.type('.......CPU '+Math.floor(Math.random() *1000)+' Hz', { delay: 50})
+    boot1.break()
+    boot1.type('.......'+Math.floor(Math.random() *1000)+' kb free', { delay: 100 })
+    boot1.empty()
+    boot1.type(medium+'&nbsp;.........', { delay: 800 })
+    boot1.empty()
+    boot1.type(medium+'&nbsp;....... located', { delay: 100 })
+    boot1.empty()
+    boot1.type('...reading...', { delay: 100 })
+    boot1.empty()
+    boot1.type("-", { delay: 150 })
+    boot1.empty()
+    boot1.type("/", { delay: 150 })
+    boot1.empty()
+    boot1.type("|", { delay: 150 })
+    boot1.empty()
+    boot1.type("\\", { delay: 150 })
+    boot1.empty()
+    boot1.type("-", { delay: 150 })
+    boot1.empty()
+    boot1.type("/", { delay: 150 })
+    boot1.empty()
+    boot1.type("|", { delay: 150 })
+    boot1.empty()
+    boot1.type("\\", { delay: 150 })
+    boot1.empty()
+    boot1.type("-", { delay: 150 })
+    boot1.empty()
+    boot1.type("/", { delay: 150 })
+    boot1.empty()
+    boot1.type("|", { delay: 150 })
+    boot1.empty()
+    boot1.type("\\", { delay: 150 })
+    boot1.empty()
+    boot1.type("-", { delay: 150 })
+    boot1.empty()
+    boot1.type("/", { delay: 150 })
+    boot1.empty()
+    boot1.type("|", { delay: 150 })
+    boot1.empty()
+    boot1.type("\\", { delay: 150 })
+    boot1.empty()
+    boot1.type("-", { delay: 150})
+    boot1.empty()
+    boot1.type(actions[Math.floor(Math.random()* actions.length)],)
+    boot1.break()
+    boot1.type("..........................",)
+    boot1.break()
+    boot1.type("...............completed", { delay: 50 })
+    boot1.empty()
+    boot1.type(actions[Math.floor(Math.random()* actions.length)], { delay: 50 })
+    boot1.break()
+    boot1.break()
+    boot1.type(actions[Math.floor(Math.random()* actions.length)], { delay: 200 })
+    boot1.empty()
+    boot1.type("Computing", { delay: 200 })
+    boot1.type(" computer", { delay: 400 })
+    boot1.type(" um...", { delay: 600 })
+    boot1.delete(5)
+    boot1.type(" computations", { delay: 200 })
+    boot1.empty()
+    boot1.type("innitt", { delay: 800 })
+    boot1.delete(1, { delay: 500 })
+    boot1.type("iali", { delay: 600 })
+    boot1.move(-3, { delay: 100 })
+    boot1.move(-4, { delay: 300 })
+    boot1.delete(1, { delay: 200 })
+    boot1.move(5, { delay: 100 })
+    boot1.type("isal", { delay: 400 })
+    boot1.delete(4)
+    boot1.type("liz", { delay: 500 })
+    boot1.move(2, { delay: 200 })
+    boot1.delete(12, { delay: 400 })
+    boot1.type("booting stuff up and spinning spinny thing more", { delay: 100 })
+    boot1.empty()
+    boot1.type("-", { delay: 160 })
+    boot1.empty()
+    boot1.type("\\", { delay: 150 })
+    boot1.empty()
+    boot1.type("|", { delay: 140 })
+    boot1.empty()
+    boot1.type("/", { delay: 130 })
+    boot1.empty()
+    boot1.type("-", { delay: 120 })
+    boot1.empty()
+    boot1.type("\\", { delay: 100 })
+    boot1.empty()
+    boot1.type("|", { delay: 90 })
+    boot1.empty()
+    boot1.type("/", { delay: 80 })
+    boot1.empty()
+    boot1.type("-", { delay: 60 })
+    boot1.empty()
+    boot1.type("\\", { delay: 40 })
+    boot1.empty()
+    boot1.type("|", { delay: 20 })
+    boot1.empty()
+    boot1.type("/", { delay: 15 })
+    boot1.empty()
+    boot1.type("-", { delay: 15 })
+    boot1.empty()
+    boot1.type("\\", { delay: 15 })
+    boot1.empty()
+    boot1.type("|", { delay: 20 })
+    boot1.empty()
+    boot1.type("/", { delay: 15 })
+    boot1.empty()
+    boot1.type("-", { delay: 15 })
+    boot1.empty()
+    boot1.type("\\", { delay: 30 })
+    boot1.empty()
+    boot1.type("|", { delay: 45 })
+    boot1.empty()
+    boot1.type("/", { delay: 60 })
+    boot1.empty()
+    boot1.type("-", { delay: 40 })
+    boot1.empty()
+    boot1.type("\\", { delay: 80 })
+    boot1.empty()
+    boot1.type("|", { delay: 100 })
+    boot1.empty()
+    boot1.type("/", { delay: 80 })
+    boot1.empty()
+    boot1.type("-", { delay: 100 })
+    boot1.empty()
+    boot1.type("\\", { delay: 120 })
+    boot1.empty()
+    boot1.type("|", { delay: 100 })
+    boot1.empty()
+    boot1.type("/", { delay: 90 })
+    boot1.empty()
+    boot1.type("^", { delay: 80 })
+    boot1.empty()
+    boot1.type("-", { delay: 40 })
+    boot1.empty()
+    boot1.type("_", { delay: 30})
+    boot1.empty()
+    boot1.type("&nbsp;_", { delay: 1000})
+    boot1.empty()
+    boot1.type("WELCOME TO")
+    boot1.break()
+    boot1.type(" &nbsp;___&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;___....")
+    boot1.break()
+    boot1.type(" &nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;&nbsp;|&nbsp;|\\&nbsp;|&nbsp;|_&nbsp;&nbsp;|.....")
+    boot1.break()
+    boot1.type("|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|.....", { delay: 1000 })
+    boot1.break()
+    boot1.break()
+    boot1.type('press m for menu')
+    boot1.go()
+  
+const log = document.getElementById('log');
+document.addEventListener('keydown', logKey);
+
+function menu(){
+    mmenu.style.display='block';
+    external.style.display='none';
+    hack1.style.display='none';
+    hack2.style.display='none';
+    hack3.style.display='none';
+
+    new TypeIt("#menu", {
+        speed: 40,
+        waitUntilVisible: true,
+        lifeLike: true,
+        startDelay: 500,
+        cursor:true,
+        cursorChar: "■",
+    })
+    .empty()
+    .type("PLEASE TYPE YOUR SELECTION:")
+    .break()
+    .break()
+    .type("X - external links")
+    .break()
+    .break()
+    .type("ENTER - restyle page")
+    .break()
+    .break()
+    .type("mash keyboard - hack mainframe")
+    .go()
 }
-*/
-function spin(speed){
+
+function external_div(color){
+    mmenu.style.display='none';
+    external.style.display='block';
+    hack1.style.display='none';
+    hack2.style.display='none';
+    hack3.style.display='none';
+
+    new TypeIt("#external", {
+        speed: 40,
+        waitUntilVisible: true,
+        lifeLike: true,
+        startDelay: 500,
+        cursor:true,
+        cursorChar: "■",
+    })
+    .empty()
+    .type("PLEASE TYPE YOUR SELECTION:")
+    .break()
+    .break()
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>1 - Tang's page</a>")
+    .break()
+    .break()
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>2 - Army Cognitive Test</a>")
+    .break()
+    .break()
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>3 - CISMP practise</a>")
+    .break()
+    .break()
+    .go()
+}
+
+function loading(div){
+    new TypeIt(div, {
+    speed: Math.floor(Math.random()* 100),
+    waitUntilVisible: true,
+    lifeLike: true,
+    startDelay: 500,
+    cursor:true,
+    cursorChar: "■",
+    })
+    .empty()
+    .type('Loading ... ... ... ... ...')
+    .go()
+}
+
+function randomstatements(div){
+     new TypeIt(div, {
+    speed: Math.floor(Math.random()* 100),
+    waitUntilVisible: true,
+    lifeLike: true,
+    startDelay: 500,
+    cursor:true,
+    cursorChar: "■",
+    })
+    .empty()
+    .type(actions[Math.floor(Math.random()* actions.length)], { delay: 200 })
+    .go()
+}
+
+function spin(div){
+  var speed=Math.floor(Math.random()* 100)
   frames = ["-", "/","|","\\"]
-  var thing= new TypeIt("#boot1", {
+  var thing= new TypeIt(div, {
   speed: 50,
   waitUntilVisible: true,
   lifeLike: true,
-  startDelay: 1000,
+  startDelay: 500,
   cursor:false,
   //cursorChar: "■"
   })
+  thing.empty()
   thing.type(frames[0], { delay: speed })
   thing.empty()
   thing.type(frames[1], { delay: speed })
@@ -458,157 +735,164 @@ function spin(speed){
   return
 }
 
-let frames = ["-", "/","|","\\"]
-
-new TypeIt("#boot1", {
-  speed: 40,
+function pacman(div){
+  var speed=Math.floor(Math.random()* 100)
+  frames = ["-", "/","|","\\"]
+  new TypeIt(div, {
+  speed: 0,
   waitUntilVisible: true,
   lifeLike: true,
-  startDelay: 1000,
+  startDelay: 500,
   cursor:false,
   //cursorChar: "■"
-})
-
-  .type(medium, { delay: 800 })
+  })
   .empty()
-  .type(medium, { delay: 200 })
+  .type('C. . . . . . . .', { delay: speed })
   .empty()
-  .type('...reading...', { delay: 100 })
+  .type('&nbsp;O . . . . . . .', { delay: speed })
   .empty()
-  .type("-", { delay: 150 })
+  .type('&nbsp;&nbsp;C. . . . . . .', { delay: speed })
   .empty()
-  .type("/", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;O . . . . . .', { delay: speed })
   .empty()
-  .type("|", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;C. . . . . .', { delay: speed })
   .empty()
-  .type("\\", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . . . . .', { delay: speed })
   .empty()
-  .type("-", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. . . . .', { delay: speed })
   .empty()
-  .type("/", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . . . .', { delay: speed })
   .empty()
-  .type("|", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. . . .', { delay: speed })
   .empty()
-  .type("\\", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . . .', { delay: speed })
   .empty()
-  .type("-", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. . .', { delay: speed })
   .empty()
-  .type("/", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . .', { delay: speed })
   .empty()
-  .type("|", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. .', { delay: speed })
   .empty()
-  .type("\\", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O .', { delay: speed })
   .empty()
-  .type("-", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C.', { delay: speed })
   .empty()
-  .type("/", { delay: 150 })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O', { delay: speed })
   .empty()
-  .type("|", { delay: 150 })
-  .empty()
-  .type("\\", { delay: 150 })
-  .empty()
-  .type("-", { delay: 150})
-  .empty()
-  .type(actions[Math.floor(Math.random()* 7)],)
-  .break()
-  .type("..........................",)
-  .break()
-  .type("...............completed", { delay: 250 })
-  .empty()
-  .type(actions[Math.floor(Math.random()* 7)], { delay: 400 })
-  .break()
-  .break()
-  .type(actions[Math.floor(Math.random()* 7)], { delay: 400 })
-  .empty()
-  .type("Computing", { delay: 200 })
-  .type(" computer", { delay: 400 })
-  .type(" um...", { delay: 600 })
-  .delete(5)
-  .type(" computations", { delay: 500 })
-  .empty()
-  .type("innitt", { delay: 800 })
-  .delete(1, { delay: 500 })
-  .type("iali", { delay: 600 })
-  .move(-3, { delay: 400 })
-  .move(-4, { delay: 300 })
-  .delete(1, { delay: 500 })
-  .move(5, { delay: 200 })
-  .type("isal", { delay: 400 })
-  .delete(4)
-  .type("liz", { delay: 500 })
-  .move(2, { delay: 200 })
-  .delete(12, { delay: 800 })
-  .type("booting stuff up and spinning spinny thing more", { delay: 400 })
-  .empty()
-  .type("-", { delay: 100 })
-  .empty()
-  .type("/", { delay: 90 })
-  .empty()
-  .type("|", { delay: 80 })
-  .empty()
-  .type("\\", { delay: 70 })
-  .empty()
-  .type("-", { delay: 50 })
-  .empty()
-  .type("/", { delay: 40 })
-  .empty()
-  .type("|", { delay: 30 })
-  .empty()
-  .type("\\", { delay: 30 })
-  .empty()
-  .type("-", { delay: 20 })
-  .empty()
-  .type("/", { delay: 30 })
-  .empty()
-  .type("|", { delay: 20 })
-  .empty()
-  .type("\\", { delay: 50 })
-  .empty()
-  .type("-", { delay: 50 })
-  .empty()
-  .type("/", { delay: 75 })
-  .empty()
-  .type("|", { delay: 100 })
-  .empty()
-  .type("\\", { delay: 75 })
-  .empty()
-  .type("-", { delay: 100 })
-  .empty()
-  .type("/", { delay: 50 })
-  .empty()
-  .type("^", { delay: 100 })
-  .empty()
-  .type("_", { delay: 1000 })
-  .break()
-  .break()
-  .type("WELCOME TO")
-  .break()
-  .type(" &nbsp;___&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;___....")
-  .break()
-  .type(" &nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;&nbsp;|&nbsp;|\\&nbsp;|&nbsp;|_&nbsp;&nbsp;|.....")
-  .break()
-  .type("|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|.....", { delay: 1000 })
-  .break()
-  .break()
-  .break()
-  .type("PLEASE MAKE YOUR SELECTION:")
-  .break()
-  .break()
-  .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>1. Tang's page</a>")
-  .break()
-  .break()
-  .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>2. Army Cognitive Test</a>")
-  .break()
-  .break()
-  .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>3. CISMP practise</a>")
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C', { delay: speed })
   .go()
+}
 
-const log = document.getElementById('log');
-document.addEventListener('keydown', logKey);
+function pi(div){
+  new TypeIt(div, {
+  speed: Math.floor(Math.random()* 100),
+  waitUntilVisible: true,
+  lifeLike: true,
+  startDelay: 500,
+  cursor:true,
+  cursorChar: "■"
+  })
+  .empty()
+  .type('3.1415926535897932384626...', { delay: 400})
+  .go()
+}
 
+function snake(div){
+  new TypeIt(div, {
+  speed: Math.floor(Math.random()* 100),
+  waitUntilVisible: true,
+  lifeLike: true,
+  startDelay: 500,
+  cursor:false,
+  //cursorChar: "■"
+  })
+  .empty()
+  .type('@0o~o0@0o~o0@0o~o0@0o~o0@0o~', { delay: 400})
+  .go()
+}
+
+function make_nibble(){
+    bits=['1','0']
+    nibble=''
+    nibble+=bits[Math.floor(Math.random()* 2)]
+    nibble+=bits[Math.floor(Math.random()* 2)]
+    nibble+=bits[Math.floor(Math.random()* 2)]
+    nibble+=bits[Math.floor(Math.random()* 2)]
+    nibble+=' '
+    return nibble
+}
+
+
+function nibbles(div){
+  new TypeIt(div, {
+  speed: Math.floor(Math.random()* 100),
+  waitUntilVisible: true,
+  lifeLike: true,
+  startDelay: 300,
+  cursor:true,
+  cursorChar: "■"
+  })
+  .empty()
+  .type(make_nibble(), { delay: 100})
+  .type(make_nibble(), { delay: 100})
+  .type(make_nibble(), { delay: 100})
+  .type(make_nibble(), { delay: 100})
+  .type(make_nibble(), { delay: 100})
+  .type(make_nibble(), { delay: 100})
+  .go()
+}
+
+
+
+
+let divs=['#hack1','#hack2','#hack3','#hack4']
+// an array exists of all functions which do typit things
+let mashthings=[spin, loading, randomstatements, pacman, pi, snake, nibbles]
+// a count exists which shows how many mashes have occurred
+var mashcount=0
+var div=0
+
+function mash(){
+    mashcount+=1;
+    if(mashcount%10==0){
+        to_mash=mashthings[Math.floor(Math.random() * mashthings.length)]
+        console.log(divs[div])
+        console.log(divs[div])
+        to_mash(divs[div]);// if when that number reaches 0, target hack1 with a random function from the list
+        if(div==0){
+            mmenu.style.display='none';
+            external.style.display='none';
+            hack1.style.display='block';
+            hack2.style.display='block';
+            hack3.style.display='block';
+            hack4.style.display='block';
+        }else if(div==3){
+            div=-1;// hack4, reset all numbers
+        }
+        div+=1;// each five mashes div rises
+        console.log(div)
+        console.log(mashcount)
+    }
+}
 
 function logKey(e) {
-  spin(100);
+    console.log(e)
+    if(e.key=='m'){
+        menu()
+    }else if(e.key=='Enter'){
+        location.reload()
+    }else if(e.key=='x'){
+        external_div(color)
+    }else if(e.key=='1'){
+        window.location.href = "/tang";
+    }else if(e.key=='2'){
+        window.location.href = "/act_simulator";
+    }else if(e.key=='3'){
+        window.location.href = "/cismp";
+    }else{
+        mash()
+    }
+  //spin(100);
 }
 
 </script>
