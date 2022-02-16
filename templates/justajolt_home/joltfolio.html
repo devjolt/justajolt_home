@@ -276,10 +276,10 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
                     <div id="boot1"></div>
                     <div id="menu"></div>
                     <div id="external"></div>
-                    <div id="hack1"></div>
-                    <div id="hack2"></div>
-                    <div id="hack3"></div>
-                    <div id="hack4"></div> 
+                    <div id="hack1" class='hack'></div>
+                    <div id="hack2" class='hack'></div>
+                    <div id="hack3" class='hack'></div>
+                    <div id="hack4" class='hack'></div> 
                 </div>
             </div>
          </div>   
@@ -338,6 +338,56 @@ let ram=[
     '128k',
     '265 BYTES',
     '512 BYTES',
+]
+
+
+let nouns=[
+    'arpanet...',
+    'backdoor........',
+    'rubber ducky.....',
+    'passwords........',
+    'internets....',
+    'algorithms......',
+    'mayonaise........',
+    'cheese.............',
+    'spiders.......',
+    'pickles......',
+    'on spiders.......',
+    'bitcoin............',
+    'bitcoin.......',
+    'RAM...........',
+    'cores..........',
+    'school run..........',
+    'accountant.........',
+    'aubergine.........',
+    'docs..............',
+    'algorithms....',
+    'retina.....',
+    'privileges.....',
+    'data..............',
+    ]
+
+let verbs=[
+    'encrypting',
+    'decrypting',
+    'cracking',
+    'accessing',
+    'loading',
+    'writing',
+    'scraping',
+    'jamming',
+    'hacking',
+    'virtualising',
+    'authenticating',
+    'securing',
+    'uploading',
+    'downloading',
+    'escalating',
+    'cracking',
+    'harvesting',
+    'liquidating',
+    'reading',
+    're-writing'
 ]
 
 font = fonts[Math.floor(Math.random() * fonts.length)];
@@ -489,7 +539,7 @@ var boot1=new TypeIt("#boot1", {
     boot1.empty()
     boot1.type("-", { delay: 150})
     boot1.empty()
-    boot1.type(actions[Math.floor(Math.random()* actions.length)],)
+    boot1.type(verbs[Math.floor(Math.random()*verbs.length)]+' '+nouns[Math.floor(Math.random()*nouns.length)],)
     boot1.break()
     boot1.type("..........................",)
     boot1.break()
@@ -580,11 +630,8 @@ var boot1=new TypeIt("#boot1", {
     boot1.empty()
     boot1.type("-", { delay: 40 })
     boot1.empty()
-    boot1.type("_", { delay: 30})
-    boot1.empty()
-    boot1.type("&nbsp;_", { delay: 1000})
-    boot1.empty()
-    boot1.type("WELCOME TO")
+    boot1.type("_ ", { delay: 1000})
+    boot1.type(" WELCOME TO")
     boot1.break()
     boot1.type(" &nbsp;___&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;___....")
     boot1.break()
@@ -615,7 +662,7 @@ function menu(){
         cursorChar: "■",
     })
     .empty()
-    .type("PLEASE TYPE YOUR SELECTION:")
+    .type("PLEASE type YOUR SELECTION:")
     .break()
     .break()
     .type("X - external links")
@@ -644,20 +691,23 @@ function external_div(color){
         cursorChar: "■",
     })
     .empty()
-    .type("PLEASE TYPE YOUR SELECTION:")
+    .type("PLEASE type YOUR SELECTION:")
     .break()
     .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>1 - Tang's page</a>")
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>1 - CISMP exam practise</a>")
     .break()
     .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>2 - Army Cognitive Test</a>")
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>2 - Army Cognitive Test practise</a>")
     .break()
     .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>3 - CISMP practise</a>")
-    .break()
-    .break()
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>3 - Tang's page</a>")
     .go()
 }
+
+
+
+
+
 
 function loading(div){
     new TypeIt(div, {
@@ -731,6 +781,38 @@ function spin(div){
   thing.empty()
   thing.type(frames[3], { delay: speed })
   thing.empty()
+  thing.type(frames[2], { delay: speed })
+  thing.empty()
+  thing.type(frames[1], { delay: speed })
+  thing.empty()
+  thing.type(frames[0], { delay: speed })
+  thing.empty()
+  thing.type(frames[3], { delay: speed })
+  thing.empty()
+  thing.type(frames[2], { delay: speed })
+  thing.empty()
+  thing.type(frames[1], { delay: speed })
+  thing.empty()
+  thing.type(frames[0], { delay: speed })
+  thing.empty()
+  thing.type(frames[3], { delay: speed })
+  thing.empty()
+  thing.type(frames[2], { delay: speed })
+  thing.empty()
+  thing.type(frames[1], { delay: speed })
+  thing.empty()
+  thing.type(frames[0], { delay: speed })
+  thing.empty()
+  thing.type(frames[3], { delay: speed })
+  thing.empty()
+  thing.type(frames[2], { delay: speed })
+  thing.empty()
+  thing.type(frames[1], { delay: speed })
+  thing.empty()
+  thing.type(frames[0], { delay: speed })
+  thing.empty()
+  thing.type(frames[3], { delay: speed })
+  thing.empty()
   thing.go()
   return
 }
@@ -747,40 +829,78 @@ function pacman(div){
   //cursorChar: "■"
   })
   .empty()
-  .type('C. . . . . . . .', { delay: speed })
+  .type('C. . . . . . . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;O . . . . . . .', { delay: speed })
+  .type('&nbsp;O . . . . . . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;C. . . . . . .', { delay: speed })
+  .type('&nbsp;&nbsp;C. . . . . . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;O . . . . . .', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;O . . . . . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;C. . . . . .', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;C. . . . . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . . . . .', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . . . . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. . . . .', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. . . . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . . . .', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . . . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. . . .', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. . . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . . .', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. . .', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . .', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. .', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O .', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C.', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O . .', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C', { delay: speed })
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. .', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O .', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C.', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C', { delay: 200 })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@', { delay: 200 })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%', { delay: speed })
+  .empty()
+  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-*-', { delay: speed })
+  .empty()
+  .type("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&nbsp;'&nbsp;'", { delay: speed })
+  .empty()
+  .type("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~&nbsp;&nbsp;-&nbsp;&nbsp;~", { delay: speed })
+  .empty()
+  .type("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;.", { delay: speed })
+  
+  
+  
   .go()
+  
 }
 
 function pi(div){
@@ -822,6 +942,63 @@ function make_nibble(){
     return nibble
 }
 
+function make_ip_bit(){
+    section=''
+    hex='0123456789abcdef'
+    section+=hex[Math.floor(Math.random()* hex.length)]
+    section+=hex[Math.floor(Math.random()* hex.length)]
+    section+=hex[Math.floor(Math.random()* hex.length)]
+    section+=hex[Math.floor(Math.random()* hex.length)]
+    return section
+}
+
+function make_string_bit(){
+    section=''
+    hex='0123456789abcdefghijklmnopqrstuv!£$%&@#?'
+    section+=hex[Math.floor(Math.random()* hex.length)]
+    section+=hex[Math.floor(Math.random()* hex.length)]
+    section+=hex[Math.floor(Math.random()* hex.length)]
+    section+=hex[Math.floor(Math.random()* hex.length)]
+    section+=hex[Math.floor(Math.random()* hex.length)]
+    section+=hex[Math.floor(Math.random()* hex.length)]
+    return section
+}
+
+
+function ip(div){
+  new TypeIt(div, {
+  speed: Math.floor(Math.random()* 100),
+  waitUntilVisible: true,
+  lifeLike: true,
+  startDelay: 300,
+  cursor:true,
+  cursorChar: "■"
+  })
+  .empty()
+  .type(verbs[Math.floor(Math.random()*verbs.length)]+' ', { delay: 100})
+  .type(make_ip_bit()+':', { delay: 100})
+  .type(make_ip_bit()+':', { delay: 100})
+  .type(make_ip_bit()+':', { delay: 100})
+  .type(make_ip_bit(), { delay: 100})
+  .go()
+}
+
+function randomstring(div){
+  new TypeIt(div, {
+  speed: Math.floor(Math.random()* 100),
+  waitUntilVisible: true,
+  lifeLike: true,
+  startDelay: 300,
+  cursor:true,
+  cursorChar: "■"
+  })
+  .empty()
+  .type(verbs[Math.floor(Math.random()*verbs.length)]+' ', { delay: 100})
+  .type(make_string_bit()+'-', { delay: 100})
+  .type(make_string_bit()+'-', { delay: 100})
+  .type(make_string_bit(), { delay: 100})
+  .go()
+}
 
 function nibbles(div){
   new TypeIt(div, {
@@ -842,12 +1019,25 @@ function nibbles(div){
   .go()
 }
 
+function verbnoun(div){
+  new TypeIt(div, {
+  speed: Math.floor(Math.random()* 100),
+  waitUntilVisible: true,
+  lifeLike: true,
+  startDelay: 300,
+  cursor:true,
+  cursorChar: "■"
+  })
+  .empty()
+  .type(verbs[Math.floor(Math.random()*verbs.length)]+' '+nouns[Math.floor(Math.random()*nouns.length)]+'............', { delay: 100})
+  .go()
+}
 
 
 
 let divs=['#hack1','#hack2','#hack3','#hack4']
 // an array exists of all functions which do typit things
-let mashthings=[spin, loading, randomstatements, pacman, pi, snake, nibbles]
+let mashthings=[spin,spin, loading, pacman, pi, snake, nibbles,nibbles, randomstring, ip, verbnoun]
 // a count exists which shows how many mashes have occurred
 var mashcount=0
 var div=0
@@ -883,11 +1073,11 @@ function logKey(e) {
         location.reload()
     }else if(e.key=='x'){
         external_div(color)
-    }else if(e.key=='1'){
+    }else if(e.key=='3'){
         window.location.href = "/tang";
     }else if(e.key=='2'){
         window.location.href = "/act_simulator";
-    }else if(e.key=='3'){
+    }else if(e.key=='1'){
         window.location.href = "/cismp";
     }else{
         mash()
