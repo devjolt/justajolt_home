@@ -280,6 +280,7 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
                     <div id="hack2" class='hack'></div>
                     <div id="hack3" class='hack'></div>
                     <div id="hack4" class='hack'></div> 
+                    <div id="hack5" class='hack'></div> 
                 </div>
             </div>
          </div>   
@@ -1033,7 +1034,7 @@ function verbnoun(div){
 
 
 
-let divs=['#hack1','#hack2','#hack3','#hack4']
+let divs=['#hack1','#hack2','#hack3','#hack4', '#hack5']
 // an array exists of all functions which do typit things
 let mashthings=[spin,spin, loading, pacman, pi, snake, nibbles, nibbles, randomstring, ip, verbnoun]
 // a count exists which shows how many mashes have occurred
@@ -1054,7 +1055,7 @@ function mash(){
             hack2.style.display='block';
             hack3.style.display='block';
             hack4.style.display='block';
-        }else if(div==3){
+        }else if(div==4){
             div=-1;// hack4, reset all numbers
         }
         div+=1;// each five mashes div rises
