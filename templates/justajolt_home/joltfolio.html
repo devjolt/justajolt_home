@@ -336,35 +336,33 @@ let ram=[
     '32k',
     '64k',
     '128k',
-    '265 BYTES',
-    '512 BYTES',
+    '265b',
+    '512b',
+    '1028b',
 ]
 
 
 let nouns=[
-    'arpanet...',
-    'backdoor........',
-    'rubber ducky.....',
-    'passwords........',
-    'internets....',
-    'algorithms......',
-    'mayonaise........',
-    'cheese.............',
-    'spiders.......',
-    'pickles......',
-    'on spiders.......',
-    'bitcoin............',
-    'bitcoin.......',
-    'RAM...........',
-    'cores..........',
-    'school run..........',
-    'accountant.........',
-    'aubergine.........',
-    'docs..............',
-    'algorithms....',
-    'retina.....',
-    'privileges.....',
-    'data..............',
+    'arpanet',
+    'backdoor',
+    'rubber ducky',
+    'passwords',
+    'internets',
+    'algorithms',
+    'mayonaise',
+    'cheese',
+    'spiders',
+    'pickles',
+    'bitcoin',
+    'RAM',
+    'cores',
+    'school run',
+    'accountant',
+    'aubergine',
+    'docs',
+    'algorithms',
+    'privileges',
+    'data',
     ]
 
 let verbs=[
@@ -541,7 +539,7 @@ var boot1=new TypeIt("#boot1", {
     boot1.empty()
     boot1.type(verbs[Math.floor(Math.random()*verbs.length)]+' '+nouns[Math.floor(Math.random()*nouns.length)],)
     boot1.break()
-    boot1.type("..........................",)
+    boot1.type("........................",)
     boot1.break()
     boot1.type("...............completed", { delay: 50 })
     boot1.empty()
@@ -1037,7 +1035,7 @@ function verbnoun(div){
 
 let divs=['#hack1','#hack2','#hack3','#hack4']
 // an array exists of all functions which do typit things
-let mashthings=[spin,spin, loading, pacman, pi, snake, nibbles,nibbles, randomstring, ip, verbnoun]
+let mashthings=[spin,spin, loading, pacman, pi, snake, nibbles, nibbles, randomstring, ip, verbnoun]
 // a count exists which shows how many mashes have occurred
 var mashcount=0
 var div=0
