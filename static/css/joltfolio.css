@@ -4,7 +4,6 @@ html{
     height:92%;
     text-transform: uppercase;
     font-size:1.5rem;
-    padding: 2%;
     letter-spacing:0.3em;
     animation:turn-on 3s linear;
     --greenbg:rgb(7, 26, 7);
@@ -37,7 +36,6 @@ body{
     animation:turn-on 3s linear;
 }
 .terminal-text{
-    margin:5%;
     margin-left: 10%;
 }
 .font-share{
@@ -236,6 +234,8 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
 }
 */
 .hack{
-    margin: -20ch;
-    padding:-20ch;
+    margin-top:0;
+    margin-bottom:0;
+    padding-top:0;
+    padding-bottom:0;
 }

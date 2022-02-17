@@ -61,11 +61,7 @@ body{
     cursor: pointer;   
     transition:0.5s;
 }
-.screen{
-    /*animation:turn-on 4s linear;*/
-}
 .terminal-text{
-    margin:5%;
     margin-left: 10%;
 }
 .font-share{
@@ -79,19 +75,65 @@ body{
     font-size:1.2em;
 }
 
-
-.lime{/**/
-    color: rgb(6, 214, 75);
-    text-shadow: 5px 3px 40px rgb(109, 253, 65);
-}
 .white{/**/
-    color: whitesmoke;
-    text-shadow: 5px 3px 40px whitesmoke;
+    color: rgb(223, 223, 223);
+    text-shadow: 5px 3px 40px rgb(216, 216, 216);
 }
-.orange{/*ornage on black*/
-    color: rgb(240, 144, 0);
-    text-shadow: 5px 3px 40px rgb(240, 144, 0);
+.red{
+    color: rgb(252, 44, 44);
+    text-shadow: 5px 3px 40px rgb(255, 4, 4);
 }
+.goldenrod{/**/
+    color: rgb(218, 131, 32);
+    text-shadow: 5px 3px 40px goldenrod;
+}
+.orange{/**/
+    color: rgb(243, 188, 7);
+    text-shadow: 5px 3px 40px orange;
+}
+.gold{/**/
+    color: gold;
+    text-shadow: 5px 3px 40px gold;
+}
+.yellow{/**/
+    color: yellow;
+    text-shadow: 5px 3px 40px yellow;
+}
+.greenyellow{/*ornage on black*/
+    color: greenyellow;
+    text-shadow: 5px 3px 40px greenyellow;
+}
+.lime{/**/
+    color: rgb(68, 241, 68);
+    text-shadow: 5px 3px 40px rgb(50, 224, 16);
+}
+.blueish{
+    color: rgb(0, 255, 200);
+    text-shadow: 5px 3px 40px rgb(4, 235, 177);
+}
+.cyan{/**/
+    color: cyan;
+    text-shadow: 5px 3px 40px cyan;
+
+}
+.pink{/**/
+    color: hotpink;
+    text-shadow: 5px 3px 40px pink;
+}
+
+.fuchsia{/*ornage on black*/
+    color: fuchsia;
+    text-shadow: 5px 3px 40px fuchsia;
+}
+
+
+
+.silver{/*ornage on black*/
+    color: silver;
+    text-shadow: 5px 3px 40px silver;
+}
+
+
 
 @keyframes turn-on{
     0%{
@@ -145,9 +187,6 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
     -webkit-filter:brightness(50);
     filter:brightness(50);
     }
-}
-.screen{
-    border:none;
 }
 
 @keyframes overlay-anim{
@@ -237,6 +276,7 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
     height: 67.5vmin;
     border: 30px solid transparent;
     overflow: hidden;
+    margin:5%;
 }
 #input {
     outline: none;
@@ -255,14 +295,23 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
     animation-timing-function: step-end;
     margin-left: 1px;
 }
-/* Inserts the > before terminal input 
-#input:before {
-    content: ">";
-    position: absolute;
-    padding-left: -2ch;
-    left: 0;
+.terminal{
+    margin-top:3%;
+    margin-left:1%;
+    margin-right:1%;
+    padding:1%;
 }
-*/
+
+#boot2, #menu, #external, #hack1{
+    margin-top:2ch;
+}
+#boot1, #boot2{
+    display:block;
+}
+#menu, #external, #hack1, #hack2, #hack3, #hack4, #hack5, #hack6, #hack7{
+    display:none;
+}
+
 
 
         </style>
@@ -274,14 +323,16 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
                   <div class="terminal"><!-- the input and output -->
                     <div class="overlay">ON</div><!--onload = 'input()'-->
                     <div id="boot1"></div>
-                    <div id="boot2"></div>
-                    <div id="menu"></div>
-                    <div id="external"></div>
-                    <div id="hack1" class='hack'></div>
-                    <div id="hack2" class='hack'></div>
-                    <div id="hack3" class='hack'></div>
-                    <div id="hack4" class='hack'></div> 
-                    <div id="hack5" class='hack'></div> 
+                    <div id="boot2"class='gap'></div>
+                    <div id="menu" class='gap'></div>
+                    <div id="external" class='gap'></div>
+                    <div id="hack1" class='gap'></div>
+                    <div id="hack2" class=''></div>
+                    <div id="hack3" class=''></div>
+                    <div id="hack4" class=''></div> 
+                    <div id="hack5" class=''></div> 
+                    <div id="hack6" class=''></div> 
+                    <div id="hack7" class=''></div> 
                 </div>
             </div>
          </div>   
@@ -294,13 +345,12 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
 let fonts=['font-share','font-press','font-vt323']
 let colors=[['lime',[['var(--greenbg)','var(--greenshadow)'],['black','var(--blackshadow)'], ['var(--bluebg)','var(--blueshadow)']]],['white',[['var(--bluebg)','var(--blueshadow)'],['black','var(--blackshadow)']]],['orange',[['black','var(--blackshadow)'],['var(--greenbg)','var(--greenshadow)']]]];
     let media=[
-    'press play on tape',
+    'press play on tape deck',
     'insert casette', 
     'insert floppy disk',
     'insert punch card',
     'insert id card',
     'scanning retina',
-    'insert magnetic tape',
     'insert laser disc',
     'insert 8in floppy',
     'insert dectape',
@@ -419,6 +469,10 @@ var hack1= document.getElementById("hack1");
 var hack2= document.getElementById("hack2");
 var hack3= document.getElementById("hack3");
 var hack4= document.getElementById("hack4");
+var hack5= document.getElementById("hack5");
+var hack6= document.getElementById("hack6");
+var hack7= document.getElementById("hack7");
+
 
 boot1.className=class_text;
 boot2.className=class_text;
@@ -428,16 +482,19 @@ hack1.className=class_text;
 hack2.className=class_text;
 hack3.className=class_text;
 hack4.className=class_text;
+hack5.className=class_text;
+hack6.className=class_text;
+hack7.className=class_text;
 
-boot1.display='block';
-boot2.display='block';
-mmenu.display='none';
-external.display='none';
-hack1.display='none';
-hack2.display='none';
-hack3.display='none';
-hack4.display='none';
-
+function hackToNone(){
+    hack1.display='none';
+    hack2.display='none';
+    hack3.display='none';
+    hack4.display='none';
+    hack5.display='none';
+    hack6.display='none';
+    hack7.display='none';
+}
 
 async function main() {
       let command = await input();
@@ -490,7 +547,7 @@ var boot1=new TypeIt("#boot1", {
     speed: 25,
     waitUntilVisible: true,
     lifeLike: true,
-    startDelay: 1000,
+    startDelay: 2000,
     cursor:false,
     cursorChar: "■"
     })
@@ -500,10 +557,10 @@ var boot1=new TypeIt("#boot1", {
     boot1.type('CPU at '+Math.floor(Math.random() *1000)+' Hz...', { delay: 300})
     boot1.type(' OK', { delay: 50 })
     boot1.break()
-    boot1.type(ram[Math.floor(Math.random() * ram.length)]+' RAM.........', { delay: 300 })
+    boot1.type(ram[Math.floor(Math.random() * ram.length)]+' RAM.........', { delay: 400 })
     boot1.type(' OK', { delay: 50 })
     boot1.break()
-    boot1.type(Math.floor(Math.random() *1000)+' kb free......', { delay: 300 })
+    boot1.type(Math.floor(Math.random() *1000)+' kb free......', { delay: 200 })
     boot1.type(' OK', { delay: 18000 })
     boot1.empty()
     boot1.type("-", { delay: 160 })
@@ -571,26 +628,29 @@ var boot1=new TypeIt("#boot1", {
     boot1.break()
     boot1.type(" &nbsp;___&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;___......")
     boot1.break()
-    boot1.type(" &nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;&nbsp;|&nbsp;|\\&nbsp;|&nbsp;|_&nbsp;&nbsp;|.......")
+    boot1.type(" &nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;&nbsp;|&nbsp;|\\&nbsp;|&nbsp;|_&nbsp;&nbsp;|......")
     boot1.break()
-    boot1.type("|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|...v"+Math.floor(Math.random() *4)+'.'+Math.floor(Math.random() *20), { delay: 500 })
+    boot1.type("|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|.....")
+    boot1.break()
+    boot1.type("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v"+Math.floor(Math.random() *4)+'.'+Math.floor(Math.random() *9), { delay: 200 })
     boot1.break()
     boot1.break()
     boot1.type('type your selection:')
     boot1.break()
-    boot1.type('...x&nbsp;&nbsp;&nbsp;&nbsp; - external links')
     boot1.break()
-    boot1.type('...ENTER - restyle page')
+    boot1.type('&nbsp;&nbsp;&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp; - external links')
+    boot1.break()
+    boot1.type('&nbsp;&nbsp;&nbsp;ENTER - restyle page')
     boot1.break()
     boot1.break()
-    boot1.type('mash keyboard to hack mainframe')
+    boot1.type('&nbsp;&nbsp;&nbsp;mash keyboard to hack mainframe')
     boot1.go()
     
 var boot2=new TypeIt("#boot2", {
     speed: 40,
     waitUntilVisible: true,
     lifeLike: true,
-    startDelay: 1000,
+    startDelay: 1200,
     cursor:false,
     //cursorChar: "■"
     })
@@ -634,11 +694,11 @@ var boot2=new TypeIt("#boot2", {
     boot2.empty()
     boot2.type("-", { delay: 150})
     boot2.empty()
-    boot2.type(medium+'&nbsp;.........', { delay: 800 })
+    boot2.type(medium+'........', { delay: 800 })
     boot2.empty()
-    boot2.type(medium+'&nbsp;....... located', { delay: 100 })
+    boot2.type(medium+'..... detected', { delay: 100 })
     boot2.empty()
-    boot2.type('...reading...', { delay: 100 })
+    boot2.type('...reading...', { delay: 50 })
     boot2.empty()
     boot2.type("-", { delay: 150 })
     boot2.empty()
@@ -677,16 +737,16 @@ var boot2=new TypeIt("#boot2", {
     boot2.break()
     boot2.break()
     boot2.type("innitt", { delay: 800 })
-    boot2.delete(1, { delay: 500 })
-    boot2.type("iali", { delay: 600 })
-    boot2.move(-3, { delay: 100 })
-    boot2.move(-4, { delay: 300 })
+    boot2.delete(1, { delay: 200 })
+    boot2.type("iali", { delay: 400 })
+    boot2.move(-3, { delay: 400 })
+    boot2.move(-4, { delay: 50 })
     boot2.delete(1, { delay: 200 })
     boot2.move(5, { delay: 100 })
     boot2.type("isal", { delay: 400 })
     boot2.delete(4)
-    boot2.type("liz", { delay: 500 })
-    boot2.move(2, { delay: 200 })
+    boot2.type("liz", { delay: 300 })
+    boot2.move(2, { delay: 50 })
     boot2.delete(11, { delay: 400 })
     boot2.type("booting stuff up and spinning spinny thing more", { delay: 2500 })
     boot2.empty()
@@ -698,10 +758,7 @@ document.addEventListener('keydown', logKey);
 function menu(){
     mmenu.style.display='block';
     external.style.display='none';
-    hack1.style.display='none';
-    hack2.style.display='none';
-    hack3.style.display='none';
-    hack4.style.display='none';
+    hackToNone()
 
     new TypeIt("#menu", {
         speed: 40,
@@ -723,10 +780,7 @@ function menu(){
 function external_div(color){
     mmenu.style.display='none';
     external.style.display='block';
-    hack1.style.display='none';
-    hack2.style.display='none';
-    hack3.style.display='none';
-    hack4.style.display='none';
+    hackToNone()
 
     new TypeIt("#external", {
         speed: 40,
@@ -737,13 +791,13 @@ function external_div(color){
         cursorChar: "■",
     })
     .empty()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>...1 - CISMP exam practise</a>")
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CISMP exam practise</a>")
     .break()
     .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>...2 - Army Cognitive Test practise</a>")
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Army Cognitive Test practise</a>")
     .break()
     .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>...3 - Tang's page</a>")
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tang's page</a>")
     .go()
     document.getElementById("boot2").remove()
 }
@@ -1073,19 +1127,49 @@ function verbnoun(div){
   .go()
 }
 
-let divs=['#hack1','#hack2','#hack3','#hack4']
+let divs=['#hack1','#hack2','#hack3','#hack4', '#hack5', '#hack6']
+let hack_divs=[hack1, hack2, hack3, hack4, hack5, hack6]
+let hack_colors=['white','red','goldenrod','orange', 'gold', 'yellow', 'lime', 'greenyellow','cyan','blueish', 'pink', 'fuchsia','silver']
 // an array exists of all functions which do typit things
 let mashthings=[spin,spin, loading, pacman, pi, snake, nibbles, nibbles, randomstring, ip, verbnoun]
+//array for color changes as hacking progresses
+
 // a count exists which shows how many mashes have occurred
 var mashcount=0
 var div=0
 
+var hack_text = 'terminal-text '+font+' ' +color;
+
+function allHackTextUpgrade(){
+    console.log('all')
+    var hack_color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
+    var hack_text = 'terminal-text '+font+' ' +hack_color;
+    hack1.className=hack_text;
+    hack2.className=hack_text;
+    hack3.className=hack_text;
+    hack4.className=hack_text;
+    hack5.className=hack_text; 
+    hack6.className=hack_text;
+    console.log(hack_color)
+}
+
+function oneHackTextUpgrade(){
+    console.log('one')
+    var hack_color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
+    var chosen_hack_div=hack_divs[Math.floor(Math.random() * hack_divs.length)];
+    var hack_text = 'terminal-text '+font+' ' +hack_color;
+    chosen_hack_div.className=hack_text;
+    console.log(hack_color)
+    console.log(chosen_hack_div)
+}
+
 function mash(){
     mashcount+=1;
+    console.log(mashcount)
     if(mashcount%10==0){
         to_mash=mashthings[Math.floor(Math.random() * mashthings.length)]
-        console.log(divs[div])
-        console.log(divs[div])
+        //console.log(divs[div])
+        //console.log(divs[div])
         to_mash(divs[div]);// if when that number reaches 0, target hack1 with a random function from the list
         if(div==0){
             try{
@@ -1097,18 +1181,34 @@ function mash(){
             hack2.style.display='block';
             hack3.style.display='block';
             hack4.style.display='block';
+            hack5.style.display='block';
+            hack6.style.display='block';
             
-        }else if(div==3){
+        }else if(div==5){
             div=-1;// hack4, reset all numbers
         }
         div+=1;// each five mashes div rises
-        console.log(div)
-        console.log(mashcount)
+        //console.log(div)
+        //console.log(mashcount)
+    }
+    if(mashcount%100==0){
+        if(mashcount%500==0){ 
+            allHackTextUpgrade()
+        }else if(mashcount%1000==0){
+            oneHackTextUpgrade()
+            oneHackTextUpgrade()
+            oneHackTextUpgrade()
+            oneHackTextUpgrade()
+            oneHackTextUpgrade()
+            oneHackTextUpgrade()
+        }else{
+            oneHackTextUpgrade()
+        }
     }
 }
 
 function logKey(e) {
-    console.log(e)
+    //console.log(e)
     if(e.key=='m'){
         menu()
     }else if(e.key=='Enter'){
