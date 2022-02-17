@@ -274,6 +274,7 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
                   <div class="terminal"><!-- the input and output -->
                     <div class="overlay">ON</div><!--onload = 'input()'-->
                     <div id="boot1"></div>
+                    <div id="boot2"></div>
                     <div id="menu"></div>
                     <div id="external"></div>
                     <div id="hack1" class='hack'></div>
@@ -409,7 +410,9 @@ if (color=='lime'){
 document.getElementsByTagName("body")[0].style.backgroundColor=background;
 document.getElementsByTagName("body")[0].style.boxShadow=shaddow;
 var class_text = 'terminal-text '+font+' ' +color;
+
 var boot1= document.getElementById("boot1");
+var boot2= document.getElementById("boot2");
 var mmenu= document.getElementById("menu");
 var external= document.getElementById("external");
 var hack1= document.getElementById("hack1");
@@ -417,8 +420,8 @@ var hack2= document.getElementById("hack2");
 var hack3= document.getElementById("hack3");
 var hack4= document.getElementById("hack4");
 
-
 boot1.className=class_text;
+boot2.className=class_text;
 mmenu.className=class_text;
 external.className=class_text;
 hack1.className=class_text;
@@ -427,6 +430,7 @@ hack3.className=class_text;
 hack4.className=class_text;
 
 boot1.display='block';
+boot2.display='block';
 mmenu.display='none';
 external.display='none';
 hack1.display='none';
@@ -483,91 +487,24 @@ async function input(pw) {
 let frames = ["-", "/","|","\\"]
 
 var boot1=new TypeIt("#boot1", {
-    speed: 40,
+    speed: 25,
     waitUntilVisible: true,
     lifeLike: true,
     startDelay: 1000,
     cursor:false,
-    //cursorChar: "■"
+    cursorChar: "■"
     })
-    boot1.type('checking system', { delay: 800 })
-    boot1.break()
-    boot1.type('.......'+ram[Math.floor(Math.random() * ram.length)]+' RAM OK', { delay: 50 })
-    boot1.break()
-    boot1.type('.......CPU '+Math.floor(Math.random() *1000)+' Hz', { delay: 50})
-    boot1.break()
-    boot1.type('.......'+Math.floor(Math.random() *1000)+' kb free', { delay: 100 })
-    boot1.empty()
-    boot1.type(medium+'&nbsp;.........', { delay: 800 })
-    boot1.empty()
-    boot1.type(medium+'&nbsp;....... located', { delay: 100 })
-    boot1.empty()
-    boot1.type('...reading...', { delay: 100 })
-    boot1.empty()
-    boot1.type("-", { delay: 150 })
-    boot1.empty()
-    boot1.type("/", { delay: 150 })
-    boot1.empty()
-    boot1.type("|", { delay: 150 })
-    boot1.empty()
-    boot1.type("\\", { delay: 150 })
-    boot1.empty()
-    boot1.type("-", { delay: 150 })
-    boot1.empty()
-    boot1.type("/", { delay: 150 })
-    boot1.empty()
-    boot1.type("|", { delay: 150 })
-    boot1.empty()
-    boot1.type("\\", { delay: 150 })
-    boot1.empty()
-    boot1.type("-", { delay: 150 })
-    boot1.empty()
-    boot1.type("/", { delay: 150 })
-    boot1.empty()
-    boot1.type("|", { delay: 150 })
-    boot1.empty()
-    boot1.type("\\", { delay: 150 })
-    boot1.empty()
-    boot1.type("-", { delay: 150 })
-    boot1.empty()
-    boot1.type("/", { delay: 150 })
-    boot1.empty()
-    boot1.type("|", { delay: 150 })
-    boot1.empty()
-    boot1.type("\\", { delay: 150 })
-    boot1.empty()
-    boot1.type("-", { delay: 150})
-    boot1.empty()
-    boot1.type(verbs[Math.floor(Math.random()*verbs.length)]+' '+nouns[Math.floor(Math.random()*nouns.length)],)
-    boot1.break()
-    boot1.type("........................",)
-    boot1.break()
-    boot1.type("...............completed", { delay: 50 })
-    boot1.empty()
-    boot1.type(actions[Math.floor(Math.random()* actions.length)], { delay: 50 })
+    boot1.type('checking system', { delay: 50 })
     boot1.break()
     boot1.break()
-    boot1.type(actions[Math.floor(Math.random()* actions.length)], { delay: 200 })
-    boot1.empty()
-    boot1.type("Computing", { delay: 200 })
-    boot1.type(" computer", { delay: 400 })
-    boot1.type(" um...", { delay: 600 })
-    boot1.delete(5)
-    boot1.type(" computations", { delay: 200 })
-    boot1.empty()
-    boot1.type("innitt", { delay: 800 })
-    boot1.delete(1, { delay: 500 })
-    boot1.type("iali", { delay: 600 })
-    boot1.move(-3, { delay: 100 })
-    boot1.move(-4, { delay: 300 })
-    boot1.delete(1, { delay: 200 })
-    boot1.move(5, { delay: 100 })
-    boot1.type("isal", { delay: 400 })
-    boot1.delete(4)
-    boot1.type("liz", { delay: 500 })
-    boot1.move(2, { delay: 200 })
-    boot1.delete(12, { delay: 400 })
-    boot1.type("booting stuff up and spinning spinny thing more", { delay: 100 })
+    boot1.type('CPU at '+Math.floor(Math.random() *1000)+' Hz...', { delay: 300})
+    boot1.type(' OK', { delay: 50 })
+    boot1.break()
+    boot1.type(ram[Math.floor(Math.random() * ram.length)]+' RAM.........', { delay: 300 })
+    boot1.type(' OK', { delay: 50 })
+    boot1.break()
+    boot1.type(Math.floor(Math.random() *1000)+' kb free......', { delay: 300 })
+    boot1.type(' OK', { delay: 18000 })
     boot1.empty()
     boot1.type("-", { delay: 160 })
     boot1.empty()
@@ -632,15 +569,128 @@ var boot1=new TypeIt("#boot1", {
     boot1.type("_ ", { delay: 1000})
     boot1.type(" WELCOME TO")
     boot1.break()
-    boot1.type(" &nbsp;___&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;___....")
+    boot1.type(" &nbsp;___&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;___......")
     boot1.break()
-    boot1.type(" &nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;&nbsp;|&nbsp;|\\&nbsp;|&nbsp;|_&nbsp;&nbsp;|.....")
+    boot1.type(" &nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;&nbsp;|&nbsp;|\\&nbsp;|&nbsp;|_&nbsp;&nbsp;|.......")
     boot1.break()
-    boot1.type("|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|.....", { delay: 1000 })
+    boot1.type("|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|...v"+Math.floor(Math.random() *4)+'.'+Math.floor(Math.random() *20), { delay: 500 })
     boot1.break()
     boot1.break()
-    boot1.type('press m for menu')
+    boot1.type('type your selection:')
+    boot1.break()
+    boot1.type('...x&nbsp;&nbsp;&nbsp;&nbsp; - external links')
+    boot1.break()
+    boot1.type('...ENTER - restyle page')
+    boot1.break()
+    boot1.break()
+    boot1.type('mash keyboard to hack mainframe')
     boot1.go()
+    
+var boot2=new TypeIt("#boot2", {
+    speed: 40,
+    waitUntilVisible: true,
+    lifeLike: true,
+    startDelay: 1000,
+    cursor:false,
+    //cursorChar: "■"
+    })
+    boot2.type("/", { delay: 150 })
+    boot2.empty()
+    boot2.type("|", { delay: 150 })
+    boot2.empty()
+    boot2.type("\\", { delay: 150 })
+    boot2.empty()
+    boot2.type("-", { delay: 150 })
+    boot2.empty()
+    boot2.type("/", { delay: 150 })
+    boot2.empty()
+    boot2.type("|", { delay: 150 })
+    boot2.empty()
+    boot2.type("\\", { delay: 150 })
+    boot2.empty()
+    boot2.type("-", { delay: 150 })
+    boot2.empty()
+    boot2.type("/", { delay: 150 })
+    boot2.empty()
+    boot2.type("|", { delay: 150 })
+    boot2.empty()
+    boot2.type("\\", { delay: 150 })
+    boot2.empty()
+    boot2.type("-", { delay: 150 })
+    boot2.empty()
+    boot2.type("/", { delay: 150 })
+    boot2.empty()
+    boot2.type("|", { delay: 150 })
+    boot2.empty()
+    boot2.type("\\", { delay: 150 })
+    boot2.empty()
+    boot2.type("-", { delay: 150 })
+    boot2.empty()
+    boot2.type("/", { delay: 150 })
+    boot2.empty()
+    boot2.type("|", { delay: 150 })
+    boot2.empty()
+    boot2.type("\\", { delay: 150 })
+    boot2.empty()
+    boot2.type("-", { delay: 150})
+    boot2.empty()
+    boot2.type(medium+'&nbsp;.........', { delay: 800 })
+    boot2.empty()
+    boot2.type(medium+'&nbsp;....... located', { delay: 100 })
+    boot2.empty()
+    boot2.type('...reading...', { delay: 100 })
+    boot2.empty()
+    boot2.type("-", { delay: 150 })
+    boot2.empty()
+    boot2.type("/", { delay: 150 })
+    boot2.empty()
+    boot2.type("|", { delay: 150 })
+    boot2.empty()
+    boot2.type("\\", { delay: 150 })
+    boot2.empty()
+    boot2.type("-", { delay: 150 })
+    boot2.empty()
+    boot2.type("/", { delay: 150 })
+    boot2.empty()
+    boot2.type("|", { delay: 150 })
+    boot2.empty()
+    boot2.type("\\", { delay: 150 })
+    boot2.empty()
+    boot2.type("-", { delay: 150 })
+    boot2.empty()
+    boot2.type("/", { delay: 150 })
+    boot2.empty()
+    boot2.type("|", { delay: 150 })
+    boot2.empty()
+    boot2.type("\\", { delay: 150 })
+    boot2.empty()
+    boot2.type("-", { delay: 150})
+    boot2.empty()
+    boot2.type(verbs[Math.floor(Math.random()*verbs.length)]+' '+nouns[Math.floor(Math.random()*nouns.length)],)
+    boot2.break()
+    boot2.type("...............completed", { delay: 50 })
+    boot2.empty()
+    boot2.type(actions[Math.floor(Math.random()* actions.length)], { delay: 50 })
+    boot2.break()
+    boot2.break()
+    boot2.type(actions[Math.floor(Math.random()* actions.length)], { delay: 200 })
+    boot2.break()
+    boot2.break()
+    boot2.type("innitt", { delay: 800 })
+    boot2.delete(1, { delay: 500 })
+    boot2.type("iali", { delay: 600 })
+    boot2.move(-3, { delay: 100 })
+    boot2.move(-4, { delay: 300 })
+    boot2.delete(1, { delay: 200 })
+    boot2.move(5, { delay: 100 })
+    boot2.type("isal", { delay: 400 })
+    boot2.delete(4)
+    boot2.type("liz", { delay: 500 })
+    boot2.move(2, { delay: 200 })
+    boot2.delete(11, { delay: 400 })
+    boot2.type("booting stuff up and spinning spinny thing more", { delay: 2500 })
+    boot2.empty()
+    boot2.go()
   
 const log = document.getElementById('log');
 document.addEventListener('keydown', logKey);
@@ -651,6 +701,7 @@ function menu(){
     hack1.style.display='none';
     hack2.style.display='none';
     hack3.style.display='none';
+    hack4.style.display='none';
 
     new TypeIt("#menu", {
         speed: 40,
@@ -661,17 +712,12 @@ function menu(){
         cursorChar: "■",
     })
     .empty()
-    .type("PLEASE type YOUR SELECTION:")
+    .type("...ENTER - restyle page")
     .break()
     .break()
-    .type("X - external links")
-    .break()
-    .break()
-    .type("ENTER - restyle page")
-    .break()
-    .break()
-    .type("mash keyboard - hack mainframe")
+    .type("...mash keyboard - hack mainframe")
     .go()
+    document.getElementById("boot2").remove()
 }
 
 function external_div(color){
@@ -680,6 +726,7 @@ function external_div(color){
     hack1.style.display='none';
     hack2.style.display='none';
     hack3.style.display='none';
+    hack4.style.display='none';
 
     new TypeIt("#external", {
         speed: 40,
@@ -690,22 +737,16 @@ function external_div(color){
         cursorChar: "■",
     })
     .empty()
-    .type("PLEASE type YOUR SELECTION:")
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>...1 - CISMP exam practise</a>")
     .break()
     .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>1 - CISMP exam practise</a>")
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>...2 - Army Cognitive Test practise</a>")
     .break()
     .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>2 - Army Cognitive Test practise</a>")
-    .break()
-    .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>3 - Tang's page</a>")
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>...3 - Tang's page</a>")
     .go()
+    document.getElementById("boot2").remove()
 }
-
-
-
-
 
 
 function loading(div){
@@ -1032,9 +1073,7 @@ function verbnoun(div){
   .go()
 }
 
-
-
-let divs=['#hack1','#hack2','#hack3','#hack4', '#hack5']
+let divs=['#hack1','#hack2','#hack3','#hack4']
 // an array exists of all functions which do typit things
 let mashthings=[spin,spin, loading, pacman, pi, snake, nibbles, nibbles, randomstring, ip, verbnoun]
 // a count exists which shows how many mashes have occurred
@@ -1049,13 +1088,17 @@ function mash(){
         console.log(divs[div])
         to_mash(divs[div]);// if when that number reaches 0, target hack1 with a random function from the list
         if(div==0){
+            try{
+                document.getElementById("boot2").remove()
+            }catch(error){}
             mmenu.style.display='none';
             external.style.display='none';
             hack1.style.display='block';
             hack2.style.display='block';
             hack3.style.display='block';
             hack4.style.display='block';
-        }else if(div==4){
+            
+        }else if(div==3){
             div=-1;// hack4, reset all numbers
         }
         div+=1;// each five mashes div rises
