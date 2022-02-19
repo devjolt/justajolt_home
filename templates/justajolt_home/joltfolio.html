@@ -311,6 +311,16 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
 #menu, #external, #hack1, #hack2, #hack3, #hack4, #hack5, #hack6, #hack7{
     display:none;
 }
+#advice{
+    display:none;
+}
+@media only screen and (max-width: 660px) {
+        #advice{
+        display:block;
+    }
+
+
+}
 
 
 
@@ -322,6 +332,7 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
                   <div class="scanline"></div><!-- slowly moving scanline -->              
                   <div class="terminal"><!-- the input and output -->
                     <div class="overlay">ON</div><!--onload = 'input()'-->
+                    <div id="advice"><br>>>turn device sideways<<<br>>>view on desktop for hacking feature<<<br><br></div>
                     <div id="boot1"></div>
                     <!--<class id = 'version' class='gap'>v<span id='whole'>0</span>.<span id='decimal'>1</span></class>-->
                     <div id="boot2"class='gap'></div>
@@ -462,6 +473,7 @@ document.getElementsByTagName("body")[0].style.backgroundColor=background;
 document.getElementsByTagName("body")[0].style.boxShadow=shaddow;
 var class_text = 'terminal-text '+font+' ' +color;
 
+var advice =document.getElementById("advice"); 
 var boot1= document.getElementById("boot1");
 var version=document.getElementById("version");
 var boot2= document.getElementById("boot2");
@@ -475,6 +487,7 @@ var hack5= document.getElementById("hack5");
 var hack6= document.getElementById("hack6");
 
 
+advice.className=class_text;
 boot1.className=class_text;
 
 boot2.className=class_text;
