@@ -654,7 +654,7 @@ var boot2=new TypeIt("#boot2", {
     boot2.empty()
     boot2.type('...'+medium+'...', { delay: 100 })
     boot2.empty()
-    boot2.type("access denied at <span id='noun'>"+nouns[Math.floor(Math.random() * nouns.length)]+"</span> layer [<span id='layer'>0</span>/4]", { delay: 50 })
+    boot2.type("access denied at <span id='noun'>"+nouns[Math.floor(Math.random() * nouns.length)]+"</span> layer [<span id='layer'>0</span>/3]", { delay: 50 })
     boot2.break()
     boot2.break()
     boot2.go()
@@ -668,7 +668,7 @@ new TypeIt("#boot3", {
     cursorChar: "■"
     })
     .empty()
-    .type("mash keyboard to hack into joltnet ", { delay: 500 })
+    .type("mash keyboard and hack the system...  ", { delay: 500 })
     .go()
 
 
@@ -871,7 +871,7 @@ function blitMenu(){
     .type('type your selection:')
     .break()
     .break()
-    .type("&nbsp;&nbsp;&nbsp;ENTER - restyle page")
+    .type("&nbsp;&nbsp;&nbsp;ENTER - reboot and restyle")
     .break()
     .break()
     .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CISMP exam practise</a>")
@@ -1368,8 +1368,8 @@ function mash(){
             allBootUpgrade()
         }
         
-        if(hacklayer==5){
-            hacklayer=6
+        if(hacklayer==4){
+            hacklayer=5
             
             blitJoltnetMain()//wait and then spin and jolt screen
             blitAuthorisationMessage()//write access granted wait and
