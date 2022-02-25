@@ -305,10 +305,10 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
 #boot2, #menu, #external, #hack1{
     margin-top:2ch;
 }
-#boot1, #boot2, #boot3, #boot4{
+#boot1, #boot2{
     display:block;
 }
-#menu,#nomenu, #external, #hack1, #hack2, #hack3, #hack4, #hack5, #hack6, #hack7{
+#menu, #external, #hack1, #hack2, #hack3, #hack4, #hack5, #hack6, #hack7{
     display:none;
 }
 #advice{
@@ -336,13 +336,8 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
                     <div id="boot1"></div>
                     <!--<class id = 'version' class='gap'>v<span id='whole'>0</span>.<span id='decimal'>1</span></class>-->
                     <div id="boot2"class='gap'></div>
-                    <div id="boot3"class='gap'></div>
-                    <div id="boot4"class='gap'></div>
-                    <div id="boot5"class='gap'></div>
-                    <div id="boot6"class='gap'></div>
-                    <div id="nomenu" class='gap'></div>
-                    <div id="external" class='gap'></div>
                     <div id="menu" class='gap'></div>
+                    <div id="external" class='gap'></div>
                     <div id="hack1" class='gap'></div>
                     <div id="hack2" class=''></div>
                     <div id="hack3" class=''></div>
@@ -415,19 +410,20 @@ let nouns=[
     'arpanet',
     'backdoor',
     'rubber ducky',
-    'password',
+    'passwords',
     'internets',
-    'algorithm',
+    'algorithms',
     'mayonaise',
     'cheese',
-    'spider',
-    'pickle',
+    'spiders',
+    'pickles',
     'bitcoin',
     'RAM',
-    'core',
+    'cores',
     'school run',
     'accountant',
     'aubergine',
+    'docs',
     'algorithms',
     'privileges',
     'data',
@@ -477,57 +473,40 @@ document.getElementsByTagName("body")[0].style.backgroundColor=background;
 document.getElementsByTagName("body")[0].style.boxShadow=shaddow;
 var class_text = 'terminal-text '+font+' ' +color;
 
-var adviceDiv =document.getElementById("advice"); 
-var boot1Div= document.getElementById("boot1");
-var boot2Div= document.getElementById("boot2");
-var boot3Div= document.getElementById("boot3");
-var boot4Div= document.getElementById("boot4");
-var boot5Div= document.getElementById("boot5");
-var boot6Div= document.getElementById("boot6");
-
-var hack1Div= document.getElementById("hack1");
-var hack2Div= document.getElementById("hack2");
-var hack3Div= document.getElementById("hack3");
-var hack4Div= document.getElementById("hack4");
-var hack5Div= document.getElementById("hack5");
-var hack6Div= document.getElementById("hack6");
-
-var deniedDiv=document.getElementById("denied");
-var hackingDiv=document.getElementById("hacking");
-var versionDiv=document.getElementById("version");
-var mmenuDiv= document.getElementById("menu");
-var nomenuDiv= document.getElementById("nomenu");
-var externalDiv= document.getElementById("external");
+var advice =document.getElementById("advice"); 
+var boot1= document.getElementById("boot1");
+var version=document.getElementById("version");
+var boot2= document.getElementById("boot2");
+var mmenu= document.getElementById("menu");
+var external= document.getElementById("external");
+var hack1= document.getElementById("hack1");
+var hack2= document.getElementById("hack2");
+var hack3= document.getElementById("hack3");
+var hack4= document.getElementById("hack4");
+var hack5= document.getElementById("hack5");
+var hack6= document.getElementById("hack6");
 
 
+advice.className=class_text;
+boot1.className=class_text;
 
-adviceDiv.className=class_text;
-boot1Div.className=class_text;
-boot2Div.className=class_text;
-boot3Div.className=class_text;
-boot4Div.className=class_text;
-boot5Div.className=class_text;
-boot6Div.className=class_text;
-
-mmenuDiv.className=class_text;
-nomenuDiv.className=class_text;
-externalDiv.className=class_text;
-hack1Div.className=class_text;
-hack2Div.className=class_text;
-hack3Div.className=class_text;
-hack4Div.className=class_text;
-hack5Div.className=class_text;
-hack6Div.className=class_text;
-
-
+boot2.className=class_text;
+mmenu.className=class_text;
+external.className=class_text;
+hack1.className=class_text;
+hack2.className=class_text;
+hack3.className=class_text;
+hack4.className=class_text;
+hack5.className=class_text;
+hack6.className=class_text;
 
 function hackToNone(){
-    hack1Div.display='none';
-    hack2Div.display='none';
-    hack3Div.display='none';
-    hack4Div.display='none';
-    hack5Div.display='none';
-    hack6Div.display='none';
+    hack1.display='none';
+    hack2.display='none';
+    hack3.display='none';
+    hack4.display='none';
+    hack5.display='none';
+    hack6.display='none';
 }
 
 async function main() {
@@ -595,168 +574,7 @@ var boot1=new TypeIt("#boot1", {
     boot1.type(' OK', { delay: 50 })
     boot1.break()
     boot1.type(Math.floor(Math.random() *1000)+' kb free......', { delay: 400 })
-    boot1.type(' OK', { delay: 500 })
-    boot1.go()
-
-
-
-var boot2=new TypeIt("#boot2", {
-    speed: 40,
-    waitUntilVisible: true,
-    lifeLike: true,
-    startDelay: 1500,
-    cursor:false,
-    //cursorChar: "■"
-    })
-    boot2.type("/", { delay: 150 })
-    boot2.empty()
-    boot2.type("|", { delay: 150 })
-    boot2.empty()
-    boot2.type("\\", { delay: 150 })
-    boot2.empty()
-    boot2.type("-", { delay: 150 })
-    boot2.empty()
-    boot2.type("/", { delay: 150 })
-    boot2.empty()
-    boot2.type("|", { delay: 150 })
-    boot2.empty()
-    boot2.type("\\", { delay: 140 })
-    boot2.empty()
-    boot2.type("-", { delay: 140 })
-    boot2.empty()
-    boot2.type("/", { delay: 130 })
-    boot2.empty()
-    boot2.type("|", { delay: 130 })
-    boot2.empty()
-    boot2.type("\\", { delay: 120 })
-    boot2.empty()
-    boot2.type("-", { delay: 120 })
-    boot2.empty()
-    boot2.type("/", { delay: 110 })
-    boot2.empty()
-    boot2.type("|", { delay: 110 })
-    boot2.empty()
-    boot2.type("\\", { delay: 100 })
-    boot2.empty()
-    boot2.type("-", { delay: 100 })
-    boot2.empty()
-    boot2.type("/", { delay: 100 })
-    boot2.empty()
-    boot2.type("|", { delay: 100 })
-    boot2.empty()
-    boot2.type("\\", { delay: 100 })
-    boot2.empty()
-    boot2.type("-", { delay: 100 })
-    boot2.empty()
-    boot2.type("/", { delay: 100 })
-    boot2.empty()
-    boot2.type('...'+medium+'...', { delay: 800 })
-    boot2.empty()
-    boot2.type('...'+medium+'...', { delay: 100 })
-    boot2.empty()
-    boot2.type("access denied at <span id='noun'>"+nouns[Math.floor(Math.random() * nouns.length)]+"</span> layer [<span id='layer'>0</span>/4]", { delay: 50 })
-    boot2.break()
-    boot2.break()
-    boot2.go()
-
-new TypeIt("#boot3", {
-    speed: 80,
-    waitUntilVisible: true,
-    lifeLike: true,
-    startDelay: 10000,
-    cursor:false,
-    cursorChar: "■"
-    })
-    .empty()
-    .type("mash keyboard to hack into joltnet ", { delay: 500 })
-    .go()
-
-
-function showLayer(){
-    new TypeIt("#boot4", {
-    speed: 100,
-    waitUntilVisible: true,
-    lifeLike: true,
-    startDelay: 0,
-    cursor:true,
-    cursorChar: "■"
-    })
-    .empty()
-    .type("...<span id='percentage'>0</span>% complete...", { delay: 500 })
-    .go()
-}
-
-
-function blitAuthorisationMessage(){
-    new TypeIt("#boot6", {
-    speed: 50,
-    waitUntilVisible: true,
-    lifeLike: true,
-    startDelay: 10,
-    cursor:false,
-    cursorChar: "■"
-    })
-    .type("-", { delay: 120 })
-    .empty()
-    .type("/", { delay: 120 })
-    .empty()
-    .type("|", { delay: 120 })
-    .empty()
-    .type("\\", { delay: 120 })
-    .empty()
-    .type("Access granted", { delay: 120 })
-    .break()
-    .break()
-    .type("-", { delay: 120 })
-    .empty()
-    .type("/", { delay: 120 })
-    .empty()
-    .type("|", { delay: 120 })
-    .empty()
-    .type("\\", { delay: 120 })
-    .empty()
-    .type("-", { delay: 120 })
-    .empty()
-    .type("/", { delay: 120 })
-    .empty()
-    .type("|", { delay: 120 })
-    .empty()
-    .type(actions[Math.floor(Math.random()* actions.length)])
-    .break()
-    .type(".................completed")
-    .break()
-    .break()
-    .type(actions[Math.floor(Math.random()* actions.length)])
-    .break()
-    .type(".................completed")
-    .break()
-    .break()
-    .type("innitt", { delay: 400 })
-    .delete(1, { delay: 50 })
-    .type("iali", { delay: 400 })
-    .move(-3, { delay: 400 })
-    .move(-4, { delay: 50 })
-    .delete(1, { delay: 200 })
-    .move(5, { delay: 100 })
-    .type("isal", { delay: 400 })
-    .delete(4)
-    .type("liz", { delay: 300 })
-    .move(2, { delay: 50 })
-    .delete(11, { delay: 400 })
-    .type("spinning spinny thing more", { delay: 1800 })
-    .empty()
-    .go()
-}
-
-function blitJoltnetMain(){
-    var boot1=new TypeIt("#boot5", {
-    speed: 30,
-    waitUntilVisible: true,
-    lifeLike: true,
-    startDelay: 12000,
-    cursor:false,
-    cursorChar: "■"
-    })
+    boot1.type(' OK', { delay: 13000 })
     boot1.empty()
     boot1.type("-", { delay: 160 })
     boot1.empty()
@@ -828,12 +646,7 @@ function blitJoltnetMain(){
     boot1.type("|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|.....")
     boot1.type("<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<span id='whole'>0</span>.<span id='decimal'>01</span></div>")
     boot1.break()
-    boot1.go()
-}
-    
-    
-    
-    /*
+    boot1.type('type your selection:')
     boot1.break()
     boot1.break()
     boot1.type('&nbsp;&nbsp;&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp; - external links')
@@ -843,74 +656,160 @@ function blitJoltnetMain(){
     boot1.break()
     boot1.type('&nbsp;&nbsp;&nbsp;mash keyboard to hack mainframe')
     boot1.go()
-}
+    
+var boot2=new TypeIt("#boot2", {
+    speed: 40,
+    waitUntilVisible: true,
+    lifeLike: true,
+    startDelay: 1200,
+    cursor:false,
+    //cursorChar: "■"
+    })
+    boot2.type("/", { delay: 150 })
+    boot2.empty()
+    boot2.type("|", { delay: 150 })
+    boot2.empty()
+    boot2.type("\\", { delay: 140 })
+    boot2.empty()
+    boot2.type("-", { delay: 140 })
+    boot2.empty()
+    boot2.type("/", { delay: 130 })
+    boot2.empty()
+    boot2.type("|", { delay: 130 })
+    boot2.empty()
+    boot2.type("\\", { delay: 120 })
+    boot2.empty()
+    boot2.type("-", { delay: 120 })
+    boot2.empty()
+    boot2.type("/", { delay: 110 })
+    boot2.empty()
+    boot2.type("|", { delay: 110 })
+    boot2.empty()
+    boot2.type("\\", { delay: 100 })
+    boot2.empty()
+    boot2.type("-", { delay: 100 })
+    boot2.empty()
+    boot2.type("/", { delay: 100 })
+    boot2.empty()
+    boot2.type("|", { delay: 100 })
+    boot2.empty()
+    boot2.type("\\", { delay: 100 })
+    boot2.empty()
+    boot2.type("-", { delay: 100 })
+    boot2.empty()
+    boot2.type("/", { delay: 100 })
+    boot2.empty()
+    boot2.type(medium+'........', { delay: 800 })
+    boot2.empty()
+    boot2.type(medium+'..... detected', { delay: 100 })
+    boot2.empty()
+    boot2.type('...reading...', { delay: 50 })
+    boot2.empty()
+    boot2.type("-", { delay: 120 })
+    boot2.empty()
+    boot2.type("/", { delay: 120 })
+    boot2.empty()
+    boot2.type("|", { delay: 120 })
+    boot2.empty()
+    boot2.type("\\", { delay: 120 })
+    boot2.empty()
+    boot2.type("-", { delay: 120 })
+    boot2.empty()
+    boot2.type("/", { delay: 120 })
+    boot2.empty()
+    boot2.type("|", { delay: 120 })
+    boot2.empty()
+    boot2.type("\\", { delay: 120 })
+    boot2.empty()
+    boot2.type("-", { delay: 120 })
+    boot2.empty()
+    boot2.type("/", { delay: 120 })
+    boot2.empty()
+    boot2.type("|", { delay: 120 })
+    boot2.empty()
+    boot2.type(actions[Math.floor(Math.random()* actions.length)])
+    boot2.break()
+    boot2.type(".................completed")
+    boot2.break()
+    boot2.break()
+    boot2.type(actions[Math.floor(Math.random()* actions.length)])
+    boot2.break()
+    boot2.type(".................completed")
+    boot2.break()
+    boot2.break()
+    boot2.type("innitt", { delay: 400 })
+    boot2.delete(1, { delay: 50 })
+    boot2.type("iali", { delay: 400 })
+    boot2.move(-3, { delay: 400 })
+    boot2.move(-4, { delay: 50 })
+    boot2.delete(1, { delay: 200 })
+    boot2.move(5, { delay: 100 })
+    boot2.type("isal", { delay: 400 })
+    boot2.delete(4)
+    boot2.type("liz", { delay: 300 })
+    boot2.move(2, { delay: 50 })
+    boot2.delete(11, { delay: 400 })
+    boot2.type("spinning spinny thing more", { delay: 1800 })
+    boot2.empty()
+    boot2.go()
+  
+/*
+    boot2.type("innitt", { delay: 400 })
+    boot2.delete(1, { delay: 50 })
+    boot2.type("iali", { delay: 400 })
+    boot2.move(-3, { delay: 400 })
+    boot2.move(-4, { delay: 50 })
+    boot2.delete(1, { delay: 200 })
+    boot2.move(5, { delay: 100 })
+    boot2.type("isal", { delay: 400 })
+    boot2.delete(4)
+    boot2.type("liz", { delay: 300 })
+    boot2.move(2, { delay: 50 })
+    boot2.delete(11, { delay: 400 })
 */
+
 
 const log = document.getElementById('log');
 document.addEventListener('keydown', logKey);
 
-function blitMenu(){
-    mmenuDiv.style.display='block';
-    hack1Div.display='none';
-    hack2Div.display='none';
-    hack3Div.display='none';
-    hack4Div.display='none';
-    hack5Div.display='none';
-    hack6Div.display='none';
+function menu(){
+    mmenu.style.display='block';
+    external.style.display='none';
+    hack1.display='none';
+    hack2.display='none';
+    hack3.display='none';
+    hack4.display='none';
+    hack5.display='none';
+    hack6.display='none';
+
     new TypeIt("#menu", {
-        speed: 20,
-        waitUntilVisible: true,
-        lifeLike: true,
-        startDelay: 0,
-        cursor:true,
-        cursorChar: "■",
-    })
-    
-    
-    .empty()
-    .type('type your selection:')
-    .break()
-    .break()
-    .type("&nbsp;&nbsp;&nbsp;ENTER - restyle page")
-    .break()
-    .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CISMP exam practise</a>")
-    .break()
-    .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Army Cognitive Test practise</a>")
-    .break()
-    .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tang's page</a>")
-    .break()
-    .break()
-    .type("mash keyboard to upgrade joltnet")
-    .go()
-}
-
-function nomenu(){
-
-    new TypeIt("#nomenu", {
         speed: 40,
         waitUntilVisible: true,
         lifeLike: true,
-        startDelay:20000,
-        cursor:false,
+        startDelay: 500,
+        cursor:true,
         cursorChar: "■",
     })
     .empty()
-    .type("press m for menu")
+    .type("...ENTER - restyle page")
+    .break()
+    .break()
+    .type("...mash keyboard - hack mainframe")
     .go()
+    try{
+        document.getElementById("boot2").remove()
+    }catch(error){}
 }
 
 function external_div(color){
-    mmenuDiv.style.display='none';
-    externalDiv.style.display='block';
-    hack1Div.display='none';
-    hack2Div.display='none';
-    hack3Div.display='none';
-    hack4Div.display='none';
-    hack5Div.display='none';
-    hack6Div.display='none';
+    mmenu.style.display='none';
+    external.style.display='block';
+    hack1.display='none';
+    hack2.display='none';
+    hack3.display='none';
+    hack4.display='none';
+    hack5.display='none';
+    hack6.display='none';
 
     new TypeIt("#external", {
         speed: 40,
@@ -921,7 +820,14 @@ function external_div(color){
         cursorChar: "■",
     })
     .empty()
-     .go()
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CISMP exam practise</a>")
+    .break()
+    .break()
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Army Cognitive Test practise</a>")
+    .break()
+    .break()
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tang's page</a>")
+    .go()
     try{
         document.getElementById("boot2").remove()
     }catch(error){
@@ -1255,7 +1161,7 @@ function verbnoun(div){
 }
 
 let divs=['#hack1','#hack2','#hack3','#hack4', '#hack5', '#hack6']
-let hack_divs=[hack1Div, hack2Div, hack3Div, hack4Div, hack5Div, hack6Div]
+let hack_divs=[hack1, hack2, hack3, hack4, hack5, hack6]
 let hack_colors=['white','red','goldenrod','orange', 'gold', 'yellow', 'lime', 'greenyellow','cyan','blueish', 'pink', 'fuchsia','silver']
 // an array exists of all functions which do typit things
 let mashthings=[spin,spin, loading, pacman, pi, snake, nibbles, nibbles, randomstring, ip, verbnoun]
@@ -1271,21 +1177,13 @@ function allHackTextUpgrade(){
     console.log('all')
     var hack_color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
     var hack_text = 'terminal-text '+font+' ' +hack_color;
-    hack1Div.className=hack_text;
-    hack2Div.className=hack_text;
-    hack3Div.className=hack_text;
-    hack4Div.className=hack_text;
-    hack5Div.className=hack_text; 
-    hack6Div.className=hack_text;
-}
-
-function allBootUpgrade(){
-    var hack_color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
-    var hack_text = 'terminal-text '+font+' ' +hack_color;
-    boot1Div.className=hack_text;
-    boot2Div.className=hack_text;
-    boot3Div.className=hack_text;
-    boot4Div.className=hack_text;
+    hack1.className=hack_text;
+    hack2.className=hack_text;
+    hack3.className=hack_text;
+    hack4.className=hack_text;
+    hack5.className=hack_text; 
+    hack6.className=hack_text;
+    console.log(hack_color)
 }
 
 function oneHackTextUpgrade(){
@@ -1294,195 +1192,97 @@ function oneHackTextUpgrade(){
     var chosen_hack_div=hack_divs[Math.floor(Math.random() * hack_divs.length)];
     var hack_text = 'terminal-text '+font+' ' +hack_color;
     chosen_hack_div.className=hack_text;
+    console.log(hack_color)
+    console.log(chosen_hack_div)
 }
 
 function upgradeTerminal(){
     var hack_color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
     var hack_text = 'terminal-text '+font+' ' +hack_color;
-    boot1Div.className=hack_text
+    boot1.className=hack_text
 }
-
-
-
-function pad ( val ) { return val }
 
 var whole_span=document.getElementById("whole");
 var decimal_span=document.getElementById("decimal");
 
-var hackcount=0
-var hacklayer=1
-
-var upgradecount=0
-var upgradestage=0
-
-var div=0
-
-booting = true
-
-
-main_menu=false
+function pad ( val ) { return val > 9 ? val : "0" + val; }
 
 function mash(){
-    nomenuDiv.style.display='none';
-    hackcount+=1;
-    if(booting==true){
-        
-        if(hacklayer==0){
-            if(hackcount==1){
-                boot3Div.style.display='none';
-                showLayer()
-                hack1Div.style.display='block';
-                hack2Div.style.display='block';
-                hack3Div.style.display='block';
-                hack4Div.style.display='block';
-                hack5Div.style.display='block';
-                hack6Div.style.display='block';
-            }
+    mashcount+=1;
+    console.log(mashcount)
+    if(mashcount%20==0){
+    
+        decimal_val=Math.floor(mashcount/20);
+        if(decimal_val>19){
+            decimal_val=decimal_val%20
         }
-        if(hackcount%2==0){
-            //blit percentage to percentage
-            document.getElementById("percentage").innerHTML=pad(hackcount)
+        document.getElementById("decimal").innerHTML=pad(decimal_val);
+        whole_val=Math.floor(mashcount/400);
+        document.getElementById("whole").innerHTML=whole_val;
+
+        to_mash=mashthings[Math.floor(Math.random() * mashthings.length)]
+        //console.log(divs[div])
+        //console.log(divs[div])
+        to_mash(divs[div]);// if when that number reaches 0, target hack1 with a random function from the list
+        if(div==0){
+            try{
+                document.getElementById("boot2").remove()
+            }catch(error){}
+            mmenu.style.display='none';
+            external.style.display='none';
+            hack1.style.display='block';
+            hack2.style.display='block';
+            hack3.style.display='block';
+            hack4.style.display='block';
+            hack5.style.display='block';
+            hack6.style.display='block';
+            
+        }else if(div==5){
+            div=-1;// hack4, reset all numbers
         }
-        if(hackcount%8==0){
-            to_mash=mashthings[Math.floor(Math.random() * mashthings.length)]
-            to_mash(divs[div]);// if when that number reaches 0, target hack1 with a random function from the list   
-            div+=1;
-            if(div==5){
-                div=0
-            }
-        }
-        if(hackcount%40==0){
+        div+=1;// each five mashes div rises
+        //console.log(div)
+        //console.log(mashcount)
+    }
+    if(mashcount%80==0){
+        if(mashcount%400==0){ 
+            allHackTextUpgrade()
+            upgradeTerminal()
+            document.getElementById("boot1").style.color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
+        }else if(mashcount%800==0){
+            oneHackTextUpgrade()
+            oneHackTextUpgrade()
+            oneHackTextUpgrade()
+            oneHackTextUpgrade()
+            oneHackTextUpgrade()
+            oneHackTextUpgrade()
+        }else if(mashcount%2000==0){
+            alert("Your commitment to joltnet is impressive! Take a break, get a drink of water and rest your fingers. Then come back and check out some of the external links! ^_^");
+        }else{
             oneHackTextUpgrade()
         }
-        if(hackcount%100==0){
-            hacklayer+=1
-            allBootUpgrade()
-            document.getElementById("layer").innerHTML=pad(hacklayer)
-
-            document.getElementById("noun").innerHTML=nouns[Math.floor(Math.random() * nouns.length)]
-            console.log(hacklayer)
-        }
-        if(hackcount>100){
-            hackcount=0
-        }else if(hackcount>92){
-            allBootUpgrade()
-        }
-        
-        if(hacklayer==5){
-            hacklayer=6
-            
-            blitJoltnetMain()//wait and then spin and jolt screen
-            blitAuthorisationMessage()//write access granted wait and
-            mmenuDiv.style.display='block';
-            nomenu()
-            blitMenu()
-            booting=false
-
-            boot1Div.style.display='none';
-            boot2Div.style.display='none';
-            boot3Div.style.display='none';
-            boot4Div.style.display='none';
-            hack1Div.style.display='none';
-            hack2Div.style.display='none';
-            hack3Div.style.display='none';
-            hack4Div.style.display='none';
-            hack5Div.style.display='none';
-            hack6Div.style.display='none';
-            nomenuDiv.style.display='none';
-            
-        }
-    
-    }else{
-        
-        upgradecount+=2
-        console.log(upgradecount)
-        if(upgradecount%20==0){
-            decimal_val=Math.floor(upgradecount/20);
-            if(decimal_val>19){
-                decimal_val=decimal_val%20
-            }
-            document.getElementById("decimal").innerHTML=pad(decimal_val);
-            document.getElementById("whole").innerHTML=upgradestage;
-            to_mash=mashthings[Math.floor(Math.random() * mashthings.length)]
-            to_mash(divs[div]);// if when that number reaches 0, target hack1 with a random function from the list
-            if(div==5){
-                div=-1;// hack4, reset all numbers
-            }
-            div+=1;
-        }
-        if(upgradecount%80==0){
-            if(upgradecount%400==0){ 
-                allHackTextUpgrade()
-                document.getElementById("boot5").style.color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
-                upgradestage+=1
-            }else{
-                oneHackTextUpgrade()
-            }
-        }
-        if(upgradecount>380){
-            upgradecount=0
-        }else if(upgradecount>380){
-            document.getElementById("boot5").style.color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
-        }
-        if (upgradestage==7){
-            alert("Your commitment to joltnet is impressive! Take a break, get a drink of water and rest your fingers. Then come back and check out some of the external links! ^_^");
-        }
     }
-}
-
-
-
-/*
-
     
-}else if(e.key=='x'){
-            external_div(color)
-
-*/
+}
 
 function logKey(e) {
     //console.log(e)
-    if(booting==true){
+    if(e.key=='m'){
+        menu()
+    }else if(e.key=='Enter'){
+        location.reload()
+    }else if(e.key=='x'){
+        external_div(color)
+    }else if(e.key=='3'){
+        window.location.href = "/tang";
+    }else if(e.key=='2'){
+        window.location.href = "/act_simulator";
+    }else if(e.key=='1'){
+        window.location.href = "/cismp";
+    }else{
         mash()
-
-    }else if(booting==false){
-        if(e.key=='m'){
-            nomenuDiv.style.display='none';
-            mmenuDiv.style.display='block';
-            main_menu=true
-            hack1Div.style.display='none';
-            hack2Div.style.display='none';
-            hack3Div.style.display='none';
-            hack4Div.style.display='none';
-            hack5Div.style.display='none';
-            hack6Div.style.display='none'; 
-        }
-        if(main_menu==true){
-            console.log(e.key)
-            if(e.key=='Enter'){
-                location.reload()
-            }else if(e.key=='3'){
-                window.location.href = "/tang";
-            }else if(e.key=='2'){
-                window.location.href = "/act_simulator";
-            }else if(e.key=='1'){
-                window.location.href = "/cismp";
-            }       
-        }else{            
-            mash()
-            main_menu=false
-            nomenuDiv.style.display='block';
-            mmenuDiv.style.display='none';
-            hack1Div.style.display='block';
-            hack2Div.style.display='block';
-            hack3Div.style.display='block';
-            hack4Div.style.display='block';
-            hack5Div.style.display='block';
-            hack6Div.style.display='block';
-        }
-        
     }
-    
+  //spin(100);
 }
 
 </script>
