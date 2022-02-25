@@ -1327,7 +1327,7 @@ function mash(){
     hackcount+=1;
     if(booting==true){
         
-        if(hacklayer==0){
+        if(hacklayer==1){
             if(hackcount==1){
                 boot3Div.style.display='none';
                 showLayer()
@@ -1389,6 +1389,8 @@ function mash(){
             hack5Div.style.display='none';
             hack6Div.style.display='none';
             nomenuDiv.style.display='none';
+
+            var can_mash=false
             
         }
     
@@ -1402,7 +1404,7 @@ function mash(){
                 decimal_val=decimal_val%20
             }
             document.getElementById("decimal").innerHTML=pad(decimal_val);
-            document.getElementById("whole").innerHTML=upgradestage;
+            document.getElementById("whole").innerHTML=pad(upgradestage);
             to_mash=mashthings[Math.floor(Math.random() * mashthings.length)]
             to_mash(divs[div]);// if when that number reaches 0, target hack1 with a random function from the list
             if(div==5){
@@ -1411,7 +1413,7 @@ function mash(){
             div+=1;
         }
         if(upgradecount%80==0){
-            if(upgradecount%400==0){ 
+            if(upgradecount%398==0){ 
                 allHackTextUpgrade()
                 document.getElementById("boot5").style.color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
                 upgradestage+=1
@@ -1419,9 +1421,9 @@ function mash(){
                 oneHackTextUpgrade()
             }
         }
-        if(upgradecount>380){
+        if(upgradecount>398){
             upgradecount=0
-        }else if(upgradecount>380){
+        }else if(upgradecount>378){
             document.getElementById("boot5").style.color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
         }
         if (upgradestage==7){
@@ -1439,8 +1441,8 @@ function mash(){
             external_div(color)
 
 */
-
 function logKey(e) {
+    
     //console.log(e)
     if(booting==true){
         mash()
@@ -1449,30 +1451,30 @@ function logKey(e) {
         if(e.key=='m'){
             nomenuDiv.style.display='none';
             mmenuDiv.style.display='block';
-            main_menu=true
             hack1Div.style.display='none';
             hack2Div.style.display='none';
             hack3Div.style.display='none';
             hack4Div.style.display='none';
             hack5Div.style.display='none';
-            hack6Div.style.display='none'; 
-        }
-        if(main_menu==true){
-            console.log(e.key)
-            if(e.key=='Enter'){
-                location.reload()
-            }else if(e.key=='3'){
-                window.location.href = "/tang";
-            }else if(e.key=='2'){
-                window.location.href = "/act_simulator";
-            }else if(e.key=='1'){
-                window.location.href = "/cismp";
-            }       
-        }else{            
+            hack6Div.style.display='none';
+            
+        }else if(e.key=='Enter'){
+            location.reload()
+        }else if(e.key=='3'){
+            window.location.href = "/tang";
+        }else if(e.key=='2'){
+            window.location.href = "/act_simulator";
+        }else if(e.key=='1'){
+            window.location.href = "/cismp";  
+        }else{    
+            if (can_mash=false){
+                return
+            }        
             mash()
             main_menu=false
-            nomenuDiv.style.display='block';
             mmenuDiv.style.display='none';
+            nomenuDiv.style.display='block';
+            
             hack1Div.style.display='block';
             hack2Div.style.display='block';
             hack3Div.style.display='block';
