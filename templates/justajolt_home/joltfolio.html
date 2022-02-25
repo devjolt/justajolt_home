@@ -412,6 +412,13 @@ let ram=[
 
 
 let nouns=[
+    'firewall',
+    'datalink',
+    'application',
+    'transport',
+    'network',
+    'session',
+    'presentation',
     'arpanet',
     'backdoor',
     'rubber ducky',
@@ -449,12 +456,29 @@ let verbs=[
     'uploading',
     'downloading',
     'escalating',
-    'cracking',
     'harvesting',
     'liquidating',
     'reading',
     're-writing'
 ]
+
+
+let hack_verbs=[
+    'hack',
+    'compromise',
+    'crack',
+    'gain entry to',
+    'force entry to',
+    'break into',
+    ]
+
+let hack_nouns=[
+    'mainframe',
+    'system',
+    'network',
+    'server',
+    'firewall',
+    ]
 
 font = fonts[Math.floor(Math.random() * fonts.length)];
 medium = media[Math.floor(Math.random() * media.length)];
@@ -654,7 +678,7 @@ var boot2=new TypeIt("#boot2", {
     boot2.empty()
     boot2.type('...'+medium+'...', { delay: 100 })
     boot2.empty()
-    boot2.type("access denied at <span id='noun'>"+nouns[Math.floor(Math.random() * nouns.length)]+"</span> layer [<span id='layer'>1</span>/3]", { delay: 50 })
+    boot2.type("access denied at <span id='noun'>"+nouns[Math.floor(Math.random() * nouns.length)]+"</span> layer [<span id='layer'>01</span>/03]", { delay: 50 })
     boot2.break()
     boot2.break()
     boot2.go()
@@ -668,7 +692,7 @@ new TypeIt("#boot3", {
     cursorChar: "■"
     })
     .empty()
-    .type("mash keyboard and hack the system...  ", { delay: 500 })
+    .type("mash keyboard to "+hack_verbs[Math.floor(Math.random() * hack_verbs.length)]+ " the "+hack_nouns[Math.floor(Math.random() * hack_nouns.length)] +"...", { delay: 500 })
     .go()
 
 
@@ -682,7 +706,7 @@ function showLayer(){
     cursorChar: "■"
     })
     .empty()
-    .type("...<span id='percentage'>0</span>% complete...", { delay: 500 })
+    .type("..."+verbs[Math.floor(Math.random() * verbs.length)]+ " <span id='percentage'>0</span>% complete...", { delay: 500 })
     .go()
 }
 
@@ -702,11 +726,8 @@ function blitAuthorisationMessage(){
     .empty()
     .type("|", { delay: 120 })
     .empty()
-    .type("\\", { delay: 120 })
+    .type("\\", { delay: 60 })
     .empty()
-    .type("Access granted", { delay: 120 })
-    .break()
-    .break()
     .type("-", { delay: 120 })
     .empty()
     .type("/", { delay: 120 })
@@ -715,12 +736,9 @@ function blitAuthorisationMessage(){
     .empty()
     .type("\\", { delay: 120 })
     .empty()
-    .type("-", { delay: 120 })
-    .empty()
-    .type("/", { delay: 120 })
-    .empty()
-    .type("|", { delay: 120 })
-    .empty()
+    .type("........Access granted", { delay: 400 })
+    .break()
+    .break()
     .type(actions[Math.floor(Math.random()* actions.length)])
     .break()
     .type(".................completed")
@@ -753,7 +771,7 @@ function blitJoltnetMain(){
     speed: 30,
     waitUntilVisible: true,
     lifeLike: true,
-    startDelay: 12000,
+    startDelay: 13000,
     cursor:false,
     cursorChar: "■"
     })
@@ -826,8 +844,7 @@ function blitJoltnetMain(){
     boot1.type(" &nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;&nbsp;|&nbsp;|\\&nbsp;|&nbsp;|_&nbsp;&nbsp;|......")
     boot1.break()
     boot1.type("|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|.....")
-    boot1.type("<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<span id='whole'>0</span>.<span id='decimal'>01</span></div>")
-    boot1.break()
+    boot1.type("<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<span id='unit'>0</span>.<span id='decimal'>1</span></div>")
     boot1.go()
 }
     
@@ -866,12 +883,8 @@ function blitMenu(){
         cursorChar: "■",
     })
     
-    
     .empty()
     .type('type your selection:')
-    .break()
-    .break()
-    .type("mash keyboard to upgrade joltnet")
     .break()
     .break()
     .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CISMP exam practise</a>")
@@ -888,7 +901,7 @@ function blitMenu(){
     .go()
 }
 
-function nomenu(){
+function blitMashPrompt(){
 
     new TypeIt("#nomenu", {
         speed: 40,
@@ -898,8 +911,9 @@ function nomenu(){
         cursor:false,
         cursorChar: "■",
     })
-    .empty()
-    .type("press m for menu")
+    .type("mash keyboard to upgrade joltnet")
+    .break()
+    .type("or press m for menu")
     .go()
 }
 
@@ -1303,9 +1317,25 @@ function upgradeTerminal(){
     boot1Div.className=hack_text
 }
 
+function upgradeJoltHome(){
+    var hack_color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
+    var hack_text = 'terminal-text '+font+' ' +hack_color;
+    boot5Div.className=hack_text
+    boot6Div.className=hack_text
+    document.getElementById("decimal").style.color=hack_color
+    document.getElementById("unit").style.color=hack_color
+}
 
 
-function pad ( val ) { return val }
+function upgradeVersionText(){
+    var hack_color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
+    var hack_text = 'terminal-text '+font+' ' +hack_color;
+    document.getElementById("decimal").style.color=hack_color
+    document.getElementById("unit").style.color=hack_color
+}
+
+function zero_pad ( val ) { return val > 9 ? val : "0" + val; }
+function whole_pad ( val ) { return val }
 
 var whole_span=document.getElementById("whole");
 var decimal_span=document.getElementById("decimal");
@@ -1342,7 +1372,7 @@ function mash(){
         }
         if(hackcount%2==0){
             //blit percentage to percentage
-            document.getElementById("percentage").innerHTML=pad(hackcount)
+            document.getElementById("percentage").innerHTML=zero_pad(hackcount)
         }
         if(hackcount%8==0){
             to_mash=mashthings[Math.floor(Math.random() * mashthings.length)]
@@ -1352,31 +1382,33 @@ function mash(){
                 div=0
             }
         }
-        if(hackcount%40==0){
+        if(hackcount%50==0){
             oneHackTextUpgrade()
         }
         if(hackcount%100==0){
             hacklayer+=1
             allBootUpgrade()
-            document.getElementById("layer").innerHTML=pad(hacklayer)
+            document.getElementById("layer").innerHTML=zero_pad(hacklayer)
 
             document.getElementById("noun").innerHTML=nouns[Math.floor(Math.random() * nouns.length)]
             console.log(hacklayer)
         }
         if(hackcount>100){
             hackcount=0
-        }else if(hackcount>92){
             allBootUpgrade()
         }
         
-        if(hacklayer==4){
+        if(hackcount>94){
+            allBootUpgrade()
+        }else if(hackcount>86){
+            document.getElementById("boot4").style.color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
+        }
+        else if(hacklayer==4){
             hacklayer=5
             
             blitJoltnetMain()//wait and then spin and jolt screen
             blitAuthorisationMessage()//write access granted wait and
-            mmenuDiv.style.display='block';
-            nomenu()
-            blitMenu()
+            blitMashPrompt()
             booting=false
 
             boot1Div.style.display='none';
@@ -1399,13 +1431,25 @@ function mash(){
         
         upgradecount+=2
         console.log(upgradecount)
+        if(upgradecount%40==0){
+            if(upgradecount%200==0){ 
+                allHackTextUpgrade()
+                document.getElementById("boot5").style.color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
+                upgradestage+=1
+                upgradecount=0
+            }else{
+                oneHackTextUpgrade()
+            }
+        }
+        
         if(upgradecount%20==0){
             decimal_val=Math.floor(upgradecount/20);
-            if(decimal_val>19){
-                decimal_val=decimal_val%20
+            if(decimal_val>20){
+                decimal_val=decimal_val%10
+                unit_val=Math.floor(decimal_val/10)
             }
-            document.getElementById("decimal").innerHTML=pad(decimal_val);
-            document.getElementById("whole").innerHTML=pad(upgradestage);
+            document.getElementById("decimal").innerHTML=whole_pad(decimal_val);
+            document.getElementById("unit").innerHTML=whole_pad(upgradestage);
             to_mash=mashthings[Math.floor(Math.random() * mashthings.length)]
             to_mash(divs[div]);// if when that number reaches 0, target hack1 with a random function from the list
             if(div==5){
@@ -1413,22 +1457,17 @@ function mash(){
             }
             div+=1;
         }
-        if(upgradecount%80==0){
-            if(upgradecount%398==0){ 
-                allHackTextUpgrade()
-                document.getElementById("boot5").style.color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
-                upgradestage+=1
-            }else{
-                oneHackTextUpgrade()
-            }
-        }
-        if(upgradecount>398){
-            upgradecount=0
-        }else if(upgradecount>378){
-            document.getElementById("boot5").style.color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
+        //if(upgradecount>398){
+        //    upgradecount=0
+        //}
+        if(upgradecount>185){
+            upgradeJoltHome()
+        }else if(upgradecount>170){
+            upgradeVersionText()
+            
         }
         if (upgradestage==7){
-            alert("Your commitment to joltnet is impressive! Take a break, get a drink of water and rest your fingers. Then come back and check out some of the external links! ^_^");
+            alert("Your commitment to joltnet is impressive! Take a break, get a drink of water and rest your fingers ^_^");
         }
     }
 }
@@ -1450,6 +1489,7 @@ function logKey(e) {
 
     }else if(booting==false){
         if(e.key=='m'){
+            blitMenu()
             nomenuDiv.style.display='none';
             mmenuDiv.style.display='block';
             hack1Div.style.display='none';
