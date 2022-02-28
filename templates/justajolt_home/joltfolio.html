@@ -40,8 +40,23 @@ html{
     --bluebg:rgb(9, 9, 32);
     --blueshadow:0px 0px 200px 100px rgb(30, 15, 124) inset;
     --blackshadow:0px 0px 200px 100px rgb(37, 37, 37) inset;
-
 }
+
+@media only screen and (max-width: 660px) {
+    html{
+        font-size:0.8rem;
+        min-height:100vh;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    html{
+        font-size:1rem;
+        min-height:100vh;
+    }
+}
+
+
 body{
     height:100%;
     /*background-color: rgb(7, 26, 7);
@@ -332,7 +347,7 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
                   <div class="scanline"></div><!-- slowly moving scanline -->              
                   <div class="terminal"><!-- the input and output -->
                     <div class="overlay">ON</div><!--onload = 'input()'-->
-                    <div id="advice"><br>>>turn device sideways<<<br>>>keyboard required<<<br>>>view on desktop to interact<<<br><br></div>
+                    <div id="advice"><br>>>turn device sideways<<<br>>>no keyboard? mash the screen!<<<br>>>use desktop for authentic experience<<<br><br></div>
                     <div id="boot1"></div>
                     <!--<class id = 'version' class='gap'>v<span id='whole'>0</span>.<span id='decimal'>1</span></class>-->
                     <div id="boot2"class='gap'></div>
@@ -678,7 +693,7 @@ var boot2=new TypeIt("#boot2", {
     boot2.empty()
     boot2.type('...'+medium+'...', { delay: 100 })
     boot2.empty()
-    boot2.type("access denied at <span id='noun'>"+nouns[Math.floor(Math.random() * nouns.length)]+"</span> layer [<span id='layer'>01</span>/03]", { delay: 50 })
+    boot2.type("access denied at <span id='noun'>"+nouns[Math.floor(Math.random() * nouns.length)]+"</span> layer", { delay: 50 })
     boot2.break()
     boot2.break()
     boot2.go()
@@ -706,7 +721,7 @@ function showLayer(){
     cursorChar: "■"
     })
     .empty()
-    .type("..."+verbs[Math.floor(Math.random() * verbs.length)]+ " <span id='percentage'>0</span>% complete...", { delay: 500 })
+    .type(verbs[Math.floor(Math.random() * verbs.length)]+ "</span> layer <span id='layer'>01</span>/03......<br>[<span id='percentage'>0</span>% complete]......", { delay: 500 })
     .go()
 }
 
@@ -845,6 +860,11 @@ function blitJoltnetMain(){
     boot1.break()
     boot1.type("|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|.....")
     boot1.type("<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<span id='unit'>0</span>.<span id='decimal'>1</span></div>")
+    boot1.break()
+    boot1.break()
+    boot1.type("mash keyboard to upgrade joltnet")
+    boot1.break()
+    boot1.type("or press <span onclick='blitMenu()'>m</span> for menu")
     boot1.go()
 }
     
@@ -1149,7 +1169,7 @@ function pi(div){
   cursorChar: "■"
   })
   .empty()
-  .type('3.1415926535897932384626...', { delay: 400})
+  .type('3.141592653589...', { delay: 400})
   .go()
 }
 
@@ -1163,7 +1183,7 @@ function snake(div){
   //cursorChar: "■"
   })
   .empty()
-  .type('@0o~o0@0o~o0@0o~o0@0o~o0@0o~', { delay: 400})
+  .type('@0o~o0@0o~o0@0o~o0@', { delay: 400})
   .go()
 }
 
@@ -1408,7 +1428,7 @@ function mash(){
             
             blitJoltnetMain()//wait and then spin and jolt screen
             blitAuthorisationMessage()//write access granted wait and
-            blitMashPrompt()
+            blitMenu()
             booting=false
 
             boot1Div.style.display='none';
@@ -1428,7 +1448,13 @@ function mash(){
         }
     
     }else{
-        
+        mmenuDiv.style.display='none';
+        hack1Div.style.display='block';
+        hack2Div.style.display='block';
+        hack3Div.style.display='block';
+        hack4Div.style.display='block';
+        hack5Div.style.display='block';
+        hack6Div.style.display='block';
         upgradecount+=2
         console.log(upgradecount)
         if(upgradecount%40==0){
@@ -1467,13 +1493,13 @@ function mash(){
             
         }
         if (upgradestage==7){
-            alert("Your commitment to joltnet is impressive! Take a break, get a drink of water and rest your fingers ^_^");
+            alert("Your commitment to joltnet is impressive! Take a break, rest your fingers, get a drink of water ^_^");
         }
     }
 }
 
 
-
+document.addEventListener('click',mash);
 /*
 
     
@@ -1489,8 +1515,6 @@ function logKey(e) {
 
     }else if(booting==false){
         if(e.key=='m'){
-            blitMenu()
-            nomenuDiv.style.display='none';
             mmenuDiv.style.display='block';
             hack1Div.style.display='none';
             hack2Div.style.display='none';
@@ -1513,15 +1537,7 @@ function logKey(e) {
             }        
             mash()
             main_menu=false
-            mmenuDiv.style.display='none';
-            nomenuDiv.style.display='block';
             
-            hack1Div.style.display='block';
-            hack2Div.style.display='block';
-            hack3Div.style.display='block';
-            hack4Div.style.display='block';
-            hack5Div.style.display='block';
-            hack6Div.style.display='block';
         }
         
     }
