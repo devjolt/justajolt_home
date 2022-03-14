@@ -635,15 +635,18 @@ var boot1=new TypeIt("#boot1", {
     boot1.break()
     boot1.type(Math.floor(Math.random() *1000)+' kb free......', { delay: 400 })
     boot1.type(' OK', { delay: 500 })
+    boot1.break()
+    boot1.break()
+    boot1.type('.........system OK', { delay: 500 })
+    boot1.break()
+    boot1.break()
     boot1.go()
-
-
 
 var boot2=new TypeIt("#boot2", {
     speed: 40,
     waitUntilVisible: true,
     lifeLike: true,
-    startDelay: 1500,
+    startDelay: 1600,
     cursor:false,
     //cursorChar: "■"
     })
@@ -689,12 +692,23 @@ var boot2=new TypeIt("#boot2", {
     boot2.empty()
     boot2.type("/", { delay: 100 })
     boot2.empty()
+    boot2.type("|", { delay: 100 })
+    boot2.empty()
+    boot2.type("\\", { delay: 100 })
+    boot2.empty()
+    boot2.type("-", { delay: 100 })
+    boot2.empty()
+    boot2.type("/", { delay: 100 })
+    boot2.empty()
     boot2.type('...'+medium+'...', { delay: 800 })
     boot2.empty()
-    boot2.type('...'+medium+'...', { delay: 100 })
+    boot2.type('...'+medium+'...', { delay: 50 })
     boot2.empty()
-    boot2.type("access denied at <span id='noun'>"+nouns[Math.floor(Math.random() * nouns.length)]+"</span> layer", { delay: 50 })
-    boot2.break()
+    boot2.type("!!!! access denied !!!!", { delay: 500 })
+    boot2.empty()
+    boot2.type("!!!! access denied !!!!", { delay: 500 })
+    boot2.empty()
+    boot2.type("!!!! access denied !!!!", { delay: 500 })
     boot2.break()
     boot2.go()
 
@@ -707,6 +721,8 @@ new TypeIt("#boot3", {
     cursorChar: "■"
     })
     .empty()
+    .break()
+    .break()
     .type("mash keyboard to "+hack_verbs[Math.floor(Math.random() * hack_verbs.length)]+ " the "+hack_nouns[Math.floor(Math.random() * hack_nouns.length)] +"...", { delay: 500 })
     .go()
 
@@ -721,14 +737,16 @@ function showLayer(){
     cursorChar: "■"
     })
     .empty()
-    .type(verbs[Math.floor(Math.random() * verbs.length)]+ "</span> layer <span id='layer'>01</span>/03......<br>[<span id='percentage'>0</span>% complete]......", { delay: 500 })
+    .break()
+    .break()
+    .type("<span id='hackverb'>analysing</span> <span id='hacknoun'>first</span> layer <span id='layer'>01</span>/03......<br><br>[<span id='percentage'>0</span>% complete]......", { delay: 500 })
     .go()
 }
 
 
 function blitAuthorisationMessage(){
     new TypeIt("#boot6", {
-    speed: 50,
+    speed: 35,
     waitUntilVisible: true,
     lifeLike: true,
     startDelay: 10,
@@ -754,14 +772,10 @@ function blitAuthorisationMessage(){
     .type("........Access granted", { delay: 400 })
     .break()
     .break()
-    .type(actions[Math.floor(Math.random()* actions.length)])
-    .break()
-    .type(".................completed")
+    .type(actions[Math.floor(Math.random()* actions.length)]+' ...completed')
     .break()
     .break()
-    .type(actions[Math.floor(Math.random()* actions.length)])
-    .break()
-    .type(".................completed")
+    .type(actions[Math.floor(Math.random()* actions.length)]+' ...completed')
     .break()
     .break()
     .type("innitt", { delay: 400 })
@@ -786,7 +800,7 @@ function blitJoltnetMain(){
     speed: 30,
     waitUntilVisible: true,
     lifeLike: true,
-    startDelay: 13000,
+    startDelay: 10000,
     cursor:false,
     cursorChar: "■"
     })
@@ -852,14 +866,25 @@ function blitJoltnetMain(){
     boot1.type("-", { delay: 40 })
     boot1.empty()
     boot1.type("_ ", { delay: 600})
-    boot1.type(" WELCOME TO")
+    boot1.type("WELCOME TO")
     boot1.break()
-    boot1.type(" &nbsp;___&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;___......")
+    
+
     boot1.break()
-    boot1.type(" &nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;&nbsp;|&nbsp;|\\&nbsp;|&nbsp;|_&nbsp;&nbsp;|......")
+    boot1.type("<span id='logo0'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=======</span>")
     boot1.break()
-    boot1.type("|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|.....")
-    boot1.type("<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<span id='unit'>0</span>.<span id='decimal'>1</span></div>")
+    boot1.type("<span id='logo1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOLTNET</span>")
+    boot1.break()
+    boot1.type("<span id='logo2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=======</span>")
+    boot1.break()
+    boot1.type("<span id='logo3'>&nbsp;</span>")
+    boot1.break()
+    boot1.type("<span id='logo4'>\# note to admin: logo's rubbish!</span>")
+    boot1.break()
+    boot1.type("<span id='logo5'>\# Could look into that new ASCII art stuff?</span>")
+    boot1.break()
+    boot1.break()
+    boot1.type("<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<span id='unit'>0</span>.<span id='decimal'>1</span></div>")
     boot1.break()
     boot1.break()
     boot1.type("mash keyboard to upgrade joltnet")
@@ -882,6 +907,7 @@ function blitJoltnetMain(){
     boot1.go()
 }
 */
+
 
 const log = document.getElementById('log');
 document.addEventListener('keydown', logKey);
@@ -909,11 +935,11 @@ function blitMenu(){
     .break()
     .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CISMP exam practise</a>")
     .break()
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/ceh'>&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CEH exam practise</a>")
     .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Army Cognitive Test practise</a>")
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Army Cognitive Test practise</a>")
     .break()
-    .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tang's page</a>")
+    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tang's page</a>")
     .break()
     .break()
     .type("&nbsp;&nbsp;&nbsp;ENTER - reboot and restyle")
@@ -1293,8 +1319,113 @@ let divs=['#hack1','#hack2','#hack3','#hack4', '#hack5', '#hack6']
 let hack_divs=[hack1Div, hack2Div, hack3Div, hack4Div, hack5Div, hack6Div]
 let hack_colors=['white','red','goldenrod','orange', 'gold', 'yellow', 'lime', 'greenyellow','cyan','blueish', 'pink', 'fuchsia','silver']
 // an array exists of all functions which do typit things
-let mashthings=[spin,spin, loading, pacman, pi, snake, nibbles, nibbles, randomstring, ip, verbnoun]
+let mashthings=[spin, loading, pacman, pi, snake, nibbles, nibbles, randomstring, ip, verbnoun]
 //array for color changes as hacking progresses
+
+
+   
+ 
+
+
+     
+ 
+
+/*
+  @..@
+ (----)
+( >__< )
+^^ ~~ ^^
+*/
+
+let funny_joltnet = [
+    '&nbsp;&nbsp;(\\ /)&nbsp;=======&nbsp;(\\ /)',
+    '&nbsp;&nbsp;( ..)&nbsp;JOLTNET&nbsp;(.. )',
+    '&nbsp;c(")(")=======(")(")D',
+    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\(^_^)/',
+    '\#Great',
+    '\#...any other ideas?',
+]
+
+let skinny_joltnet = [
+    '',
+    '',
+    '',
+    '&nbsp;___&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;___......',
+    '&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;&nbsp;|&nbsp;|\\&nbsp;|&nbsp;|_&nbsp;&nbsp;|......',
+    '|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|.....',
+    
+]
+
+let letter_joltnet = [
+    '',
+    '&nbsp;&nbsp;&nbsp;J&nbsp;&nbsp;OO&nbsp;&nbsp;L&nbsp;&nbsp;TTTTT&nbsp;N&nbsp;&nbsp;&nbsp;N&nbsp;EEEE&nbsp;TTTTT',
+    '&nbsp;&nbsp;&nbsp;J&nbsp;O&nbsp;&nbsp;O&nbsp;L&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;NN&nbsp;&nbsp;N&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T',
+    '&nbsp;&nbsp;&nbsp;J&nbsp;O&nbsp;&nbsp;O&nbsp;L&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;N&nbsp;N&nbsp;N&nbsp;EEEE&nbsp;&nbsp;&nbsp;T',
+    'J&nbsp;&nbsp;J&nbsp;O&nbsp;&nbsp;O&nbsp;L&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;NN&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T',
+    '&nbsp;JJ&nbsp;&nbsp;&nbsp;OO&nbsp;&nbsp;LLLL&nbsp;T&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;N&nbsp;EEEE&nbsp;&nbsp;&nbsp;T',
+    
+]
+
+let chubby_joltnet = [
+    '',
+    '',
+    '&nbsp;_____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_____',
+    '|_&nbsp;&nbsp;&nbsp;_|_&nbsp;_&nbsp;_____&nbsp;___&nbsp;_|_&nbsp;&nbsp;&nbsp;_|',
+    '&nbsp;_|&nbsp;|&nbsp;_&nbsp;|&nbsp;|_&nbsp;&nbsp;&nbsp;_|&nbsp;&nbsp;&nbsp;|&nbsp;-_|&nbsp;|',
+    '|___|___|___|_|&nbsp;|_|_|___|_|',
+    
+]
+
+let tall_joltnet = [
+    '',
+    '&nbsp;_____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_____',
+    '|_&nbsp;&nbsp;&nbsp;_|_&nbsp;_&nbsp;_____&nbsp;___&nbsp;_|_&nbsp;&nbsp;&nbsp;_|',
+    '&nbsp;&nbsp;|&nbsp;|&nbsp;_&nbsp;|&nbsp;|_&nbsp;&nbsp;&nbsp;_|&nbsp;&nbsp;&nbsp;|&nbsp;__|&nbsp;|',
+    '&nbsp;_|&nbsp;||_||&nbsp;|_|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;__|&nbsp;|',
+    '|___|___|___|_|&nbsp;|_|_|___|_|',
+    
+]
+
+let lean_joltnet = [
+    '',
+    '&nbsp;&nbsp;&nbsp;&nbsp;_______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_______',
+    '&nbsp;&nbsp;&nbsp;/__&nbsp;&nbsp;__/___&nbsp;&nbsp;_______&nbsp;&nbsp;___/__&nbsp;&nbsp;__/',
+    '&nbsp;&nbsp;_&nbsp;&nbsp;/&nbsp;/__&nbsp;/&nbsp;/&nbsp;/_&nbsp;&nbsp;_/&nbsp;&nbsp;|/&nbsp;/&nbsp;__/&nbsp;/',
+    '&nbsp;//_/&nbsp;//_//&nbsp;/___/&nbsp;//&nbsp;/||&nbsp;/&nbsp;__/&nbsp;/',
+    '/____/___/_____/_//_/&nbsp;|_/___/_/',
+    
+]
+
+let threed_joltnet = [
+    '&nbsp;&nbsp;&nbsp;&nbsp;_______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_______',
+    '&nbsp;&nbsp;&nbsp;/__&nbsp;&nbsp;__/___&nbsp;&nbsp;_______&nbsp;&nbsp;___/__&nbsp;&nbsp;__/\\',
+    '&nbsp;&nbsp;_&nbsp;&nbsp;/&nbsp;/__&nbsp;/&nbsp;/&nbsp;/_&nbsp;&nbsp;_/&nbsp;&nbsp;|/&nbsp;/&nbsp;__/&nbsp;/\\_\\/',
+    '&nbsp;//_/&nbsp;//_//&nbsp;/___/&nbsp;//&nbsp;/||&nbsp;/&nbsp;__/&nbsp;/ /',
+    '/____/___/_____/_//_/&nbsp;|_/___/_/ /',
+    '\\____\\___\\_____\\_\\\\_\\/\\_\\___\\_\\/',
+]
+
+let joltnet_logos =[
+    funny_joltnet,
+    skinny_joltnet,
+    letter_joltnet,
+    chubby_joltnet,
+    tall_joltnet,
+    lean_joltnet,
+    threed_joltnet,
+]
+
+
+function upgrade_logo(logo_list){
+    document.getElementById("logo0").innerHTML=logo_list[0]
+    document.getElementById("logo1").innerHTML=logo_list[1]
+    document.getElementById("logo2").innerHTML=logo_list[2]
+    document.getElementById("logo3").innerHTML=logo_list[3]
+    document.getElementById("logo4").innerHTML=logo_list[4]
+    document.getElementById("logo5").innerHTML=logo_list[5]
+}
+
+
 
 // a count exists which shows how many mashes have occurred
 var mashcount=0
@@ -1317,8 +1448,8 @@ function allHackTextUpgrade(){
 function allBootUpgrade(){
     var hack_color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
     var hack_text = 'terminal-text '+font+' ' +hack_color;
-    boot1Div.className=hack_text;
-    boot2Div.className=hack_text;
+    //boot1Div.className=hack_text;
+    //boot2Div.className=hack_text;
     boot3Div.className=hack_text;
     boot4Div.className=hack_text;
 }
@@ -1409,8 +1540,8 @@ function mash(){
             hacklayer+=1
             allBootUpgrade()
             document.getElementById("layer").innerHTML=zero_pad(hacklayer)
-
-            document.getElementById("noun").innerHTML=nouns[Math.floor(Math.random() * nouns.length)]
+            document.getElementById("hackverb").innerHTML=verbs[Math.floor(Math.random() * verbs.length)]
+            document.getElementById("hacknoun").innerHTML=nouns[Math.floor(Math.random() * nouns.length)]
             console.log(hacklayer)
         }
         if(hackcount>100){
@@ -1461,7 +1592,9 @@ function mash(){
             if(upgradecount%200==0){ 
                 allHackTextUpgrade()
                 document.getElementById("boot5").style.color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
+                upgrade_logo(joltnet_logos[upgradestage])
                 upgradestage+=1
+                
                 upgradecount=0
             }else{
                 oneHackTextUpgrade()
@@ -1525,12 +1658,14 @@ function logKey(e) {
             
         }else if(e.key=='Enter'){
             location.reload()
-        }else if(e.key=='3'){
+        }else if(e.key=='4'){
             window.location.href = "/tang";
-        }else if(e.key=='2'){
+        }else if(e.key=='3'){
             window.location.href = "/act_simulator";
+        }else if(e.key=='2'){
+            window.location.href = "/ceh";
         }else if(e.key=='1'){
-            window.location.href = "/cismp";  
+            window.location.href = "/cismp";
         }else{    
             if (can_mash=false){
                 return
