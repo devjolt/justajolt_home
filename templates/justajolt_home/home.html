@@ -18,9 +18,6 @@
         <style>
 body{
     margin:0%;
-    padding:0%;
-    width:100vw;
-    height:100%;
 }
 
 .center{
@@ -31,6 +28,10 @@ body{
     font-family: 'Press Start 2P', cursive;
 }
 
+.mobile{
+    display:none;
+}
+
 @media only screen and (min-width: 741px) {
     .mobile{
         display:none;
@@ -38,13 +39,23 @@ body{
     .desktop{
         width:100%;
         height:100%;
-        background:url('/static/images/doddy.png') no-repeat center center fixed;
+        background:url('/static/images/doddy.png') no-repeat fixed center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         color: white;
         font-family: 'Press Start 2P', cursive;
+    
+        /*
+        background:url('/static/images/doddy-mobile.png');
+        background-repeat: no-repeat;
+        background-size: 100vw 400vh;
+        color: white;
+        align-items:center;
+        text-align:center;
+        */
+    
     }
     .top-banner{
         display: grid;
@@ -69,6 +80,10 @@ body{
         border-width:2px;
         border-radius:10px;
         color: white;
+
+        
+
+
     }
     .tag-straight{
         display:block;
@@ -799,27 +814,8 @@ body{
                 
                 <div></div>
                 <div></div>
-                <!--
-                <div class = 'justajolt-logo'>
-                    <div class = 'justajolt' onload="myFunction()">
-                        <div class = 'container'>
-                            <div class = 'joltcard'>
-                                <div class = 'content'>
-                                    <div class = 'jolt tang-trig'><a href ='https://www.youtube.com/channel/UC3Bn-Hrh_-U9gEsieL5aQmA'>justajolt</a></div>
-                                </div>                   
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-                -->
-                
         
             </div>
-
-                
-           
-                
-            
                 
         </div>
         
@@ -1008,6 +1004,20 @@ VanillaTilt.init(document.querySelectorAll("#two-a"), {
 });
 
 VanillaTilt.init(document.querySelectorAll("#two-b"), {
+    max: 70,
+    speed: 2,
+    glare:false, 
+    reverse:true,
+    reset:false,
+    //gyroscope
+    //gyroscopeMinAngleX:     -80,     // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
+    //gyroscopeMaxAngleX:     80,      // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
+    //gyroscopeMinAngleY:     -80,     // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
+    //gyroscopeMaxAngleY:     80,  
+    //perspective:            1000, 
+});
+
+VanillaTilt.init(document.querySelectorAll("#three"), {
     max: 70,
     speed: 2,
     glare:false, 
