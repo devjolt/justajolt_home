@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 
 <script>
-
+    // check state of what's on the server
+    // upload and reset
 
   
 </script>
@@ -31,7 +32,6 @@
 html{
     height:95%;
     text-transform: uppercase;
-    font-size:1.5rem;
     padding: 2%;
     letter-spacing:0.3em;
     animation:turn-on 3s linear;
@@ -44,14 +44,12 @@ html{
 
 @media only screen and (max-width: 660px) {
     html{
-        font-size:0.8rem;
         min-height:100vh;
     }
 }
 
 @media only screen and (max-width: 1200px) {
     html{
-        font-size:1rem;
         min-height:100vh;
     }
 }
@@ -87,7 +85,6 @@ body{
 }
 .font-vt323{
     font-family: 'VT323', monospace;
-    font-size:1.2em;
 }
 
 .white{/**/
@@ -114,7 +111,7 @@ body{
     color: yellow;
     text-shadow: 5px 3px 40px yellow;
 }
-.greenyellow{/*ornage on black*/
+.greenyellow{/*orange on black*/
     color: greenyellow;
     text-shadow: 5px 3px 40px greenyellow;
 }
@@ -219,6 +216,143 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
     }
 }
 
+/*
+
+@keyframes textShadow {
+  0% {
+    text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+}
+@keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.18128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.65583;
+  }
+  35% {
+    opacity: 0.67807;
+  }
+  40% {
+    opacity: 0.26559;
+  }
+  45% {
+    opacity: 0.84693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.08594;
+  }
+  60% {
+    opacity: 0.20313;
+  }
+  65% {
+    opacity: 0.71988;
+  }
+  70% {
+    opacity: 0.53455;
+  }
+  75% {
+    opacity: 0.37288;
+  }
+  80% {
+    opacity: 0.71428;
+  }
+  85% {
+    opacity: 0.70419;
+  }
+  90% {
+    opacity: 0.7003;
+  }
+  95% {
+    opacity: 0.36108;
+  }
+  100% {
+    opacity: 0.24387;
+  }
+}
+
+
+
+*/
+
 .overlay{
     color:#00FF00;
     position:absolute;
@@ -234,7 +368,7 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
     animation:overlay-anim 6s linear;
     animation-fill-mode:forwards;
 }
-#crt:before {
+#crt::before {
     content: " ";
     display: block;
     position: absolute;
@@ -242,15 +376,29 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
     left: 0;
     bottom: 0;
     right: 0;
-    background: linear-gradient(
-    to bottom,
-    rgba(18, 16, 16, 0) 55%,
-    rgba(0, 0, 0, 0.25) 55%
-    );
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
     background-size: 110% 8px;
+    /*background-size: 100% 2px, 3px 100%;*/
     z-index: 2;
-    pointer-events: none;
+    pointer-events: none;    
+    
 }
+
+/*
+#crt::after{
+    animation: flicker 0.15s infinite;
+    
+}
+
+
+#crt {
+    animation: textShadow 1.6s infinite;
+}
+
+*/
+
+
+/*
 @keyframes textShadow {
     0% {
       text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
@@ -258,8 +406,9 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
     5% {
       text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
     }
-    /** etc */
+ 
 }
+*/
 .scanline {
     width: 96%;
     height: 100px;
@@ -293,6 +442,7 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
     overflow: hidden;
     margin:5%;
 }
+
 #input {
     outline: none;
     margin:5%;
@@ -323,7 +473,7 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
 #boot1, #boot2, #boot3, #boot4{
     display:block;
 }
-#menu,#nomenu, #external, #hack1, #hack2, #hack3, #hack4, #hack5, #hack6, #hack7{
+#menu,#nomenu, #external, #hack1, #hack2, #hack3, #hack4, #hack5, #hack6, #hack7, #hack8, #hack9, #hack10{
     display:none;
 }
 #advice{
@@ -364,7 +514,10 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
                     <div id="hack4" class=''></div> 
                     <div id="hack5" class=''></div> 
                     <div id="hack6" class=''></div> 
-                    <div id="hack7" class=''></div> 
+                    <div id="hack7" class=''></div>
+                    <div id="hack8" class=''></div> 
+                    <div id="hack9" class=''></div>
+                    <div id="hack10" class=''></div>
                 </div>
             </div>
          </div>   
@@ -374,9 +527,19 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
 
 <script>
 
-let fonts=['font-share','font-press','font-vt323']
-let colors=[['lime',[['var(--greenbg)','var(--greenshadow)'],['black','var(--blackshadow)'], ['var(--bluebg)','var(--blueshadow)']]],['white',[['var(--bluebg)','var(--blueshadow)'],['black','var(--blackshadow)']]],['orange',[['black','var(--blackshadow)'],['var(--greenbg)','var(--greenshadow)']]]];
-    let media=[
+let fonts=[
+    ['font-share','1rem','1.2'],
+    ['font-press','0.9rem','1.4'],
+    ['font-vt323','1.2rem','1.1'],
+]
+
+let colors=[
+    ['lime',[['var(--greenbg)','var(--greenshadow)'],['black','var(--blackshadow)'], ['var(--bluebg)','var(--blueshadow)']]],
+    ['white',[['var(--bluebg)','var(--blueshadow)'],['black','var(--blackshadow)']]],
+    ['orange',[['black','var(--blackshadow)'],['var(--greenbg)','var(--greenshadow)']]]
+];
+    
+let media=[
     'press play on tape deck',
     'insert casette', 
     'insert floppy disk',
@@ -384,11 +547,12 @@ let colors=[['lime',[['var(--greenbg)','var(--greenshadow)'],['black','var(--bla
     'insert id card',
     'scanning retina',
     'insert laser disc',
-    'insert 8in floppy',
+    'loading from 8in floppy',
     'insert dectape',
     'insert datasette',
     ]
-let actions=[
+
+    let actions=[
     'recommissioning arpanet...',
     'accessing backdoor........',
     'uploading rubber ducky.....',
@@ -413,6 +577,7 @@ let actions=[
     'escalating privileges.....',
     'loading data..............',
     ]
+
 let ram=[
     '4k',
     '8k',
@@ -482,9 +647,9 @@ let hack_verbs=[
     'hack',
     'compromise',
     'crack',
-    'gain entry to',
-    'force entry to',
-    'break into',
+    'pwn',
+    'force',
+    'break',
     ]
 
 let hack_nouns=[
@@ -493,24 +658,34 @@ let hack_nouns=[
     'network',
     'server',
     'firewall',
+    'BIOS',
+    'kernel',
+    'root'
     ]
 
-font = fonts[Math.floor(Math.random() * fonts.length)];
-medium = media[Math.floor(Math.random() * media.length)];
-colorvars = colors[Math.floor(Math.random() * 3)];
+
+var fontOption = fonts[Math.floor(Math.random() * fonts.length)];
+var font = fontOption[0]
+document.getElementsByTagName('html')[0].style.fontSize = fontOption[1]
+document.getElementsByTagName('html')[0].style.lineHeight = fontOption[2]
+
+
+var colorvars = colors[Math.floor(Math.random() * 3)];
 var color=colorvars[0]
 if (color=='lime'){
   morecolorvars=colorvars[1][Math.floor(Math.random() * 3)];
   console.log(morecolorvars)
-  background=morecolorvars[0]
-  shaddow=morecolorvars[1]
+  var background=morecolorvars[0]
+  var shaddow=morecolorvars[1]
   
 }else{
   morecolorvars=colorvars[1][Math.floor(Math.random() * 2)];
   console.log(morecolorvars)
-  background=morecolorvars[0]
-  shaddow=morecolorvars[1]
+  var background=morecolorvars[0]
+  var shaddow=morecolorvars[1]
 }
+
+medium = media[Math.floor(Math.random() * media.length)];
 
 document.getElementsByTagName("body")[0].style.backgroundColor=background;
 document.getElementsByTagName("body")[0].style.boxShadow=shaddow;
@@ -524,12 +699,23 @@ var boot4Div= document.getElementById("boot4");
 var boot5Div= document.getElementById("boot5");
 var boot6Div= document.getElementById("boot6");
 
+var bootDivs = [boot1Div, boot2Div, boot3Div, boot4Div, boot5Div, boot6Div]
+
 var hack1Div= document.getElementById("hack1");
 var hack2Div= document.getElementById("hack2");
 var hack3Div= document.getElementById("hack3");
 var hack4Div= document.getElementById("hack4");
 var hack5Div= document.getElementById("hack5");
 var hack6Div= document.getElementById("hack6");
+var hack7Div= document.getElementById("hack7");
+var hack8Div= document.getElementById("hack8");
+var hack9Div= document.getElementById("hack9");
+var hack10Div= document.getElementById("hack10");
+
+var divs=['#hack1','#hack2','#hack3','#hack4', '#hack5', '#hack6','#hack7','#hack8', '#hack9', '#hack10']
+var hack_divs=[hack1Div, hack2Div, hack3Div, hack4Div, hack5Div, hack6Div, hack7Div, hack8Div, hack9Div, hack10Div]
+var hack_colors=['white','red','goldenrod','orange', 'gold', 'yellow', 'lime', 'greenyellow','cyan','blueish', 'pink', 'fuchsia','silver']
+
 
 var deniedDiv=document.getElementById("denied");
 var hackingDiv=document.getElementById("hacking");
@@ -538,35 +724,27 @@ var mmenuDiv= document.getElementById("menu");
 var nomenuDiv= document.getElementById("nomenu");
 var externalDiv= document.getElementById("external");
 
-
+console.log(class_text)
 
 adviceDiv.className=class_text;
-boot1Div.className=class_text;
-boot2Div.className=class_text;
-boot3Div.className=class_text;
-boot4Div.className=class_text;
-boot5Div.className=class_text;
-boot6Div.className=class_text;
+
+for (const div in bootDivs){
+    bootDivs[div].className=class_text;    
+}
 
 mmenuDiv.className=class_text;
 nomenuDiv.className=class_text;
 externalDiv.className=class_text;
-hack1Div.className=class_text;
-hack2Div.className=class_text;
-hack3Div.className=class_text;
-hack4Div.className=class_text;
-hack5Div.className=class_text;
-hack6Div.className=class_text;
 
+for (const div in hack_divs){
+    hack_divs[div].className=class_text;    
+}
 
 
 function hackToNone(){
-    hack1Div.display='none';
-    hack2Div.display='none';
-    hack3Div.display='none';
-    hack4Div.display='none';
-    hack5Div.display='none';
-    hack6Div.display='none';
+    for (const div in hack_divs){
+        hack_divs[div].display='none';
+    }
 }
 
 async function main() {
@@ -613,40 +791,274 @@ async function input(pw) {
 }
 
 
+// https://www.typeitjs.com/docs/v7 
+// instance.options({speed: 500, lifeLike: false})...go();
 
+var time = 0 // time variable for counting and timing
+var can_mash = false
 let frames = ["-", "/","|","\\"]
 
-var boot1=new TypeIt("#boot1", {
-    speed: 22,
-    waitUntilVisible: true,
-    lifeLike: true,
-    startDelay: 2000,
-    cursor:false,
-    cursorChar: "■"
-    })
-    boot1.type('checking system', { delay: 50 })
-    boot1.break()
-    boot1.break()
-    boot1.type('CPU at '+Math.floor(Math.random() *1000)+' Hz...', { delay: 250})
-    boot1.type(' OK', { delay: 50 })
-    boot1.break()
-    boot1.type(ram[Math.floor(Math.random() * ram.length)]+' RAM.........', { delay: 350 })
-    boot1.type(' OK', { delay: 50 })
-    boot1.break()
-    boot1.type(Math.floor(Math.random() *1000)+' kb free......', { delay: 400 })
-    boot1.type(' OK', { delay: 500 })
-    boot1.break()
-    boot1.break()
-    boot1.type('.........system OK', { delay: 500 })
-    boot1.break()
-    boot1.break()
-    boot1.go()
+function generic(){
+    // https://www.youtube.com/watch?v=sR2FJcJ6LsE
+    // Generic 
+    // time 21000 boot3 + 7000
+    var boot1=new TypeIt("#boot1", {
+        speed: 1,
+        waitUntilVisible: true,
+        lifeLike: true,
+        startDelay: 1500,
+        cursor:true,
+        cursorChar: "■"
+        })   
+        boot1.type('COMPBIO (C) 1991 Motherboard, Inc. Size - 768Kb', { delay: 50 }).break()
+        boot1.options({cursor:true})
+        boot1.type('BIOS Date 09/29/91 15:43:29 ver 08.00.15', { delay: 1000 }).break()
+        boot1.options({cursor:false})
+        boot1.type('CPU: Intel(R) CPU 330 @ 40 MHz', { delay: 50 }).break()
+        boot1.type('Speed: 40 MHz', { delay: 50 }).break()
+        boot1.type('This VGA/PCI Bios is released under the GNU LGPL', { delay: 50 }).break()
+        boot1.break()
+        boot1.options({cursor:true})
+        boot1.type('Press F11 for BBS POPUP', { delay: 1500 }).break()
+        boot1.options({cursor:false})
+        boot1.type('Memory Clock: 64 MHz, Tel:7 Tred:4 Trp:8 Tras:20 (2T Timing) 8 bit.', { delay: 50 }).break()
+        boot1.type('Memory Test: <span id="memorySpan">0</span>', { delay: 3000 }).break()
+        boot1.break()
+        boot1.type('PMU ROM Version: 9303', { delay: 50 }).break()
+        boot1.type('NVMM ROM Version: 4 092 03', { delay: 50 }).break()
+        boot1.type('Initialising USB Controllers ', { delay: 100 }).type('.', { delay: 100 }).type('.', { delay: 200 }).type('.', { delay: 200 }).type('DONE', { delay: 200 }).break()
+        boot1.options({speed:100})
+        boot1.type('128MB OK', { delay: 50 }).break()
+        boot1.type('USB Device(s): 1 Keyboard, 1 Mouse, 1 Hub, 1 Storage Device', { delay: 50 }).break()
+        boot1.type('Auto-detecting USB Mass Storage Devices..', { delay: 200 }).break()
+        boot1.type('Device #01: USB 2.0 Floppy Disk *spend*', { delay: 200 }).break()
+        boot1.options({speed:2})
+        boot1.type('01 USB mass storage devices found and configured.', { delay: 50 }).break()
+        boot1.type('(c) Motherboard, Inc', { delay: 50 }).break()
+        boot1.type('64', {delay:500}).type('-0100', {delay:400}).type('-00001', {delay:300}).type('-001011111', {delay:400}).type('-092909', {delay:300}).type('-70207-1AE0V003-Y2DC', {delay:50}).break()
+        boot1.options({speed:100})
+        boot1.type('Booting from Hard Disk...', {delay:500}).break().break()
+        boot1.options({cursor:true})
+        boot1.type('c:\\ ', {delay:1000})
+        boot1.options({speed:200})
+        boot1.type('joltnet', {delay:2000})
+        boot1.empty()
+        boot1.options({cursor:false})
+        boot1.empty()
+        boot1.go()
+
+        var count = 1
+        setInterval( function(){
+            if (time>5){
+                if (count<128420) {
+                    try{
+                        count+=Math.floor(Math.random() * 8000);
+                        document.getElementById("memorySpan").innerHTML=count;
+                    }catch{}
+                }else{
+                    try{
+                        document.getElementById("memorySpan").innerHTML=128420+' OK';
+                    }catch{}
+                }
+            } else if (time==30){
+                document.getElementById("memorySpan").remove()
+            }
+        }, 100);
+    }
+
+function nineties(){
+    // https://www.youtube.com/watch?v=9y-2LKdofCY
+    // 90s PC boot sequence
+    new TypeIt("#boot1", {
+        speed: 0,
+        waitUntilVisible: true,
+        lifeLike: true,
+        startDelay: 1500,
+        cursor:true,
+        cursorChar: "■"
+        })   
+        
+        .type('Award Modular BIOS v4.51PG, An Energy Star Ally', { delay: 50 }).break()
+        .type('Copyright (C) 1984-97, Award Software, Inc.', { delay: 400 }).break()
+        .break()
+        .type('(55XWUQ0E) Intel i430VX PCIset(TM)', { delay: 50 }).break()
+        .break()
+        .type('PENTIUM-S CPU at 120MHz', { delay: 50 }).break()
+        //boot1.type('Memory Test : 65536K OK', { delay: 50 }).break()
+        .type('Memory Test: <span id="memorySpan">0</span>', { delay: 3500 }).break()
+        .break()       
+        .type('Award Plug and Play BIOS Extension &nbsp;v1.0A', { delay: 50 }).break()
+        .type('Copyright (C) 1997, Award Software, Inc.', { delay: 800 }).break().break()
+        .type('Detecting IDE Primary Master&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...[Press F4 to skip]', {delay: 600}).delete(18).type('PCemHD').break()
+        .type('Detecting IDE Primary Slave&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;...[Press F4 to skip]', {delay: 400}).delete(18).type('PCemCD').break()
+        .type('Detecting IDE Secondary Master&nbsp;&nbsp;&nbsp;...[Press F4 to skip]', {delay: 700}).delete(18).type('None').break()
+        .type('Detecting IDE Secondary Slave&nbsp;&nbsp;&nbsp;&nbsp;...[Press F4 to skip]', {delay: 500}).delete(18).type('None').break()
+        .break()
+        //BLEEP
+        .type('Press DEL to enter SETUP', { delay: 50 }).break()
+        .type('Verifying DMI Pool Data ......', { delay: 50 }).break()
+        .options({cursor:true})
+        .type('c:\\ ', {delay:1000})
+        .options({speed:200})
+        .type('joltnet', {delay:2000})
+        .options({cursor:false})
+        .empty()
+        .go()
+        
+    
+    setInterval( function(){
+        //if (count<128420){
+        console.log(document.getElementById('trigger'))
+        if (document.getElementById('trigger')!=null){
+            console.log('trying to re-do')
+            document.getElementById(memorySpan).innerHTML = ''    
+        }
+        //}
+    }, 1000);
+
+    var count = 1
+    var memorySize = 65536
+    var memoryComplete = false
+    setInterval( function(){
+        if (time>1){
+            if (count < memorySize) {
+                try{
+                    count+=Math.floor(Math.random() * 4000);
+                    document.getElementById("memorySpan").innerHTML=count + 'k';
+                }catch{
+                    console.log('Error')
+                }
+            }else{
+                try{
+                    document.getElementById("memorySpan").innerHTML=memorySize + 'k OK';
+                }catch{}
+            }
+        } else if (time==15){
+            document.getElementById("memorySpan").innerHTML = ''
+        }
+    }, 100);
+
+    function removeHtmlFrom(element){
+        document.getElementById(element).innerHTML = ''
+    }
+
+    // create div at bottom of page with Press DEL to enter SETUP
+    // DATE PROCESSOR TYPE RANDOM CODE BLIT ON START
+    // REMOVE AT START OF NEXT THING
+
+}
+
+function tandyDos90(){
+    // Tandy 1000RL, a 9.54 MHz 8086 XT-class computer with the startup files of MS-DOS 3.3 
+    // white on black https://www.youtube.com/watch?v=DaSkda4XW3k
+    var boot1 = new TypeIt("#boot1", {
+        speed: 1,
+        waitUntilVisible: true,
+        lifeLike: true,
+        startDelay: 2000,
+        cursor:true,
+        cursorChar: "■"
+        })
+        boot1.type('_ Memory Size = 768Kb', {delay:1200}).empty()
+
+        boot1.type('BIOS ROM Version 02.00.00', { delay: 50 }).break()
+        boot1.type('Compatability Software', { delay: 50 }).break()
+        boot1.type('Copyright (C) 1984,1985,1986,1987,1988', { delay: 50 }).break()
+        boot1.type('Phoenix Software Associates Ltd.', { delay: 50 }).break()
+        boot1.type('All rights reserved.', { delay: 1000 }).break()
+        boot1.break()
+        boot1.type('MS-DOS Version 3.30.22', { delay: 50 }).break()
+        boot1.type('(C)Copyright Microsoft Corp 1981-1987', { delay: 50 }).break()
+        boot1.type('All rights reserved.', { delay: 50 }).break()
+        boot1.break()
+        boot1.type('A>', { delay: 600 })
+        boot1.options({speed:200})
+        boot1.type('joltnet', {delay:2000})
+        boot1.options({cursor:false})
+        boot1.empty()
+        boot1.go()
+        
+    function removeHtmlFrom(element){
+        document.getElementById(element).innerHTML = ''
+    }
+}
+
+function xedos81(){
+    // XEDOS white on black rapidly flashing
+    // https://www.youtube.com/watch?v=Vo8NG8T4rWs
+    
+    var boot1 = new TypeIt("#boot1", {
+        speed: 0,
+        waitUntilVisible: true,
+        lifeLike: true,
+        startDelay: 1000,
+        cursor:false,
+        })   
+        boot1.type('Copyright (C) 1984,1985,1986', { delay: 50 }).break()
+        boot1.type('Phoenix Software Assiciates Ltd.', { delay: 50 }).break()
+        boot1.type('and Tandy Corporation.', { delay: 50 }).break()
+        boot1.type('All rights reserved.', { delay: 800 }).break()
+        boot1.break()
+        boot1.type('-=XTIDE Universal BIOS (XT)=- @D000h', { delay: 50 }).break()
+        boot1.type('v2.0.0B3+ (2013-04-03)', { delay: 50 }).break()
+        boot1.type('Released under GNU GPL v2', { delay: 500 }).break()
+        boot1.break()
+        boot1.type('Master at 300h:',{delay:200}).type(' SanDisk SDCFB-64MB',).break()
+        boot1.type('Booting').options({speed:200}).type(' A>>A').break()
+        boot1.break()
+        boot1.options({speed:20})
+        boot1.type('Microsoft MS-DOS version 2.11').break()
+        boot1.type('Copyright 1981,82,83 Microsoft Corp.').break()
+        boot1.type('Tandy Version 02.11.22').break()
+        boot1.type('All rights reserved.').break()
+        boot1.type('Licensed to Tandy Corp.').break()
+        boot1.break()
+        boot1.options({cursor:true})
+        boot1.options({cursorChar: "■"})
+        boot1.type('A>', { delay: 1000})
+        boot1.options({speed:200})
+        boot1.type('joltnet').break().break()
+        boot1.type('&nbsp;',{speed:2000})
+        
+        boot1.empty()
+        boot1.go()
+        
+    function removeHtmlFrom(element){
+        document.getElementById(element).innerHTML = ''
+    }
+}
+
+bootDict = {
+    'xedos81':[xedos81, 9500, 'joltnet on XEDOS'],
+    'tandyDos90':[tandyDos90, 9000, 'joltnet on MS-DOS'],
+    'generic':[generic, 21000, 'joltnet circa 92'],
+    'nineties':[nineties, 17500, 'joltnet circa 97'],
+}
+
+var bootDictKeys = Object.keys(bootDict); // make a list of all keys in dict
+var chosenSystemStr = bootDictKeys[Math.floor(Math.random()*bootDictKeys.length)]; // pick one of the keys
+var chosenSystem = bootDict[chosenSystemStr] // access dict
+//var chosenSystem = bootDict['tandyDos90']
+
+chosenSystem[0]()
+var boot2Delay = chosenSystem[1]
+document.querySelector('title').textContent = chosenSystem[2]
+
+
+setInterval( function(){
+    time+=1
+    console.log(time, boot2Delay/1000)
+    if (time>boot2Delay/1000){
+        can_mash = true
+    }
+}, 1000);
+
 
 var boot2=new TypeIt("#boot2", {
     speed: 40,
     waitUntilVisible: true,
     lifeLike: true,
-    startDelay: 1600,
+    startDelay: boot2Delay,
     cursor:false,
     //cursorChar: "■"
     })
@@ -704,19 +1116,22 @@ var boot2=new TypeIt("#boot2", {
     boot2.empty()
     boot2.type('...'+medium+'...', { delay: 50 })
     boot2.empty()
-    boot2.type("!!!! access denied !!!!", { delay: 500 })
+    boot2.options({speed:10})
+    boot2.type("!!!! access denied !!!!", { delay: 700 })
     boot2.empty()
-    boot2.type("!!!! access denied !!!!", { delay: 500 })
+    boot2.options({speed:10})
+    boot2.type("!!!! access denied !!!!", { delay: 700 })
     boot2.empty()
-    boot2.type("!!!! access denied !!!!", { delay: 500 })
+    boot2.options({speed:10})
+    boot2.type("!!!! access denied !!!!", { delay: 700 })
     boot2.break()
     boot2.go()
 
 new TypeIt("#boot3", {
-    speed: 80,
+    speed: 40,
     waitUntilVisible: true,
     lifeLike: true,
-    startDelay: 10000,
+    startDelay: boot2Delay+7000,
     cursor:false,
     cursorChar: "■"
     })
@@ -729,7 +1144,7 @@ new TypeIt("#boot3", {
 
 function showLayer(){
     new TypeIt("#boot4", {
-    speed: 100,
+    speed: 20,
     waitUntilVisible: true,
     lifeLike: true,
     startDelay: 0,
@@ -746,7 +1161,7 @@ function showLayer(){
 
 function blitAuthorisationMessage(){
     new TypeIt("#boot6", {
-    speed: 35,
+    speed: 20,
     waitUntilVisible: true,
     lifeLike: true,
     startDelay: 10,
@@ -800,7 +1215,7 @@ function blitJoltnetMain(){
     speed: 30,
     waitUntilVisible: true,
     lifeLike: true,
-    startDelay: 10000,
+    startDelay: 8000,
     cursor:false,
     cursorChar: "■"
     })
@@ -871,6 +1286,7 @@ function blitJoltnetMain(){
     
 
     boot1.break()
+    boot1.options({speed:1})
     boot1.type("<span id='logo0'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=======</span>")
     boot1.break()
     boot1.type("<span id='logo1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOLTNET</span>")
@@ -879,17 +1295,21 @@ function blitJoltnetMain(){
     boot1.break()
     boot1.type("<span id='logo3'>&nbsp;</span>")
     boot1.break()
-    boot1.type("<span id='logo4'>\# note to admin: logo's rubbish!</span>")
+    boot1.type("<span id='logo4'>&nbsp;</span>")
     boot1.break()
-    boot1.type("<span id='logo5'>\# Could look into that new ASCII art stuff?</span>")
+    boot1.options({speed:20})
+    boot1.type("<span id='logo5'>\# sys-admin: logo's boring!</span>")
+    boot1.break()
+    boot1.type("<span id='logo6'>\# Can you make it more exciting?</span>")
     boot1.break()
     boot1.break()
+    boot1.options({speed:1})
     boot1.type("<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<span id='unit'>0</span>.<span id='decimal'>1</span></div>")
     boot1.break()
     boot1.break()
-    boot1.type("mash keyboard to upgrade joltnet")
+    boot1.type("~ mash keyboard to upgrade joltnet")
     boot1.break()
-    boot1.type('or press <a onclick="blitMenu()">m for menu</a>')
+    boot1.type('~ press <a onclick="blitMenu()">m for menu</a>')
     boot1.go()
 }
     
@@ -914,14 +1334,11 @@ document.addEventListener('keydown', logKey);
 
 function blitMenu(){
     mmenuDiv.style.display='block';
-    hack1Div.display='none';
-    hack2Div.display='none';
-    hack3Div.display='none';
-    hack4Div.display='none';
-    hack5Div.display='none';
-    hack6Div.display='none';
+    for (const div in hack_divs){
+        hack_divs[div].display='none';
+    }
     new TypeIt("#menu", {
-        speed: 20,
+        speed: 10,
         waitUntilVisible: true,
         lifeLike: true,
         startDelay: 0,
@@ -930,24 +1347,26 @@ function blitMenu(){
     })
     
     .empty()
-    .type('type your selection:')
+    .type('arrow / number keys to navigate ').break()
+    .type('ENTER to select').break()
     .break()
-    .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/cismp'>&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CISMP exam practise</a>")
-    .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/ceh'>&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CEH exam practise</a>")
-    .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/act_simulator'>&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Army Cognitive Test practise</a>")
-    .break()
-    .type("<a class='option' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tang's page</a>")
-    .break()
-    .break()
-    .type("&nbsp;&nbsp;&nbsp;ENTER - reboot and restyle")
+    .type("<a class='option' id='0' style='text-decoration:none;color:"+color+"' href='/'>&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Reboot and restyle</a>").break()
+    .type("<a class='option' id='1' style='text-decoration:none;color:"+color+"' href='/cismp'>&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CISMP exam practise</a>").break()
+    .type("<a class='option' id='2' style='text-decoration:none;color:"+color+"' href='/ceh'>&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CEH exam practise</a>").break()
+    .type("<a class='option' id='3' style='text-decoration:none;color:"+color+"' href='/act_simulator'>&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Army Cognitive Test practise</a>").break()
+    .type("<a class='option' id='4' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tang's page</a>").break()
+    .type("<a class='option' id='5' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- exit menu</a>").break()
     
+    .break()
+    .type('continue mashing to upgrade')
     .go()
 }
 
 function blitMashPrompt(){
+
+    for (const hackDiv in hack_divs){
+        hack_divs[hackDiv].style.display='none';
+    }
 
     new TypeIt("#nomenu", {
         speed: 40,
@@ -966,13 +1385,9 @@ function blitMashPrompt(){
 function external_div(color){
     mmenuDiv.style.display='none';
     externalDiv.style.display='block';
-    hack1Div.display='none';
-    hack2Div.display='none';
-    hack3Div.display='none';
-    hack4Div.display='none';
-    hack5Div.display='none';
-    hack6Div.display='none';
-
+    for (const div in hack_divs){
+        hack_divs[div].display='none';
+    }
     new TypeIt("#external", {
         speed: 40,
         waitUntilVisible: true,
@@ -991,42 +1406,44 @@ function external_div(color){
 }
 
 
-function loading(div){
-    new TypeIt(div, {
+function loading(divId){
+    new TypeIt(divId, {
     speed: Math.floor(Math.random()* 100),
     waitUntilVisible: true,
     lifeLike: true,
-    startDelay: 500,
+    startDelay: 200,
     cursor:true,
     cursorChar: "■",
     })
-    .empty()
+    
     .type('Loading ... ... ... ... ...')
+    .empty()
     .go()
 }
 
-function randomstatements(div){
-     new TypeIt(div, {
+function randomstatements(divId){
+     new TypeIt(divId, {
     speed: Math.floor(Math.random()* 100),
     waitUntilVisible: true,
     lifeLike: true,
-    startDelay: 500,
+    startDelay: 200,
     cursor:true,
     cursorChar: "■",
     })
-    .empty()
+    
     .type(actions[Math.floor(Math.random()* actions.length)], { delay: 200 })
+    .empty()
     .go()
 }
 
-function spin(div){
+function spin(divId){
   var speed=Math.floor(Math.random()* 100)
   frames = ["-", "/","|","\\"]
-  var thing= new TypeIt(div, {
+  var thing= new TypeIt(divId, {
   speed: 50,
   waitUntilVisible: true,
   lifeLike: true,
-  startDelay: 500,
+  startDelay: 300,
   cursor:false,
   //cursorChar: "■"
   })
@@ -1099,14 +1516,14 @@ function spin(div){
   return
 }
 
-function pacman(div){
+function pacman(divId){
   var speed=Math.floor(Math.random()* 100)
   frames = ["-", "/","|","\\"]
-  new TypeIt(div, {
+  new TypeIt(divId, {
   speed: 0,
   waitUntilVisible: true,
   lifeLike: true,
-  startDelay: 500,
+  startDelay: 200,
   cursor:false,
   //cursorChar: "■"
   })
@@ -1159,14 +1576,6 @@ function pacman(div){
   .empty()
   .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C', { delay: speed })
   .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@', { delay: speed })
-  .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o', { delay: speed })
-  .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O', { delay: speed })
-  .empty()
-  .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C', { delay: 200 })
-  .empty()
   .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@', { delay: 200 })
   .empty()
   .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%', { delay: speed })
@@ -1177,39 +1586,39 @@ function pacman(div){
   .empty()
   .type("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~&nbsp;&nbsp;-&nbsp;&nbsp;~", { delay: speed })
   .empty()
-  .type("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;.", { delay: speed })
-  
+  .type("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;.", { delay: 1000 })
+  .empty()
   
   
   .go()
   
 }
 
-function pi(div){
-  new TypeIt(div, {
+function pi(divId){
+  new TypeIt(divId, {
   speed: Math.floor(Math.random()* 100),
   waitUntilVisible: true,
   lifeLike: true,
-  startDelay: 500,
+  startDelay: 200,
   cursor:true,
   cursorChar: "■"
   })
+  .type('3.141592653589...', { delay: 800})
   .empty()
-  .type('3.141592653589...', { delay: 400})
   .go()
 }
 
-function snake(div){
-  new TypeIt(div, {
+function snake(divId){
+  new TypeIt(divId, {
   speed: Math.floor(Math.random()* 100),
   waitUntilVisible: true,
   lifeLike: true,
-  startDelay: 500,
+  startDelay: 200,
   cursor:false,
   //cursorChar: "■"
   })
-  .empty()
   .type('@0o~o0@0o~o0@0o~o0@', { delay: 400})
+  .empty()
   .go()
 }
 
@@ -1247,26 +1656,26 @@ function make_string_bit(){
 }
 
 
-function ip(div){
-  new TypeIt(div, {
+function ip(divId){
+  new TypeIt(divId, {
   speed: Math.floor(Math.random()* 100),
   waitUntilVisible: true,
   lifeLike: true,
-  startDelay: 300,
+  startDelay: 100,
   cursor:true,
   cursorChar: "■"
   })
-  .empty()
   .type(verbs[Math.floor(Math.random()*verbs.length)]+' ', { delay: 100})
   .type(make_ip_bit()+':', { delay: 100})
   .type(make_ip_bit()+':', { delay: 100})
   .type(make_ip_bit()+':', { delay: 100})
-  .type(make_ip_bit(), { delay: 100})
+  .type(make_ip_bit(), { delay: 500})
+  .empty()
   .go()
 }
 
-function randomstring(div){
-  new TypeIt(div, {
+function randomstring(divId){
+  new TypeIt(divId, {
   speed: Math.floor(Math.random()* 100),
   waitUntilVisible: true,
   lifeLike: true,
@@ -1274,20 +1683,20 @@ function randomstring(div){
   cursor:true,
   cursorChar: "■"
   })
-  .empty()
   .type(verbs[Math.floor(Math.random()*verbs.length)]+' ', { delay: 100})
   .type(make_string_bit()+'-', { delay: 100})
   .type(make_string_bit()+'-', { delay: 100})
-  .type(make_string_bit(), { delay: 100})
+  .type(make_string_bit(), { delay: 500})
+  .empty()
   .go()
 }
 
-function nibbles(div){
-  new TypeIt(div, {
+function nibbles(divId){
+  new TypeIt(divId, {
   speed: Math.floor(Math.random()* 100),
   waitUntilVisible: true,
   lifeLike: true,
-  startDelay: 300,
+  startDelay: 100,
   cursor:true,
   cursorChar: "■"
   })
@@ -1297,38 +1706,28 @@ function nibbles(div){
   .type(make_nibble(), { delay: 100})
   .type(make_nibble(), { delay: 100})
   .type(make_nibble(), { delay: 100})
-  .type(make_nibble(), { delay: 100})
+  .type(make_nibble(), { delay: 500})
+  .empty()
   .go()
 }
 
-function verbnoun(div){
-  new TypeIt(div, {
+function verbnoun(divId){
+  new TypeIt(divId, {
   speed: Math.floor(Math.random()* 100),
   waitUntilVisible: true,
   lifeLike: true,
-  startDelay: 300,
-  cursor:true,
+  startDelay: 100,
+  cursor:false,
   cursorChar: "■"
   })
+  .type(verbs[Math.floor(Math.random()*verbs.length)]+' '+nouns[Math.floor(Math.random()*nouns.length)]+' ... ... ...', { delay: 2000})
   .empty()
-  .type(verbs[Math.floor(Math.random()*verbs.length)]+' '+nouns[Math.floor(Math.random()*nouns.length)]+' ... ... ...', { delay: 100})
   .go()
 }
 
-let divs=['#hack1','#hack2','#hack3','#hack4', '#hack5', '#hack6']
-let hack_divs=[hack1Div, hack2Div, hack3Div, hack4Div, hack5Div, hack6Div]
-let hack_colors=['white','red','goldenrod','orange', 'gold', 'yellow', 'lime', 'greenyellow','cyan','blueish', 'pink', 'fuchsia','silver']
 // an array exists of all functions which do typit things
 let mashthings=[spin, loading, pacman, pi, snake, nibbles, nibbles, randomstring, ip, verbnoun]
 //array for color changes as hacking progresses
-
-
-   
- 
-
-
-     
- 
 
 /*
   @..@
@@ -1336,63 +1735,95 @@ let mashthings=[spin, loading, pacman, pi, snake, nibbles, nibbles, randomstring
 ( >__< )
 ^^ ~~ ^^
 */
+let yay_joltnet = [
+    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=======',
+    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOLTNET',
+    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=======&nbsp;&nbsp;&nbsp;YAY!',
+    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\(^_^)/',
+    '',
+    '\# Really?',
+    '\# Take this seriously and add some life to it...'
+]
+
+let froggy_joltnet = [
+    '&nbsp;&nbsp;@..@&nbsp;&nbsp;=======&nbsp;&nbsp;@..@&nbsp;&nbsp;',
+    '&nbsp;(----)&nbsp;JOLTNET&nbsp;(----)&nbsp;',
+    '(&nbsp;>__<&nbsp;)=======(&nbsp;>__<&nbsp;)',
+    '^^&nbsp;~~&nbsp;^^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^^&nbsp;~~&nbsp;^^',
+    '',
+    '\# !??',
+    '\# Please remove the frogs.'
+]
 
 let funny_joltnet = [
     '&nbsp;&nbsp;(\\ /)&nbsp;=======&nbsp;(\\ /)',
     '&nbsp;&nbsp;( ..)&nbsp;JOLTNET&nbsp;(.. )',
     '&nbsp;c(")(")=======(")(")D',
     '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\(^_^)/',
-    '\#Great',
-    '\#...any other ideas?',
+    '',
+    '\# What are you smoking?',
+    '\# Just make the letters bigger...'
 ]
 
 let skinny_joltnet = [
-    '',
-    '',
-    '',
+    
     '&nbsp;___&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;&nbsp;___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_&nbsp;___......',
     '&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;|&nbsp;|&nbsp;&nbsp;|&nbsp;|\\&nbsp;|&nbsp;|_&nbsp;&nbsp;|......',
     '|_|&nbsp;&nbsp;|_|&nbsp;|_&nbsp;|&nbsp;|&nbsp;\\|&nbsp;|_&nbsp;&nbsp;|.....',
+    '',
+    '',
+    '\# That\'s more like it.',
+    '\# Still on the small side though...'
     
 ]
 
 let letter_joltnet = [
-    '',
+    
     '&nbsp;&nbsp;&nbsp;J&nbsp;&nbsp;OO&nbsp;&nbsp;L&nbsp;&nbsp;TTTTT&nbsp;N&nbsp;&nbsp;&nbsp;N&nbsp;EEEE&nbsp;TTTTT',
     '&nbsp;&nbsp;&nbsp;J&nbsp;O&nbsp;&nbsp;O&nbsp;L&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;NN&nbsp;&nbsp;N&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T',
     '&nbsp;&nbsp;&nbsp;J&nbsp;O&nbsp;&nbsp;O&nbsp;L&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;N&nbsp;N&nbsp;N&nbsp;EEEE&nbsp;&nbsp;&nbsp;T',
     'J&nbsp;&nbsp;J&nbsp;O&nbsp;&nbsp;O&nbsp;L&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;NN&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T',
     '&nbsp;JJ&nbsp;&nbsp;&nbsp;OO&nbsp;&nbsp;LLLL&nbsp;T&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;N&nbsp;EEEE&nbsp;&nbsp;&nbsp;T',
-    
+    '',
+    '\# Too big. Smaller and bouncier? But no more bunnies...'
 ]
 
 let chubby_joltnet = [
-    '',
-    '',
+    
     '&nbsp;_____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_____',
     '|_&nbsp;&nbsp;&nbsp;_|_&nbsp;_&nbsp;_____&nbsp;___&nbsp;_|_&nbsp;&nbsp;&nbsp;_|',
     '&nbsp;_|&nbsp;|&nbsp;_&nbsp;|&nbsp;|_&nbsp;&nbsp;&nbsp;_|&nbsp;&nbsp;&nbsp;|&nbsp;-_|&nbsp;|',
     '|___|___|___|_|&nbsp;|_|_|___|_|',
+    '',
+    '',
+    '\# Not bad... Maybe a little larger?'
+    
     
 ]
 
 let tall_joltnet = [
-    '',
+    
     '&nbsp;_____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_____',
     '|_&nbsp;&nbsp;&nbsp;_|_&nbsp;_&nbsp;_____&nbsp;___&nbsp;_|_&nbsp;&nbsp;&nbsp;_|',
     '&nbsp;&nbsp;|&nbsp;|&nbsp;_&nbsp;|&nbsp;|_&nbsp;&nbsp;&nbsp;_|&nbsp;&nbsp;&nbsp;|&nbsp;__|&nbsp;|',
     '&nbsp;_|&nbsp;||_||&nbsp;|_|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;__|&nbsp;|',
     '|___|___|___|_|&nbsp;|_|_|___|_|',
+    '',
+    '\# Nice. Now put your own slant on it.'
+    
     
 ]
 
 let lean_joltnet = [
-    '',
+    
     '&nbsp;&nbsp;&nbsp;&nbsp;_______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_______',
     '&nbsp;&nbsp;&nbsp;/__&nbsp;&nbsp;__/___&nbsp;&nbsp;_______&nbsp;&nbsp;___/__&nbsp;&nbsp;__/',
     '&nbsp;&nbsp;_&nbsp;&nbsp;/&nbsp;/__&nbsp;/&nbsp;/&nbsp;/_&nbsp;&nbsp;_/&nbsp;&nbsp;|/&nbsp;/&nbsp;__/&nbsp;/',
     '&nbsp;//_/&nbsp;//_//&nbsp;/___/&nbsp;//&nbsp;/||&nbsp;/&nbsp;__/&nbsp;/',
     '/____/___/_____/_//_/&nbsp;|_/___/_/',
+    '',
+    '\# ...I see what ya did there...'
+    
     
 ]
 
@@ -1403,9 +1834,12 @@ let threed_joltnet = [
     '&nbsp;//_/&nbsp;//_//&nbsp;/___/&nbsp;//&nbsp;/||&nbsp;/&nbsp;__/&nbsp;/ /',
     '/____/___/_____/_//_/&nbsp;|_/___/_/ /',
     '\\____\\___\\_____\\_\\\\_\\/\\_\\___\\_\\/',
+    '',
 ]
 
 let joltnet_logos =[
+    yay_joltnet,
+    froggy_joltnet,
     funny_joltnet,
     skinny_joltnet,
     letter_joltnet,
@@ -1423,6 +1857,7 @@ function upgrade_logo(logo_list){
     document.getElementById("logo3").innerHTML=logo_list[3]
     document.getElementById("logo4").innerHTML=logo_list[4]
     document.getElementById("logo5").innerHTML=logo_list[5]
+    document.getElementById("logo6").innerHTML=logo_list[6]
 }
 
 
@@ -1437,12 +1872,11 @@ function allHackTextUpgrade(){
     console.log('all')
     var hack_color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
     var hack_text = 'terminal-text '+font+' ' +hack_color;
-    hack1Div.className=hack_text;
-    hack2Div.className=hack_text;
-    hack3Div.className=hack_text;
-    hack4Div.className=hack_text;
-    hack5Div.className=hack_text; 
-    hack6Div.className=hack_text;
+    
+    for (const div in hack_divs){
+        hack_divs[div].className=hack_text;
+    }
+
 }
 
 function allBootUpgrade(){
@@ -1497,11 +1931,9 @@ var hacklayer=1
 var upgradecount=0
 var upgradestage=0
 
-var div=0
+var hackDivNumber=0 // for counting the number div we're on so we can iterate through hack divs
 
 booting = true
-
-
 main_menu=false
 
 function mash(){
@@ -1513,12 +1945,9 @@ function mash(){
             if(hackcount==1){
                 boot3Div.style.display='none';
                 showLayer()
-                hack1Div.style.display='block';
-                hack2Div.style.display='block';
-                hack3Div.style.display='block';
-                hack4Div.style.display='block';
-                hack5Div.style.display='block';
-                hack6Div.style.display='block';
+                for (const hackDiv in hack_divs){
+                    hack_divs[hackDiv].style.display='block';
+                }
             }
         }
         if(hackcount%2==0){
@@ -1527,10 +1956,11 @@ function mash(){
         }
         if(hackcount%8==0){
             to_mash=mashthings[Math.floor(Math.random() * mashthings.length)]
-            to_mash(divs[div]);// if when that number reaches 0, target hack1 with a random function from the list   
-            div+=1;
-            if(div==5){
-                div=0
+            console.log(divs[hackDivNumber])
+            to_mash(divs[hackDivNumber]);// if when that number reaches 0, target hack1 with a random function from the list   
+            hackDivNumber+=1;
+            if(hackDivNumber==9){
+                hackDivNumber=0
             }
         }
         if(hackcount%50==0){
@@ -1555,7 +1985,7 @@ function mash(){
             document.getElementById("boot4").style.color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
         }
         else if(hacklayer==4){
-            hacklayer=5
+            hacklayer=5//so no chance of triggering anything else
             
             blitJoltnetMain()//wait and then spin and jolt screen
             blitAuthorisationMessage()//write access granted wait and
@@ -1566,26 +1996,24 @@ function mash(){
             boot2Div.style.display='none';
             boot3Div.style.display='none';
             boot4Div.style.display='none';
-            hack1Div.style.display='none';
-            hack2Div.style.display='none';
-            hack3Div.style.display='none';
-            hack4Div.style.display='none';
-            hack5Div.style.display='none';
-            hack6Div.style.display='none';
+            
+            for (const hackDiv in hack_divs){
+                hack_divs[hackDiv].style.display='none';
+            }
+            
             nomenuDiv.style.display='none';
 
             var can_mash=false
             
         }
     
-    }else{
+    }else{// what happens if we mash whilst menu is up...
         mmenuDiv.style.display='none';
-        hack1Div.style.display='block';
-        hack2Div.style.display='block';
-        hack3Div.style.display='block';
-        hack4Div.style.display='block';
-        hack5Div.style.display='block';
-        hack6Div.style.display='block';
+        
+        for (const hackDiv in hack_divs){
+            hack_divs[hackDiv].style.display='block';
+        }
+
         upgradecount+=2
         console.log(upgradecount)
         if(upgradecount%40==0){
@@ -1610,11 +2038,11 @@ function mash(){
             document.getElementById("decimal").innerHTML=whole_pad(decimal_val);
             document.getElementById("unit").innerHTML=whole_pad(upgradestage);
             to_mash=mashthings[Math.floor(Math.random() * mashthings.length)]
-            to_mash(divs[div]);// if when that number reaches 0, target hack1 with a random function from the list
-            if(div==5){
-                div=-1;// hack4, reset all numbers
+            to_mash(divs[hackDivNumber]);// if when that number reaches 0, target hack1 with a random function from the list
+            if(hackDivNumber==9){
+                hackDivNumber=-1;// hack9, reset all numbers
             }
-            div+=1;
+            hackDivNumber+=1;
         }
         //if(upgradecount>398){
         //    upgradecount=0
@@ -1625,61 +2053,140 @@ function mash(){
             upgradeVersionText()
             
         }
-        if (upgradestage==7){
-            alert("Your commitment to joltnet is impressive! Take a break, rest your fingers, get a drink of water ^_^");
+        if (upgradestage==9){
+            alert("Your commitment to joltnet is impressive! Take a break, rest your fingers, get a drink of water, and explore the menu ^_^");
         }
     }
 }
 
-
 document.addEventListener('click',mash);
 
-function logKey(e) {
-    console.log(e.key)
-    
-    if(booting==true){
-        mash()
+var menuDisplay = false
+var activeOptionNumber = 1
 
-    }else if(booting==false){
-        if(e.key=='m'){
-            mmenuDiv.style.display='block';
-            hack1Div.style.display='none';
-            hack2Div.style.display='none';
-            hack3Div.style.display='none';
-            hack4Div.style.display='none';
-            hack5Div.style.display='none';
-            hack6Div.style.display='none';
-            
-        }else if(e.key=='Enter'){
-            location.reload()
-        }else if(e.key=='4'){
-            window.location.href = "/tang";
-        }else if(e.key=='3'){
-            window.location.href = "/act_simulator";
-        }else if(e.key=='2'){
-            window.location.href = "/ceh";
-        }else if(e.key=='1'){
-            window.location.href = "/cismp";
-        }else if(e.key=='39'){
-            console.log('right')
-        }else if(e.key=='40'){
-            console.log('down')
-        }else if(e.key=='37'){
-            console.log('left')
-        }else if(e.key=='38'){
-            console.log('up')
-        
-        }else{   
-            if (can_mash=false){
-                return
-            }        
-            mash()
-            main_menu=false
-            
-        }
-        
+function optionUp(){
+    activeOptionNumber-=1
+    if (activeOptionNumber==-1){
+        activeOptionNumber=5
     }
-    
+}
+
+function optionDown(){
+    activeOptionNumber+=1
+    if (activeOptionNumber==6){
+        activeOptionNumber=0
+    }
+}
+
+var optionArray = ['0','1','2','3','4','5']
+var optionLinkArray = ["/tang","/act_simulator","/ceh","/cismp"]
+
+function highlightSelectedOption(optionNumber){
+    console.log(optionNumber)
+    console.log('font:', color, 'background:', background)
+    for (const i in optionArray){
+        if (optionNumber.toString()==optionArray[i]){
+            var option = document.getElementById(optionArray[i])
+            option.style.color = background// background colour
+            option.style.background = color// font colour
+        }else{
+            var option = document.getElementById(optionArray[i])
+            option.style.color = color // font colour
+            option.style.background = background // background colour   
+        }
+    }
+}
+
+function logKey(e) {
+    //console.log(e) // uncomment to see how js sees what you're typing!
+    if(booting==true){ // if going through booting process, mash!
+        if (can_mash==true){
+            mash()
+        }
+    }else if(booting==false){ // if after booting process, 
+        if (can_mash=false){ // if we're not allowed to mash, nothing doing!
+            return
+        } else {
+            if (menuDisplay==false){ // if menu not active, we're only lsitening for m, return or something else
+                if(e.key=='m'){ // activate menu
+                    mmenuDiv.style.display='block'; // display menu   
+                    for (const hackDiv in hack_divs){ // hide all hack divs
+                        hack_divs[hackDiv].style.display='none';
+                    }
+                    highlightSelectedOption(activeOptionNumber)
+                    menuDisplay = true // change menu display to true
+                }else if(e.key=='Enter'){ // reset joltnet
+                    location.reload()
+                }else{
+                    mash() // we're mashing
+                    menuDisplay = false
+                    main_menu=false
+                }
+            } else if (menuDisplay==true){ // if menu active
+                if(e.key=='5'){ // listen for a key number to go directly to a site
+                    highlightSelectedOption('5')
+                    // window.location.href = "/tang";
+                }else if(e.key=='4'){ // listen for a key number to go directly to a site
+                    highlightSelectedOption('4')
+                    // window.location.href = "/tang";
+                }else if(e.key=='3'){
+                    highlightSelectedOption('3')
+                    // window.location.href = "/act_simulator";
+                }else if(e.key=='2'){
+                    highlightSelectedOption('2')
+                    // window.location.href = "/ceh";
+                }else if(e.key=='1'){
+                    highlightSelectedOption('1')
+                    // window.location.href = "/cismp";
+                }else if(e.key=='0'){
+                    highlightSelectedOption('0')
+                }else if(e.key=='ArrowUp'){ // listen for a navigation command to change highlighted div, and div we'll go to if return pushed
+                    console.log('navigating up')
+                    optionUp()
+                    highlightSelectedOption(activeOptionNumber)
+                }else if(e.key=='ArrowDown'){
+                    console.log('navigating down')                    
+                    optionDown()
+                    highlightSelectedOption(activeOptionNumber)
+                }else if(e.key=='ArrowLeft'){
+                    console.log('navigating up')
+                    optionUp()
+                    highlightSelectedOption(activeOptionNumber)
+                }else if(e.key=='ArrowRight'){
+                    console.log('navigating down')
+                    optionDown()
+                    highlightSelectedOption(activeOptionNumber)
+                }else if(e.key==' '){
+                    console.log('navigating down')
+                    optionDown()
+                    highlightSelectedOption(activeOptionNumber)
+                }else if(e.key=='m'){ 
+                    mmenuDiv.style.display='none'; // display menu   
+                    for (const hackDiv in hack_divs){ // hide all hack divs
+                        hack_divs[hackDiv].style.display='block';
+                    }
+                    menuDisplay = false // change menu display to false
+                }else if(e.key=='Enter'){ 
+                    if(activeOptionNumber==0){
+                        location.reload()                        
+                    }else if(activeOptionNumber==5){
+                        mmenuDiv.style.display='none'; // display menu   
+                        for (const hackDiv in hack_divs){ // hide all hack divs
+                            hack_divs[hackDiv].style.display='block';
+                        }
+                        menuDisplay = false // change menu display to false
+                    }else{
+                        window.location.href = optionLinkArray[activeOptionNumber-1];
+                    }
+                }else{
+                    mash() // we're mashing
+                    menuDisplay = false
+                    main_menu=false
+                    return // do nothing (could also mash to close menu)
+                }
+            }  
+        }
+    }
 }
 
 </script>
