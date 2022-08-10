@@ -10,15 +10,686 @@
         <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
         {% load static %}
-        <link class="ignore" rel="stylesheet" href="{% static 'css/jolt_home.css' %}" type="text/css">
-        <link class="ignore" rel="stylesheet" href="{% static 'css/target_range.css' %}" type="text/css">
-        <link class="ignore" rel="stylesheet" href="{% static 'css/fling.css' %}" type="text/css">
         
         <script type="text/javascript" src="{% static 'js/vanilla-tilt.js' %}"></script>
+        <style>
+body{
+    margin:0%;
+    padding:0%;
+    width:100%;
+    height:100%;
+}
+
+.center{
+    display: flex;
+    height:2%;
+    justify-content: center;
+    align-items: center;
+    margin:-1%;
+    font-family: 'Press Start 2P', cursive;
+}
+
+@media only screen and (min-width: 741px) {
+    .mobile{
+        display:none;
+    }
+    .desktop{
+        width:100%;
+        height:100%;
+        background:url('/static/images/doddy.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        color: white;
+        font-family: 'Press Start 2P', cursive;
+    }
+    .top-banner{
+        display: grid;
+        grid-template-columns: 20% auto auto;
+    }
+    .tag-straight{
+        display:block;
+    }
+    .tang-spent-ages{
+        align-self: center;
+        font-size:1em;
+        line-height: 3vh;
+    }
+    .straight{
+        font-size:3em;
+        line-height: 1rem;
+    }
+    .justajolt{
+        height:fit-content;
+        width:30%;
+        margin:-120px;
+        margin-bottom:0px;
+        font-size: 9vw;
+        font-family: 'Orbitron', sans-serif;
+    }
+    .trigger{
+        text-shadow: 5px 5px black;
+        font-size: 3vw;
+    }
+    .kindly-do-not{
+        align-self: center;
+    }
+    .lower{
+        display:grid;
+        grid-template-columns: 20% 60% 20%;
+        margin-top:5%;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.warning-grid{
+    display:grid;
+    grid-template-columns: 33% 34% 33%;
+    margin-top:2%;
+    margin-bottom:2%;
+}
+.justajolt .container{
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.justajolt .container .joltcard{
+    position: relative;
+    margin: 5px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(239, 243, 7, 0.096);
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+.justajolt .container .joltcard .content{
+    padding: 10px;
+    text-align: center;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.justajolt .container .joltcard:hover .content{
+    opacity: 1;
+    transition: 0.5s;
+    background: rgba(243, 7, 7, 0.548);
+}
+.justajolt .container .joltcard .content a{
+    color:white;
+    text-decoration: none;
+}
+
+.kindly-do-not{
+    display:flex;
+    font-family: 'Press Start 2P', cursive;
+    color:white;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trigger:hover{
+    color:red;
+    animation: shake 0.3s;
+    animation-iteration-count: infinite;
+}
+/*Shake effects used with animation:shake time;*/
+@keyframes shake {
+    0% { transform: translate(2px, 2px) rotate(0deg); }
+    10% { transform: translate(-2px, -3px) rotate(-2deg); }
+    20% { transform: translate(-4px, 0px) rotate(2deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.tang{
+    font-size: 2vw;
+}
+
+.left-sidebar{
+    display:block;
+    font-size: 3.5vw;
+    color:white;
+    font-family: 'Orbitron', sans-serif;
+    align-items: center;
+    text-align: center;
+}
+
+.item{
+    border-radius: 5px;
+    text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.item a{
+    text-decoration: none;
+    color: white;
+    text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.item a:hover{
+    text-decoration: none;
+    color:rgb(179, 255, 1);
+}
+.item:hover{
+    background-color: rgb(18, 18, 19);
+    color:rgb(179, 255, 1);
+    border-radius: 10px;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+.middle-section{
+    margin-left: auto;
+    margin-right: auto;
+}
+.tang-frame{
+    height:max-content;
+    width:max-content;
+}
+.tang-pic{
+    height:24vw;
+    width:24vw;
+    background:url('/static/images/tang.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    background-size: 170%;
+    border-style: solid;
+    border-radius: 5px;
+    border-width:10px;
+    border-color: black;
+    transition: 1500ms;
+}
+
+.tang-pic-triggered{
+    background-position: 50% 20%;
+    background-size: 400%;
+    box-shadow: 0px 20px 500px 40px rgba(243, 7, 7, 0.95);
+    animation: shake 0.3s;
+    animation-iteration-count: infinite;
+    transition: 100ms;
+}
+.right-sidebar{
+    font-size: 2vw;
+    color:white;
+    font-family: 'Orbitron', sans-serif;
+    text-align: left;
+}
+.social-media-row{
+    display:grid;
+    grid-template-columns: 15% 15% 15% 15% 15% 15%;
+    grid-gap:1vw;
+}
+.sm-item{
+    width: 100%;
+    height:7vw;
+}
+.sm-item:hover{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+    box-shadow: 0px 20px 500px 40px rgba(208, 255, 0, 0.95) invert;
+}
+.tiktok{
+    background:url('/static/images/tiktok.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.facebook{
+    background:url('/static/images/facebook.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.instagram{
+    background:url('/static/images/instagram.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.linkedin{
+    background:url('/static/images/linkedin.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.youtube{
+    background:url('/static/images/youtube.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.click-elite{
+    position:fixed;
+    box-sizing:border-box;
+    background-color: darkblue;
+    border-style:solid;
+    
+    animation:clickElite 0.6s ease-out;
+    z-index:99999;
+}
+
+@keyframes clickElite{
+    0% {
+        opacity:0.5;
+        border-color:#0026ff;
+        border-top:20px solid rgb(252, 122, 0);
+        width: 75px;
+        height: 500px;
+        transform: perspective(200px) rotateX(1deg);
+        margin: 100px; 
+    }
+    25%{
+        opacity:1;
+        border-color:#0026ff;
+        border-top:5px solid rgb(252, 122, 0);
+        width:20px;
+        height: 80px;
+        border-radius:10;
+        transform: perspective(25px) rotateX(1deg);
+        margin: 50px;
+    }
+    75%{
+        opacity:1;
+        border-width:1px;
+        border-color:#021894;
+        border-radius:50%;
+        width: 5px;
+        height: 5px;
+        transform: perspective(4px) rotateX(1deg);
+        margin: 1px;
+    }
+    100%{
+        opacity:0;
+        border-color:#010c4b;
+        width: 1px;
+        height: 2px;
+        transform: perspective(4px) rotateX(1deg);
+        margin: 1px;
+    }
+}
+
+.click-mega{
+    position:fixed;
+    box-sizing:border-box;
+    background-color: darkred;
+    border-style:solid;
+    animation:clickMega 0.6s ease-out;
+    z-index:99999;
+}
+
+@keyframes clickMega{
+    0% {
+        opacity:0.5;
+        border-color:red;
+        border-top:35px solid rgb(252, 122, 0);
+        height: 125px;
+        height: 650px;
+        transform: perspective(275px) rotateX(1deg);
+        margin: 120px; 
+    }
+    25%{
+        opacity:1;
+        border-color:red;
+        border-top:10px solid rgb(252, 122, 0);
+        width:35px;
+        height: 115px;
+        border-radius:10;
+        transform: perspective(35px) rotateX(1deg);
+        margin: 80
+        px;
+    }
+    75%{
+        opacity:1;
+        border-width:2px;
+        border-color:red;
+        border-radius:50%;
+        width: 10px;
+        height: 10px;
+        transform: perspective(7px) rotateX(1deg);
+        margin: 2px;
+    }
+    100%{
+        opacity:0;
+        border-width:1px;
+        border-color:red;
+        width: 1px;
+        height: 3px;
+        transform: perspective(4px) rotateX(1deg);
+        margin: 1px;
+    }
+}
+.click-vortex{
+    position:fixed;
+    box-sizing:border-box;
+    background-color: rgb(0, 163, 35);
+    border-color:rgb(0, 255, 55);
+    border-style:solid;
+    animation:clickVortex 0.7s ease-out;
+    z-index:99999;
+}
+@keyframes clickVortex{
+    0% {
+        opacity:1;
+        width: 500px;
+        height: 100px;
+        border-width:22px;
+        border-color:rgb(0, 255, 55);
+        border-left: 12px solid rgb(0, 163, 35);
+        border-radius:45%;
+        transform: rotate(90deg)
+    }
+    100%{
+        opacity:1;
+        width: 5px;
+        height: 1px;
+        border-width:0px;
+        border-color:rgb(1, 207, 45);
+        border-radius:45%;
+        transform: rotate(90deg)
+    }
+}
+.click-rival {
+    background-color: rgb(230, 245, 18);
+    position:fixed;
+    box-sizing:border-box;
+    border-style:solid;
+    border-color:#FFFFFF;
+    border-radius:50%;
+    animation:clickRival 0.4s ease-out;
+    z-index:99999;
+}
+
+@keyframes clickRival{
+    0% {
+    opacity:1;
+    width: 60px;
+    height: 60px;
+    margin:-6px;
+    border-width:60px;
+    border-color: rgb(251, 255, 0);
+}
+    100%{
+    opacity:1;
+    width:5px;
+    height:5px;
+    margin:-1px;
+    border-width:5px;
+    border-color: rgb(192, 192, 3)
+    }
+}
+.click-ultra{
+    position:fixed;
+    box-sizing:border-box;
+    background-color: rgb(49, 49, 49);
+    border-style:solid;
+    animation:clickUltra 0.6s ease-out;
+    z-index:99999;
+}
+@keyframes clickUltra{
+    0% {
+        opacity:0.5;
+        border-color:rgb(49, 49, 49);
+        border-top:35px solid rgb(252, 122, 0);
+        width: 80px;
+        height: 400px;
+        transform: perspective(275px) rotateX(1deg);
+        margin: 120px;
+    }
+    25%{
+        opacity:1;
+        border-color:rgb(49, 49, 49);
+        border-top:10px solid rgb(252, 122, 0);
+        width:20px;
+        height: 80px;
+        border-radius:30%;
+        transform: perspective(35px) rotateX(1deg);
+        margin: 80px;
+        
+    }
+    75%{
+        opacity:1;
+        border-width:2px;
+        border-color:rgb(49, 49, 49);
+        border-radius:50%;
+        width: 5px;
+        height: 12px;
+        transform: perspective(7px) rotateX(1deg);
+        margin: 2px; 
+    }
+    100%{
+        opacity:0;
+        border-width:1px;
+        border-color:rgb(22, 22, 22);
+        width: 2px;
+        height: 2px;
+        transform: perspective(4px) rotateX(1deg);
+        margin: 1px;
+    }
+}
+
+
+.elite-button{
+    color: blue;
+    background-color:white;
+    border-color: blue;   
+}
+
+.elite-button:hover{
+    color: white;
+    background-color:blue;
+    border-color: orange;
+    transition: 300ms linear;
+}
+.mega-button{
+    color: red;
+    background-color:white;
+    border-color: red;   
+}
+.mega-button:hover{
+    color: white;
+    background-color:red;
+    border-color: grey;
+    transition: 300ms linear;
+}
+.vortex-button{
+    color: green;
+    background-color:white;
+    border:2px solid green;
+}
+.vortex-button:hover{
+    color: greenyellow;
+    background-color:green;
+    border-color: greenyellow;
+    transition: 300ms linear;
+}
+.rival-button{
+    color: rgb(65, 65, 65);
+    background-color:white;
+    border-color:rgb(65, 65, 65);
+    
+}
+.rival-button:hover{
+    color: yellow;
+    background-color:rgb(65, 65, 65);
+    border-color: yellow;
+    transition: 300ms linear;
+}
+.ultra-button{
+    color: goldenrod;
+    background-color:white;
+    border-color: goldenrod;
+}
+.ultra-button:hover{
+    color: goldenrod;
+    background-color:black;
+    border-color: red;
+    transition: 300ms linear;
+}
+
+
+@media only screen and (max-width: 740px) {
+    .desktop{
+        display:none;
+    }
+    .mobile{
+        display: grid;
+        grid-template-rows:auto;
+        background:url('/static/images/doddy-mobile.png');
+        background-repeat: no-repeat;
+        background-size: 100vw 400vh;
+        color: white;
+        align-items:center;
+        text-align:center;
+    }
+    
+    .kindly-do-not{
+        display:block;
+        font-family: 'Press Start 2P', cursive;
+        line-height: 4vw;
+    }
+    .straight{
+        font-size:4vw;
+        line-height: 5vw;
+    }
+    .justajolt{
+        height:100%;
+        width:100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:-40%;
+        margin-bottom:-40%;
+        font-size: 18vw;
+        font-family: 'Orbitron', sans-serif;
+    }
+    .kindly{
+        font-size: 5vw;
+    }
+    .trigger{
+        font-size: 8vw;
+        text-shadow: 5px 5px black;
+    }
+    .tang{
+        font-size: 12vw;
+    }
+    .main-section{
+        display:grid;
+        grid-template-columns: auto;
+        text-align: center;
+        align-items: center;
+        margin-left:2%;
+        margin-right:2%;
+    }
+    .social-media-row{
+        display:grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-gap:20px;
+        justify-items: center;
+        align-items: center;
+
+        font-family: 'Orbitron', sans-serif;
+        font-size: 4vw;
+        color:white;
+        
+        text-align: left;
+        margin: 20px;
+
+    }
+    .sm-item{
+        width: 100%;
+        height: 15vw;
+    }
+    .tang-pic{
+        height:65vw;
+        width:65vw;
+    
+        background:url('/static/images/tang.jpg');
+        background-position: 50% 0%;
+        background-size: 170%;
+    
+        border-style: solid;
+        border-radius: 5px;
+        border-width:10px;
+        border-color: black;
+    
+        transition: 1500ms;
+    }
+    .tang-pic-triggered{
+        background-position: 50% 20%;
+        background-size: 400%;
+        box-shadow: 0px 20px 500px 40px rgba(243, 7, 7, 0.95);
+        animation: shake 0.3s;
+        animation-iteration-count: infinite;
+        transition: 100ms;
+    }
+    #hamnav {
+        width: 100%;
+        background: #000;
+    }
+
+    #hamitems { display: flex; }
+    /* (A) BREAK INTO VERTICAL MENU */
+    #hamitems a {
+        flex-grow: 1;
+        flex-basis: 0;
+        padding: 10px;
+        color: rgb(179, 255, 1);
+        font-family: 'Orbitron', sans-serif;
+        font-size: large;
+        text-decoration: none;
+        text-align: center;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border-top: 1px solid #333;
+    }
+    /* (B) SHOW HAMBURGER ICON */
+    #hamnav label { 
+        display: inline-block; 
+        color:rgb(179, 255, 1);
+        background: black;
+        font-style: normal;
+        font-size: 5vw;
+        padding: 10px;
+    }
+    .buttons{
+        display:grid;
+        grid-template-columns:auto;
+        align-content:center;
+        margin-top:-1%;
+        margin-bottom:-1%;
+    }
+    .ammo-button{
+        width:20vw;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 4vw;
+        text-align: center;
+        cursor:pointer;
+        transition: 300ms linear;
+        border-style: solid;
+        border-width:2px;
+        border-radius:10px;
+        color: white;
+    }
+
+    /* (C) TOGGLE SHOW/HIDE MENU */
+    #hamitems { display: none; }
+    #hamnav input:checked ~ #hamitems { display: block; }
+}
+
+
+
+
+        </style>
 
     </head>
     <script>
