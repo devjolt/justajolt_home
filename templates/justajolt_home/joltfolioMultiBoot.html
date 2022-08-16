@@ -32,7 +32,7 @@
 html{
     height:95%;
     text-transform: uppercase;
-    padding: 2%;
+    padding: 0.5%;
     letter-spacing:0.3em;
     animation:turn-on 3s linear;
     --greenbg:rgb(7, 26, 7);
@@ -40,6 +40,8 @@ html{
     --bluebg:rgb(9, 9, 32);
     --blueshadow:0px 0px 200px 100px rgb(30, 15, 124) inset;
     --blackshadow:0px 0px 200px 100px rgb(37, 37, 37) inset;
+    background-image: linear-gradient(to bottom left, rgb(30, 30, 30), black);
+    
 }
 
 @media only screen and (max-width: 660px) {
@@ -54,14 +56,16 @@ html{
     }
 }
 
-
 body{
-    height:100%;
+    height:98%;
     /*background-color: rgb(7, 26, 7);
     box-shadow: 0px 0px 200px 100px rgb(11, 44, 11) inset;*/
     border-style:outset;
-    border-color:rgb(20, 20, 20) rgb(29, 29, 29) rgb(49, 49, 49) rgb(41, 41, 41);
-    border-width:5px;
+    border-top-color:rgb(13, 13, 13);
+    border-left-color:rgb(35, 35, 35);
+    border-bottom-color:rgb(73, 73, 73);
+    border-right-color:rgb(62, 62, 62);
+    border-width:10px;
     border-radius: 12%;
 }    
 .option{
@@ -75,7 +79,8 @@ body{
     transition:0.5s;
 }
 .terminal-text{
-    margin-left: 10%;
+    /*margin-left: 10%;
+    */
 }
 .font-share{
     font-family: 'Share Tech Mono', monospace;
@@ -123,6 +128,10 @@ body{
     color: rgb(0, 255, 200);
     text-shadow: 5px 3px 40px rgb(4, 235, 177);
 }
+.mediumslateblue{
+    color:mediumslateblue;
+    text-shadow: 5px 3px 40px mediumslateblue;
+}
 .cyan{/**/
     color: cyan;
     text-shadow: 5px 3px 40px cyan;
@@ -138,13 +147,15 @@ body{
     text-shadow: 5px 3px 40px fuchsia;
 }
 
-
-
 .silver{/*ornage on black*/
     color: silver;
     text-shadow: 5px 3px 40px silver;
 }
 
+.c64{
+    color: #8ea6fa;
+    text-shadow: 5px 3px 40px #8ea6fa;
+}
 
 
 @keyframes turn-on{
@@ -372,12 +383,13 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
     content: " ";
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    top: 2%;
+    left: 2%;
+    bottom: 2%;
+    right: 2%;
     background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    background-size: 110% 8px;
+    background-size: 100% 8px;
+    border-radius:12%;
     /*background-size: 100% 2px, 3px 100%;*/
     z-index: 2;
     pointer-events: none;    
@@ -461,10 +473,16 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
     margin-left: 1px;
 }
 .terminal{
-    margin-top:3%;
-    margin-left:1%;
-    margin-right:1%;
-    padding:1%;
+    min-height:83vh;
+    margin-top:1.5%;
+    margin-left:6%;
+    margin-right:6%;
+    padding:0.5%;
+    /*
+    border-style: solid;
+    border-color: mediumslateblue;
+    border-width: 3vh;
+    */
 }
 
 #boot2, #menu, #external, #hack1{
@@ -540,42 +558,42 @@ let colors=[
 ];
     
 let media=[
-    'press play on tape deck',
-    'insert casette', 
-    'insert floppy disk',
-    'insert punch card',
-    'insert id card',
-    'scanning retina',
-    'insert laser disc',
-    'loading from 8in floppy',
-    'insert dectape',
-    'insert datasette',
+    'Press play on tape deck',
+    'Insert casette', 
+    'Insert floppy disk',
+    'Insert punch card',
+    'Insert id card',
+    'Scanning retina',
+    'Insert laser disc',
+    'Loading from 8in floppy',
+    'Insert dectape',
+    'Insert datasette',
     ]
 
     let actions=[
-    'recommissioning arpanet...',
-    'accessing backdoor........',
-    'uploading rubber ducky.....',
-    'cracking passwords........',
-    'infiltrating internets....',
-    'uploading algorithms......',
-    'securing mayonaise........',
-    'adding cheese.............',
-    'irradiating spiders.......',
-    'virtualising pickles......',
-    'stamping on spiders.......',
-    'buying bitcoin............',
-    'liquidating bitcoin.......',
-    'downloading RAM...........',
-    'harvesting cores..........',
-    'doing school run..........',
-    'firing accountant.........',
-    'mashing aubergine.........',
-    'reading docs..............',
-    'downloading algorithms....',
-    'authenticating retina.....',
-    'escalating privileges.....',
-    'loading data..............',
+    'Recommissioning arpanet...',
+    'Accessing backdoor........',
+    'Uploading rubber ducky.....',
+    'Cracking passwords........',
+    'Infiltrating internets....',
+    'Uploading algorithms......',
+    'Securing mayonaise........',
+    'Adding cheese.............',
+    'Irradiating spiders.......',
+    'Virtualising pickles......',
+    'Stamping on spiders.......',
+    'Buying bitcoin............',
+    'Liquidating bitcoin.......',
+    'Downloading RAM...........',
+    'Harvesting cores..........',
+    'Doing school run..........',
+    'Firing accountant.........',
+    'Mashing aubergine.........',
+    'Reading docs..............',
+    'Downloading algorithms....',
+    'Authenticating retina.....',
+    'Escalating privileges.....',
+    'Loading data..............',
     ]
 
 let ram=[
@@ -621,25 +639,25 @@ let nouns=[
     ]
 
 let verbs=[
-    'encrypting',
-    'decrypting',
-    'cracking',
-    'accessing',
-    'loading',
-    'writing',
-    'scraping',
-    'jamming',
-    'hacking',
-    'virtualising',
-    'authenticating',
-    'securing',
-    'uploading',
-    'downloading',
-    'escalating',
-    'harvesting',
-    'liquidating',
-    'reading',
-    're-writing'
+    'Encrypting',
+    'Decrypting',
+    'Cracking',
+    'Accessing',
+    'Loading',
+    'Writing',
+    'Scraping',
+    'Jamming',
+    'Hacking',
+    'Virtualising',
+    'Authenticating',
+    'Securing',
+    'Uploading',
+    'Downloading',
+    'Escalating',
+    'Harvesting',
+    'Liquidating',
+    'Reading',
+    'Re-writing'
 ]
 
 
@@ -663,13 +681,16 @@ let hack_nouns=[
     'root'
     ]
 
-
+// at this point, assign a particular boot type a particular font option
 var fontOption = fonts[Math.floor(Math.random() * fonts.length)];
 var font = fontOption[0]
 document.getElementsByTagName('html')[0].style.fontSize = fontOption[1]
 document.getElementsByTagName('html')[0].style.lineHeight = fontOption[2]
+try{
+    document.getElementsByTagName('html')[0].style.tranform = fontOption[3]
+}catch{}
 
-
+// assign a particular colour and background
 var colorvars = colors[Math.floor(Math.random() * 3)];
 var color=colorvars[0]
 if (color=='lime'){
@@ -684,13 +705,15 @@ if (color=='lime'){
   var background=morecolorvars[0]
   var shaddow=morecolorvars[1]
 }
-
+console.log('without',color)
 medium = media[Math.floor(Math.random() * media.length)];
 
 document.getElementsByTagName("body")[0].style.backgroundColor=background;
 document.getElementsByTagName("body")[0].style.boxShadow=shaddow;
+
 var class_text = 'terminal-text '+font+' ' +color;
 
+// create boot div variables and place in a useful array
 var adviceDiv =document.getElementById("advice"); 
 var boot1Div= document.getElementById("boot1");
 var boot2Div= document.getElementById("boot2");
@@ -698,9 +721,9 @@ var boot3Div= document.getElementById("boot3");
 var boot4Div= document.getElementById("boot4");
 var boot5Div= document.getElementById("boot5");
 var boot6Div= document.getElementById("boot6");
+var bootDivs = [adviceDiv, boot1Div, boot2Div, boot3Div, boot4Div, boot5Div, boot6Div]
 
-var bootDivs = [boot1Div, boot2Div, boot3Div, boot4Div, boot5Div, boot6Div]
-
+// create hack div variables and place in an array
 var hack1Div= document.getElementById("hack1");
 var hack2Div= document.getElementById("hack2");
 var hack3Div= document.getElementById("hack3");
@@ -712,10 +735,12 @@ var hack8Div= document.getElementById("hack8");
 var hack9Div= document.getElementById("hack9");
 var hack10Div= document.getElementById("hack10");
 
+// these variable names need to be changed to be more helpful
 var divs=['#hack1','#hack2','#hack3','#hack4', '#hack5', '#hack6','#hack7','#hack8', '#hack9', '#hack10']
 var hack_divs=[hack1Div, hack2Div, hack3Div, hack4Div, hack5Div, hack6Div, hack7Div, hack8Div, hack9Div, hack10Div]
-var hack_colors=['white','red','goldenrod','orange', 'gold', 'yellow', 'lime', 'greenyellow','cyan','blueish', 'pink', 'fuchsia','silver']
 
+// potential colours to change to when hacking
+var hack_colors=['white','red','goldenrod','orange', 'gold', 'yellow', 'lime', 'greenyellow','cyan','blueish', 'pink', 'fuchsia','silver']
 
 var deniedDiv=document.getElementById("denied");
 var hackingDiv=document.getElementById("hacking");
@@ -723,23 +748,67 @@ var versionDiv=document.getElementById("version");
 var mmenuDiv= document.getElementById("menu");
 var nomenuDiv= document.getElementById("nomenu");
 var externalDiv= document.getElementById("external");
+var allOtherDivs = [deniedDiv,hackingDiv,versionDiv,mmenuDiv,nomenuDiv,externalDiv]
 
-console.log(class_text)
+var allDivsOnPage = bootDivs.concat(hack_divs, allOtherDivs)
+console.log(allDivsOnPage)
+console.log(typeof allDivsOnPage)
 
-adviceDiv.className=class_text;
-
-for (const div in bootDivs){
-    bootDivs[div].className=class_text;    
+//assign all divs class_text at the same time
+for (const allDivsOnPageDiv in allDivsOnPage){
+    try{
+        allDivsOnPage[allDivsOnPageDiv].className=class_text;
+    }catch{}
+    //console.log(typeof allDivsOnPage[allDivsOnPageDiv])
 }
 
-mmenuDiv.className=class_text;
-nomenuDiv.className=class_text;
-externalDiv.className=class_text;
+function getRandomBackgroundShaddowClassText(fonts, colors){
+    // at this point, assign a particular boot type a particular font option
+    // this will not change for the remainder of the session
+    var fontOption = fonts[Math.floor(Math.random() * fonts.length)];
+    document.getElementsByTagName('html')[0].style.fontSize = fontOption[1]
+    document.getElementsByTagName('html')[0].style.lineHeight = fontOption[2]
+    
+    try{
+        document.getElementsByTagName('html')[0].style.fontWeight = fontOption[3]
+    }catch{}
 
-for (const div in hack_divs){
-    hack_divs[div].className=class_text;    
+    // assign a particular colour and background
+    var colorvars = colors[Math.floor(Math.random() * colors.length)];
+    var color=colorvars[0]
+    
+    morecolorvars=colorvars[1][Math.floor(Math.random() * colorvars[1].length)];
+    // console.log(morecolorvars)
+    var background=morecolorvars[0]
+    var shaddow=morecolorvars[1]
+
+    var font = fontOption[0]
+    var classText = 'terminal-text '+font+' '+color;
+
+
+    console.log('classText',classText)
+
+    return {'background':background, 'shaddow':shaddow, 'classText':classText, 'color':color, 'font':font}
 }
 
+
+function changeStyleTo(background,shaddow,class_text){
+    console.log('within', background, shaddow, class_text)
+    // assign body background and shadow
+    document.getElementsByTagName("body")[0].style.backgroundColor=background;
+    document.getElementsByTagName("body")[0].style.boxShadow=shaddow;
+    
+    // assign all necessary divs class text
+    // class text contains font, colour and shadow     
+    
+    for (const allDivsOnPageDiv in allDivsOnPage){
+        try{
+            allDivsOnPage[allDivsOnPageDiv].className=class_text;
+            //console.log('within',allDivsOnPage[allDivsOnPageDiv])
+        }catch{}
+        //console.log(typeof allDivsOnPage[allDivsOnPageDiv])
+    }
+}
 
 function hackToNone(){
     for (const div in hack_divs){
@@ -798,10 +867,225 @@ var time = 0 // time variable for counting and timing
 var can_mash = false
 let frames = ["-", "/","|","\\"]
 
+// blank dict to be populated by:
+// 'strNameOfFunction':[nameOfFuntion, secondsPause(int), 'desctiptionForTitle']
+var bootDict = {}
+
+
+function commodorePET2001(){
+    // https://www.youtube.com/watch?v=qtcrv2pfnsE
+    // commodorePET2001
+
+    let fonts=[
+        ['font-press','0.9rem','1.4'],
+    ]
+
+    let colors=[
+        ['lime',[['var(--greenbg)','var(--greenshadow)'],['black','var(--blackshadow)']]],
+        ['white',[['black','var(--blackshadow)']]],
+        ['orange',[['black','var(--blackshadow)']]]
+    ];
+
+    var styleDict = getRandomBackgroundShaddowClassText(fonts, colors)
+    changeStyleTo(styleDict['background'],styleDict['shaddow'],styleDict['classText'])
+
+    var basicVersions = ['',' 2.0',' 3.0',' 4.0']
+    var basicVersion=basicVersions[Math.floor(Math.random() * basicVersions.length)]
+
+    var memorySizes = ['15','31','95']
+    var memorySize=memorySizes[Math.floor(Math.random() * memorySizes.length)] + Math.floor(Math.random() * 800).toString()
+    
+    new TypeIt("#boot1", {
+        speed: 0,
+        waitUntilVisible: true,
+        lifeLike: true,
+        startDelay: 1500,
+        cursor:true,
+        cursorChar: "■"
+        })   
+        .type('*** Commodore Basic' + basicVersion +' ***', { delay: 0 }).break().break()
+        .type('&nbsp;'+memorySize+' Bytes Free', { delay: 0 }).break().break()
+        .type('Ready.', { delay: 0 }).break().type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 1500 })
+        .options({cursor:true})
+        .options({speed:200})
+        .type('Load"" ,joltnet', { delay: 0 }).break().type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 500 }).break()
+        .options({speed:1})
+        .options({cursor:false})
+        .type('Press Play on Tape #1', { delay: 0 }).break().type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 1000 })     
+        .type('OK', { delay: 500 }).break().break()
+        .type('Searching', { delay: 500 }).break()
+        .type('Found', { delay: 100 }).break()
+        .type('Loading', { delay: 0}).break()
+        .options({speed:50})
+        .type('........................').break().break()
+        .options({speed:1})
+        .type('Ready.', {delay:0}).break().type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 1200 })
+        .options({speed:200})
+        .type('run', {delay:0}).break().type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 2500 })
+        .empty()
+        .go()
+
+    return styleDict
+}
+if(Math.floor(Math.random() *2)==1){
+    bootDict['commodorePET2001'] = [commodorePET2001, 14500, 'joltnet on Commodore PET 2001']
+}else{
+    bootDict['commodorePET2001'] = [commodorePET2001, 14500, 'joltnet on Commodore SuperPET 3000']
+}
+
+
+function commodore64(){
+    // https://www.youtube.com/watch?v=qtcrv2pfnsE
+    // commodorePET2001
+
+    let fonts=[
+        ['font-press','0.9rem','1.4'],
+    ]
+
+    let colors=[
+        ['mediumslateblue',[['var(--bluebg)','var(--blueshadow)']]],
+    ];
+
+
+    var styleDict = getRandomBackgroundShaddowClassText(fonts, colors)
+    changeStyleTo(styleDict['background'],styleDict['shaddow'],styleDict['classText'])
+
+    document.getElementsByTagName('body')[0].style.backgroundColor = 'mediumslateblue'
+    document.getElementsByClassName('terminal')[0].style.backgroundColor = 'var(--bluebg)'
+    document.getElementsByClassName('terminal')[0].style.boxShadow='var(--blueshadow)';
+
+    var basicVersions = ['',' v2',' v3']
+    var basicVersion=basicVersions[Math.floor(Math.random() * basicVersions.length)]
+
+    var memorySizes = ['37','38']
+    var memorySize=memorySizes[Math.floor(Math.random() * memorySizes.length)] + Math.floor(Math.random() * 800).toString()
+    
+    new TypeIt("#boot1", {
+        speed: 0,
+        waitUntilVisible: true,
+        lifeLike: true,
+        startDelay: 2000,
+        cursor:true,
+        cursorChar: "■"
+        })   
+        .type('&nbsp;&nbsp;&nbsp;&nbsp;**** Commodore 64 Basic' + basicVersion +' ****', { delay: 0 }).break().break()
+        .type('&nbsp;64 K RAM SYSTEM&nbsp;&nbsp;'+memorySize+' BASIC Bytes Free', { delay: 0 }).break().break()
+        .type('Ready.', { delay: 0 }).break().type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 1500 })
+        .options({cursor:true})
+        .options({speed:200})
+        .type('Load"*",8,1:', { delay: 0 }).break().type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 500 }).break()
+        .options({speed:1})
+        .options({cursor:false})
+        .type('Searching for *', { delay: 500 }).break()
+        .type('Loading', { delay: 0}).break()
+        .options({speed:50})
+        .type('........................').break().break()
+        .options({speed:1})
+        .type('Ready.', {delay:0}).break().type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 1200 })
+        .options({speed:200})
+        .type('run', {delay:0}).break().type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 2500 })
+        .empty()
+        .go()
+
+    return styleDict
+}
+bootDict['commodore64'] = [commodore64, 13000, 'joltnet on Commodore 64']
+
+function windows1(){
+    // https://www.youtube.com/watch?v=sR2FJcJ6LsE
+    // Generic 
+    // time 21000 boot3 + 7000
+    
+    let fonts=[
+        ['font-share','1.1rem','1.2'],
+        ['font-vt323','1.3rem','1.1'],
+    ]
+
+    let colors=[
+        ['white',[['var(--bluebg)','var(--blueshadow)'],['black','var(--blackshadow)']]],
+    ];
+    
+    
+    var styleDict = getRandomBackgroundShaddowClassText(fonts, colors)
+    changeStyleTo(styleDict['background'],styleDict['shaddow'],styleDict['classText'])
+
+
+
+    document.getElementsByTagName('html')[0].style.textTransform = 'none'
+    document.getElementsByTagName('html')[0].style.letterSpacing = '0.1ch'
+    
+    new TypeIt("#boot1", {
+        speed: 1,
+        waitUntilVisible: true,
+        lifeLike: true,
+        startDelay: 1500,
+        cursor:true,
+        cursorChar: "_"
+        })   
+        .type('<span id="memorySpan">0</span> KB OK', { delay: 4000 }).break()
+        .type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 1000 }).break()
+        .type('Microsoft Interlink version 1.00', { delay: 0 }).break().break()
+        .type('&nbsp;&nbsp;&nbsp;&nbsp;Port=LPT1', { delay: 0 }).break()
+        .type('&nbsp;&nbsp;&nbsp;&nbsp;Drive letters redirected:&nbsp;&nbsp;&nbsp;&nbsp;3 (D: through F:)', { delay: 0 }).break()
+        .type('&nbsp;&nbsp;&nbsp;&nbsp;Printer ports redirected:&nbsp;&nbsp;&nbsp;&nbsp;1 (LPT3:)', { delay: 0 }).break().break()
+        .type('&nbsp;&nbsp;&nbsp;&nbsp;This Computer:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other Computer', { delay: 0 }).break()
+        .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Client)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Server)', { delay: 0 }).break()
+        .type('&nbsp;&nbsp;&nbsp;&nbsp;--------------&nbsp;&nbsp;&nbsp;&nbsp;----------------------').break()
+        .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;equals&nbsp;&nbsp;&nbsp;&nbsp;A:').break()
+        .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;equals&nbsp;&nbsp;&nbsp;&nbsp;B:').break()
+        .type('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;equals&nbsp;&nbsp;&nbsp;&nbsp;C: (1054Mb)',{delay:500}).break().break()
+        .type('C>path=c:\\dos:c\\mc4',{delay:600}).break().break()
+        .type('C>c:\\gw6\\mouse',{delay:600}).break().break()
+        .empty()
+        .type('=========================================').break()
+        .type('|&nbsp;&nbsp;Dynamic Mouse driver (version 9.06)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|').break()
+        .type('|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright 1988-1991 KYE Corp.&nbsp;&nbsp;&nbsp;|').break()
+        .type('============================================').break()
+        .type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 1000 }).break()
+        .type('Serial Mouse (Mouse systems mode) installed on COM1:').break()
+        .type('( Port address is 3F8, IRQ number is 04 )').break().break()
+        .type('C>nc').break()
+        .type('The Norton Commander, Copyright (C) 1986 to 1993, Symantec Inc,', {delay:600}).break().break()
+        .type('C:\\>', {delay:1000})
+        .options({speed:200})
+        .type('joltnet')
+        .type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 2000 }).break()
+        .empty()
+        .go()
+
+        var count = 1
+        setInterval( function(){
+            if (0<time<6){
+                if (count<640) {
+                    try{
+                        count+=Math.floor(Math.random() * 100);
+                        document.getElementById("memorySpan").innerHTML=count;
+                    }catch{}
+                }else if(9<time<10){
+                    
+                    try{
+                        document.getElementById("memorySpan").innerHTML=640;
+                    }catch{}
+                
+                }
+            } else if (8<time){
+                try{
+                    document.getElementById("memorySpan").style.display = 'none'
+                }catch{}
+                
+            }
+        }, 250);
+    return styleDict
+    }
+bootDict['windows1']= [windows1, 19000, 'joltnet on Windows1']
+
 function generic(){
     // https://www.youtube.com/watch?v=sR2FJcJ6LsE
     // Generic 
     // time 21000 boot3 + 7000
+    var styleDict = getRandomBackgroundShaddowClassText(fonts, colors)
+    changeStyleTo(styleDict['background'],styleDict['shaddow'],styleDict['classText'])
+    
     var boot1=new TypeIt("#boot1", {
         speed: 1,
         waitUntilVisible: true,
@@ -864,11 +1148,18 @@ function generic(){
                 document.getElementById("memorySpan").remove()
             }
         }, 100);
+    return styleDict
     }
+bootDict['generic']= [generic, 21000, 'joltnet circa 92']
+
 
 function nineties(){
     // https://www.youtube.com/watch?v=9y-2LKdofCY
     // 90s PC boot sequence
+
+    var styleDict = getRandomBackgroundShaddowClassText(fonts, colors)
+    changeStyleTo(styleDict['background'],styleDict['shaddow'],styleDict['classText'])
+
     new TypeIt("#boot1", {
         speed: 0,
         waitUntilVisible: true,
@@ -945,12 +1236,17 @@ function nineties(){
     // create div at bottom of page with Press DEL to enter SETUP
     // DATE PROCESSOR TYPE RANDOM CODE BLIT ON START
     // REMOVE AT START OF NEXT THING
-
+    return styleDict
 }
+bootDict['nineties']=[nineties, 17500, 'joltnet circa 97']
 
 function tandyDos90(){
     // Tandy 1000RL, a 9.54 MHz 8086 XT-class computer with the startup files of MS-DOS 3.3 
     // white on black https://www.youtube.com/watch?v=DaSkda4XW3k
+    
+    var styleDict = getRandomBackgroundShaddowClassText(fonts, colors)
+    changeStyleTo(styleDict['background'],styleDict['shaddow'],styleDict['classText'])
+
     var boot1 = new TypeIt("#boot1", {
         speed: 1,
         waitUntilVisible: true,
@@ -981,11 +1277,16 @@ function tandyDos90(){
     function removeHtmlFrom(element){
         document.getElementById(element).innerHTML = ''
     }
+    return styleDict
 }
-
+bootDict['tandyDos90']=[tandyDos90, 9000, 'joltnet on MS-DOS']
+    
 function xedos81(){
     // XEDOS white on black rapidly flashing
     // https://www.youtube.com/watch?v=Vo8NG8T4rWs
+
+    var styleDict = getRandomBackgroundShaddowClassText(fonts, colors)
+    changeStyleTo(styleDict['background'],styleDict['shaddow'],styleDict['classText'])
     
     var boot1 = new TypeIt("#boot1", {
         speed: 0,
@@ -1026,21 +1327,22 @@ function xedos81(){
     function removeHtmlFrom(element){
         document.getElementById(element).innerHTML = ''
     }
+    return styleDict
 }
-
-bootDict = {
-    'xedos81':[xedos81, 9500, 'joltnet on XEDOS'],
-    'tandyDos90':[tandyDos90, 9000, 'joltnet on MS-DOS'],
-    'generic':[generic, 21000, 'joltnet circa 92'],
-    'nineties':[nineties, 17500, 'joltnet circa 97'],
-}
+bootDict['xedos81']=[xedos81, 9500, 'joltnet on XEDOS']
 
 var bootDictKeys = Object.keys(bootDict); // make a list of all keys in dict
 var chosenSystemStr = bootDictKeys[Math.floor(Math.random()*bootDictKeys.length)]; // pick one of the keys
 var chosenSystem = bootDict[chosenSystemStr] // access dict
-//var chosenSystem = bootDict['tandyDos90']
+//var chosenSystem = bootDict['windows1']
 
-chosenSystem[0]()
+var styleDict = chosenSystem[0]()
+var background = styleDict['background']
+var shaddow = styleDict['shaddow']
+var classText = styleDict['classText']
+var font = styleDict['font']
+var color = styleDict['color']
+
 var boot2Delay = chosenSystem[1]
 document.querySelector('title').textContent = chosenSystem[2]
 
@@ -1117,13 +1419,13 @@ var boot2=new TypeIt("#boot2", {
     boot2.type('...'+medium+'...', { delay: 50 })
     boot2.empty()
     boot2.options({speed:10})
-    boot2.type("!!!! access denied !!!!", { delay: 700 })
+    boot2.type("!!!! ACCESS DENIED !!!!", { delay: 700 })
     boot2.empty()
     boot2.options({speed:10})
-    boot2.type("!!!! access denied !!!!", { delay: 700 })
+    boot2.type("!!!! ACCESS DENIED !!!!", { delay: 700 })
     boot2.empty()
     boot2.options({speed:10})
-    boot2.type("!!!! access denied !!!!", { delay: 700 })
+    boot2.type("!!!! ACCESS DENIED !!!!", { delay: 700 })
     boot2.break()
     boot2.go()
 
@@ -1138,7 +1440,7 @@ new TypeIt("#boot3", {
     .empty()
     .break()
     .break()
-    .type("mash keyboard to "+hack_verbs[Math.floor(Math.random() * hack_verbs.length)]+ " the "+hack_nouns[Math.floor(Math.random() * hack_nouns.length)] +"...", { delay: 500 })
+    .type("Mash keyboard to "+hack_verbs[Math.floor(Math.random() * hack_verbs.length)]+ " the "+hack_nouns[Math.floor(Math.random() * hack_nouns.length)] +"...", { delay: 500 })
     .go()
 
 
@@ -1154,7 +1456,7 @@ function showLayer(){
     .empty()
     .break()
     .break()
-    .type("<span id='hackverb'>analysing</span> <span id='hacknoun'>first</span> layer <span id='layer'>01</span>/03......<br><br>[<span id='percentage'>0</span>% complete]......", { delay: 500 })
+    .type("<span id='hackverb'>Analysing</span> <span id='hacknoun'>first</span> layer <span id='layer'>01</span>/03......<br><br>[<span id='percentage'>0</span>% complete]......", { delay: 500 })
     .go()
 }
 
@@ -1187,13 +1489,13 @@ function blitAuthorisationMessage(){
     .type("........Access granted", { delay: 400 })
     .break()
     .break()
-    .type(actions[Math.floor(Math.random()* actions.length)]+' ...completed')
+    .type(actions[Math.floor(Math.random()* actions.length)]+' ...Completed')
     .break()
     .break()
-    .type(actions[Math.floor(Math.random()* actions.length)]+' ...completed')
+    .type(actions[Math.floor(Math.random()* actions.length)]+' ...Completed')
     .break()
     .break()
-    .type("innitt", { delay: 400 })
+    .type("Innitt", { delay: 400 })
     .delete(1, { delay: 50 })
     .type("iali", { delay: 400 })
     .move(-3, { delay: 400 })
@@ -1205,7 +1507,7 @@ function blitAuthorisationMessage(){
     .type("liz", { delay: 300 })
     .move(2, { delay: 50 })
     .delete(11, { delay: 400 })
-    .type("spinning spinny thing more", { delay: 1800 })
+    .type("Spinning spinny thing more", { delay: 1800 })
     .empty()
     .go()
 }
@@ -1307,9 +1609,9 @@ function blitJoltnetMain(){
     boot1.type("<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<span id='unit'>0</span>.<span id='decimal'>1</span></div>")
     boot1.break()
     boot1.break()
-    boot1.type("~ mash keyboard to upgrade joltnet")
+    boot1.type("~ Mash keyboard to upgrade joltnet")
     boot1.break()
-    boot1.type('~ press <a onclick="blitMenu()">m for menu</a>')
+    boot1.type('~ Press <a onclick="blitMenu()">m for menu</a>')
     boot1.go()
 }
     
@@ -1347,7 +1649,7 @@ function blitMenu(){
     })
     
     .empty()
-    .type('arrow / number keys to navigate ').break()
+    .type('ARROW / NUMBER keys to navigate ').break()
     .type('ENTER to select').break()
     .break()
     .type("<a class='option' id='0' style='text-decoration:none;color:"+color+"' href='/'>&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Reboot and restyle</a>").break()
@@ -1355,7 +1657,7 @@ function blitMenu(){
     .type("<a class='option' id='2' style='text-decoration:none;color:"+color+"' href='/ceh'>&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CEH exam practise</a>").break()
     .type("<a class='option' id='3' style='text-decoration:none;color:"+color+"' href='/act_simulator'>&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Army Cognitive Test practise</a>").break()
     .type("<a class='option' id='4' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tang's page</a>").break()
-    .type("<a class='option' id='5' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- exit menu</a>").break()
+    .type("<a class='option' id='5' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Exit menu</a>").break()
     
     .break()
     .type('continue mashing to upgrade')
@@ -1892,6 +2194,7 @@ function oneHackTextUpgrade(){
     console.log('one')
     var hack_color = hack_colors[Math.floor(Math.random() * hack_colors.length)];
     var chosen_hack_div=hack_divs[Math.floor(Math.random() * hack_divs.length)];
+    //let font = fonts[Math.floor(Math.random() * fonts.length)][0];
     var hack_text = 'terminal-text '+font+' ' +hack_color;
     chosen_hack_div.className=hack_text;
 }
@@ -2009,7 +2312,8 @@ function mash(){
     
     }else{// what happens if we mash whilst menu is up...
         mmenuDiv.style.display='none';
-        
+        nomenuDiv.style.display='block'
+
         for (const hackDiv in hack_divs){
             hack_divs[hackDiv].style.display='block';
         }
@@ -2092,7 +2396,7 @@ function highlightSelectedOption(optionNumber){
         }else{
             var option = document.getElementById(optionArray[i])
             option.style.color = color // font colour
-            option.style.background = background // background colour   
+            option.style.background = 'none' // background colour   
         }
     }
 }
@@ -2110,6 +2414,7 @@ function logKey(e) {
             if (menuDisplay==false){ // if menu not active, we're only lsitening for m, return or something else
                 if(e.key=='m'){ // activate menu
                     mmenuDiv.style.display='block'; // display menu   
+                    nomenuDiv.style.display='none';
                     for (const hackDiv in hack_divs){ // hide all hack divs
                         hack_divs[hackDiv].style.display='none';
                     }
@@ -2119,7 +2424,7 @@ function logKey(e) {
                     location.reload()
                 }else{
                     mash() // we're mashing
-                    menuDisplay = false
+                    menuDisplay=false
                     main_menu=false
                 }
             } else if (menuDisplay==true){ // if menu active
@@ -2161,7 +2466,8 @@ function logKey(e) {
                     optionDown()
                     highlightSelectedOption(activeOptionNumber)
                 }else if(e.key=='m'){ 
-                    mmenuDiv.style.display='none'; // display menu   
+                    mmenuDiv.style.display='none'; // display menu
+                    nomenuDiv.style.display='block';
                     for (const hackDiv in hack_divs){ // hide all hack divs
                         hack_divs[hackDiv].style.display='block';
                     }
