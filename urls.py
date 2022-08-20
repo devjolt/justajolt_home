@@ -1,12 +1,25 @@
 from django.urls import path
 from . import views
 
+machine_list = [
+    'commodorePET2001',
+    'commodore64',
+    'windows1',
+    'decvt320',
+    'amstrad',
+    'generic',
+    '90s',
+    'tandyDos90',
+    'xedos81',
+]
+
 #justajolt/
 urlpatterns = [
     path('', views.joltfolio, name='joltnet'),
-    path('tang/', views.home, name='home'),
-    path('joltfolio2/', views.joltfolio2, name='joltfolio2'),
-    path('generic/', views.joltfolioGeneric, name='joltfolioGeneric'),
+    path('tang/', views.tang, name='tang'),
     #path('target_range/', views.target_range, name='target_range'),
     #path('portfolio/', views.portfolio, name='portfolio'),
 ]
+
+for machine in machine_list:
+    urlpatterns.append(path(f'{machine}/', views.JoltfolioSpecificView.as_view(modules = (machine)), name=f'booting {machine}'))
