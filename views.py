@@ -2,6 +2,9 @@ from random import randint, shuffle, choice
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
 
+def glowwiththeflow(request):
+    return render(request, 'justajolt_home/glowwiththeflow.html')
+
 def joltfolio(request):
     return render(request, 'justajolt_home/joltfolioMultiBoot.html')
 

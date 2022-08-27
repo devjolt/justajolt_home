@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<script>
+    // check state of what's on the server
+    // upload and reset
+
+  
+</script>
+<html>
+    <head>
+        <!--Used :screen on feature https://codepen.io/lbebber/pen/XJRdrV-->
+        <!--Example: google search https://www.masswerk.at/googleBBS/-->
+        <!--vintage terminal tutorial https://blog.carbonfive.com/vintage-terminal-effect-in-css3/-->
+        <!--https://dev.to/ekeijl/retro-crt-terminal-screen-in-css-js-4afh-->
+        <!--https://css-tricks.com/old-timey-terminal-styling/-->
+        <!--Example: https://line-mode.cern.ch/www/hypertext/WWW/TheProject.html-->
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Joltnet</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=VT323&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Ubuntu+Mono&family=VT323&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Share+Tech+Mono&family=Ubuntu+Mono&family=VT323&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+        <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+
+        <style>
+            html{
+                background:black;
+                padding:2%;
+            }
+            body{
+
+            }
+            .main{
+            }
+            .dashboard{
+                margin:auto;
+                display:grid;
+                grid-template-columns: auto auto auto;
+                place-items:  center;
+                row-gap: 2vh;
+                padding:2vh;
+                height:auto;
+                width:25vw;
+                border-style:solid;
+                border-color:white;
+                box-shadow: 5px 3px 40px white;
+                border-width:5px;
+                border-radius:10px;
+            }
+            .selector{
+                align-self: center;
+                margin:auto;
+                height:6vh;
+                width:6vw;
+                border-style: solid;
+                border-radius:10px;
+                border-width:5px;
+                transition:0.25s;
+            }
+
+            .selector:hover{
+                transform: scale(1.1) translate(0%, 3%);
+                top: -10px;
+                cursor:pointer;
+                border-style:dashed;
+                border-color:white;
+                transition:0.25s;
+            }
+
+            .display-board{
+
+            }
+            .yellow{
+                background:yellow;
+                box-shadow: 5px 3px 40px yellow;
+                border-color:yellow;
+                border-width:5px;
+            }
+            .red{
+                background: red;
+                box-shadow: 5px 3px 40px red;
+                border-color:red;
+                border-width:5px;
+            }
+            .orange{/**/
+                background: rgb(255, 153, 0);
+                box-shadow: 5px 3px 40px rgb(255, 153, 0);
+                border-color:rgb(255, 153, 0);
+                border-width:5px;
+            }
+            .green{/**/
+                background: lime;
+                box-shadow: 5px 3px 40px lime;
+                border-color:lime;
+                border-width:5px;
+            }
+            .blue{/**/
+                background: cyan;
+                box-shadow: 5px 3px 40px cyan;
+                border-color:cyan;
+                border-width:5px;
+            }
+            .pink{/*ornage on black*/
+                background: fuchsia;
+                box-shadow: 5px 3px 40px fuchsia;
+                border-color:fuchsia;
+                border-width:5px;   
+            }
+            .glowstick{
+                margin:auto;
+                margin-top:50px;
+                margin-bottom:50px;
+                width:400px;
+                border-style:solid;
+                border-radius:10px;     
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="dashboard">
+                <div id="pink-selector" class="selector pink"></div>
+                <div id="blue-selector" class="selector blue"></div>
+                <div id ="yellow-selector" class="selector yellow"></div>
+                <div id="green-selector" class="selector green"></div>
+                <div id="orange-selector" class="selector orange"></div>
+                <div id="red-selector" class="selector red"></div>
+                <div id="random-selector" class="selector random"></div>
+                <div id="add-stick>"></div>
+            </div>
+            <div class="display-board">
+                <div class="yellow glowstick"></div>
+                <div class="pink glowstick"></div>
+                <div class="blue glowstick"></div>
+                <div class="green glowstick"></div>
+                <div class="orange glowstick"></div>
+                <div class="red glowstick"></div>
+            </div>
+        </div>
+    </body>        
+</html>
+
+<script>
+    // change colour of just a single glowstick
+    // have colour cycle through changes...
+    // add new sticks
+</script>

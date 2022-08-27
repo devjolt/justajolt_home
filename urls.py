@@ -17,6 +17,7 @@ machine_list = [
 urlpatterns = [
     path('', views.joltfolio, name='joltnet'),
     path('tang/', views.tang, name='tang'),
+    path('glowwiththeflow/', views.glowwiththeflow, name='glowwiththeflow'),
     #path('target_range/', views.target_range, name='target_range'),
     #path('portfolio/', views.portfolio, name='portfolio'),
 ]

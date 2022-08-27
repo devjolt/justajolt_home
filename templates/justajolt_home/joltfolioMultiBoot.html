@@ -526,9 +526,10 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
                     <div id="boot4"class='gap'></div>
                     <div id="boot5"class='gap'></div>
                     <div id="boot6"class='gap'></div>
-                    <div id="nomenu" class='gap'></div>
-                    <div id="external" class='gap'></div>
-                    <div id="menu" class='gap'></div>
+                    <div id="nomenu" class=''></div>
+                    <div id="external" class=''></div>
+                    <div id="menu" class=''></div>
+                    <div id="bootmenu" class=""></div>
                     
                     <div id="hack1" class='gap'></div>
                     <div id="hack2" class=''></div>
@@ -751,8 +752,9 @@ var hackingDiv=document.getElementById("hacking");
 var versionDiv=document.getElementById("version");
 var mmenuDiv= document.getElementById("menu");
 var nomenuDiv= document.getElementById("nomenu");
+var bootmenuDiv= document.getElementById("bootmenu");
 var externalDiv= document.getElementById("external");
-var allOtherDivs = [deniedDiv,hackingDiv,versionDiv,mmenuDiv,nomenuDiv,externalDiv]
+var allOtherDivs = [deniedDiv,hackingDiv,versionDiv,mmenuDiv,nomenuDiv,bootmenuDiv,externalDiv]
 
 var allDivsOnPage = bootDivs.concat(hack_divs, allOtherDivs)
 console.log(allDivsOnPage)
@@ -1159,7 +1161,7 @@ function amstrad(){
 
     let fonts=[
         //['font-share','1rem','1.2'],
-        ['font-vt323','1.4rem','1.1'],
+        ['font-vt323','1.3rem','1.1'],
     ]
 
     let colors=[
@@ -1171,7 +1173,7 @@ function amstrad(){
     
     var html = document.getElementsByTagName('html')[0]
     html.style.letterSpacing = '0.1ch'
-    html.style.background = 'FloralWhite'
+    html.style.background = 'black'
     html.style.textTransform = 'none'
 
     var body = document.getElementsByTagName('body')[0]
@@ -1760,15 +1762,14 @@ function blitJoltnetMain(){
     boot1.break()
     boot1.options({speed:1})
     boot1.type("<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<span id='unit'>0</span>.<span id='decimal'>1</span></div>")
-    boot1.break()
-    boot1.break()
-    boot1.type("~ Mash keyboard to upgrade joltnet")
-    boot1.break()
-    boot1.type('~ Press <a onclick="blitMenu()">m for menu</a>')
     boot1.go()
 }
     
+/*
+boot1.break()
+    boot1.break()
     
+*/
     
     /*
     boot1.break()
@@ -1810,10 +1811,58 @@ function blitMenu(){
     .type("<a class='option' id='2' style='text-decoration:none;color:"+color+"' href='/ceh'>&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- CEH exam practise</a>").break()
     .type("<a class='option' id='3' style='text-decoration:none;color:"+color+"' href='/act_simulator'>&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Army Cognitive Test practise</a>").break()
     .type("<a class='option' id='4' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tang's page</a>").break()
-    .type("<a class='option' id='5' style='text-decoration:none;color:"+color+"' href='/tang'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Exit menu</a>").break()
+    //.type("<a class='option' id='5' style='text-decoration:none;color:"+color+"' href='/'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Boot into another machine</a>").break()
+    .type("<a class='option' id='5' style='text-decoration:none;color:"+color+"'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Exit menu</a>").break()
     
     .break()
-    .type('continue mashing to upgrade')
+    .type('Mash keyboard to upgrade joltnet')
+    .go()
+}
+
+function blitBootMenu(){
+    mmenuDiv.style.display='none';
+    for (const div in hack_divs){
+        hack_divs[div].display='none';
+    }
+    new TypeIt("#bootmenu", {
+        speed: 40,
+        waitUntilVisible: true,
+        lifeLike: true,
+        startDelay: 16000,
+        cursor:true,
+        cursorChar: "■",
+    })
+    
+    /*
+    'commodorePET2001',
+    'decvt320',
+    'windows1',
+    'xedos81',    
+    'commodore64',
+    'amstrad',
+    'tandyDos90',
+    'generic',
+    '90s',
+    */
+
+
+    .empty()
+    .type('ARROW / NUMBER keys to navigate ').break()
+    .type('ENTER to select').break()
+    .break()
+    .type("<a class='option' id='0' style='text-decoration:none;color:"+color+"' href='../random'>&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Random nachine</a>").break()
+    .type("<a class='option' id='1' style='text-decoration:none;color:"+color+"' href='/commodorePET2001'>&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- commodorePET2001</a>").break()
+    .type("<a class='option' id='2' style='text-decoration:none;color:"+color+"' href='/decvt320'>&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 'decvt320',</a>").break()
+    .type("<a class='option' id='3' style='text-decoration:none;color:"+color+"' href='/windows1'>&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- windows1</a>").break()
+    .type("<a class='option' id='4' style='text-decoration:none;color:"+color+"' href='/xedos81'>&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- xedos81</a>").break()
+    .type("<a class='option' id='5' style='text-decoration:none;color:"+color+"' href='/commodore64'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- commodore64</a>").break()
+    .type("<a class='option' id='6' style='text-decoration:none;color:"+color+"' href='/amstrad'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- amstrad</a>").break()
+    .type("<a class='option' id='7' style='text-decoration:none;color:"+color+"' href='/tandyDos90'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- tandyDos90</a>").break()
+    .type("<a class='option' id='8' style='text-decoration:none;color:"+color+"' href='/generic'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- generic</a>").break()
+    .type("<a class='option' id='9' style='text-decoration:none;color:"+color+"' href='/90s'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 90s</a>").break()
+    .type("<a class='option' id='10' style='text-decoration:none;color:"+color+"'>&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Main menu</a>").break()
+    .break()
+    .type('Mash keyboard to upgrade joltnet')
     .go()
 }
 
@@ -1827,13 +1876,13 @@ function blitMashPrompt(){
         speed: 40,
         waitUntilVisible: true,
         lifeLike: true,
-        startDelay:20000,
+        startDelay:16000,
         cursor:false,
         cursorChar: "■",
     })
-    .type("mash keyboard to upgrade joltnet")
+    .type("~ Mash keyboard to upgrade joltnet")
     .break()
-    .type("or press m for menu")
+    .type('~ Press <a onclick="blitMenu()">m for menu</a>')
     .go()
 }
 
@@ -2446,6 +2495,8 @@ function mash(){
             blitJoltnetMain()//wait and then spin and jolt screen
             blitAuthorisationMessage()//write access granted wait and
             blitMenu()
+            //blitBootMenu()
+            blitMashPrompt()
             booting=false
 
             boot1Div.style.display='none';
@@ -2465,6 +2516,7 @@ function mash(){
     
     }else{// what happens if we mash whilst menu is up...
         mmenuDiv.style.display='none';
+        bootmenuDiv.style.display='none';
         nomenuDiv.style.display='block'
 
         for (const hackDiv in hack_divs){
@@ -2519,18 +2571,21 @@ function mash(){
 document.addEventListener('click',mash);
 
 var menuDisplay = false
+var bootmenuDisplay = false
 var activeOptionNumber = 1
 
-function optionUp(){
+function optionUp(max){
+    //max =  number of options
     activeOptionNumber-=1
     if (activeOptionNumber==-1){
-        activeOptionNumber=5
+        activeOptionNumber=max
     }
 }
 
-function optionDown(){
+function optionDown(max){
+    // max = number of options plus one
     activeOptionNumber+=1
-    if (activeOptionNumber==6){
+    if (activeOptionNumber>max){
         activeOptionNumber=0
     }
 }
@@ -2574,13 +2629,15 @@ function logKey(e) {
                     highlightSelectedOption(activeOptionNumber)
                     menuDisplay = true // change menu display to true
                 }else if(e.key=='Enter'){ // reset joltnet
-                    location.reload()
+                    window.location.href = '/'
                 }else{
                     mash() // we're mashing
                     menuDisplay=false
                     main_menu=false
                 }
             } else if (menuDisplay==true){ // if menu active
+                //if(e.key=='6'){ // listen for a key number to go directly to a site
+                //    highlightSelectedOption('6')
                 if(e.key=='5'){ // listen for a key number to go directly to a site
                     highlightSelectedOption('5')
                     // window.location.href = "/tang";
@@ -2600,23 +2657,23 @@ function logKey(e) {
                     highlightSelectedOption('0')
                 }else if(e.key=='ArrowUp'){ // listen for a navigation command to change highlighted div, and div we'll go to if return pushed
                     console.log('navigating up')
-                    optionUp()
+                    optionUp(5)
                     highlightSelectedOption(activeOptionNumber)
                 }else if(e.key=='ArrowDown'){
                     console.log('navigating down')                    
-                    optionDown()
+                    optionDown(5)
                     highlightSelectedOption(activeOptionNumber)
                 }else if(e.key=='ArrowLeft'){
                     console.log('navigating up')
-                    optionUp()
+                    optionUp(5)
                     highlightSelectedOption(activeOptionNumber)
                 }else if(e.key=='ArrowRight'){
                     console.log('navigating down')
-                    optionDown()
+                    optionDown(5)
                     highlightSelectedOption(activeOptionNumber)
                 }else if(e.key==' '){
                     console.log('navigating down')
-                    optionDown()
+                    optionDown(5)
                     highlightSelectedOption(activeOptionNumber)
                 }else if(e.key=='m'){ 
                     mmenuDiv.style.display='none'; // display menu
@@ -2627,9 +2684,20 @@ function logKey(e) {
                     menuDisplay = false // change menu display to false
                 }else if(e.key=='Enter'){ 
                     if(activeOptionNumber==0){
-                        location.reload()                        
+                        window.location.href = '/'                        
+                    /*
                     }else if(activeOptionNumber==5){
-                        mmenuDiv.style.display='none'; // display menu   
+                        mmenuDiv.style.display='none'; // display menu 
+                        bootmenuDiv.style.display='block';  
+                        highlightSelectedOption(0)
+                        menuDisplay = false // change menu display to false
+                        bootmenuDisplay =true // change boot menu display to true
+                        console.log('bootmenu supposedly')
+                    */
+                    }else if(activeOptionNumber==5){
+                        mmenuDiv.style.display='none'; // display menu 
+                        nomenuDiv.style.display='block';
+                        
                         for (const hackDiv in hack_divs){ // hide all hack divs
                             hack_divs[hackDiv].style.display='block';
                         }
@@ -2637,6 +2705,59 @@ function logKey(e) {
                     }else{
                         window.location.href = optionLinkArray[activeOptionNumber-1];
                     }
+                /*
+                }else if(bootmenuDisplay = true){
+                    if(e.key=='6'){ // listen for a key number to go directly to a site
+                        highlightSelectedOption('6')
+                    }else if(e.key=='5'){ // listen for a key number to go directly to a site
+                        highlightSelectedOption('5')
+                        // window.location.href = "/tang";
+                    }else if(e.key=='4'){ // listen for a key number to go directly to a site
+                        highlightSelectedOption('4')
+                        // window.location.href = "/tang";
+                    }else if(e.key=='3'){
+                        highlightSelectedOption('3')
+                        // window.location.href = "/act_simulator";
+                    }else if(e.key=='2'){
+                        highlightSelectedOption('2')
+                        // window.location.href = "/ceh";
+                    }else if(e.key=='1'){
+                        highlightSelectedOption('1')
+                        // window.location.href = "/cismp";
+                    }else if(e.key=='0'){
+                        highlightSelectedOption('0')
+                    }else if(e.key=='ArrowUp'){ // listen for a navigation command to change highlighted div, and div we'll go to if return pushed
+                        console.log('navigating up')
+                        optionUp(10)
+                        highlightSelectedOption(activeOptionNumber)
+                    }else if(e.key=='ArrowDown'){
+                        console.log('navigating down')                    
+                        optionDown(11)
+                        highlightSelectedOption(activeOptionNumber)
+                    }else if(e.key=='ArrowLeft'){
+                        console.log('navigating up')
+                        optionUp(10)
+                        highlightSelectedOption(activeOptionNumber)
+                    }else if(e.key=='ArrowRight'){
+                        console.log('navigating down')
+                        optionDown(11)
+                        highlightSelectedOption(activeOptionNumber)
+                    }else if(e.key==' '){
+                        console.log('navigating down')
+                        optionDown(10)
+                        highlightSelectedOption(activeOptionNumber)                    
+                    }else if(e.key=='Enter'){ 
+                        if(activeOptionNumber==0){
+                            window.location.href = '../random'                        
+                        }else if(activeOptionNumber==10){
+                            mmenuDiv.style.display='block'; // display menu 
+                            bootmenuDiv.style.display='none';  
+                            
+                            menuDisplay = false // change menu display to false
+                            bootmenuDisplay =true // change boot menu display to true
+                        }
+                    }
+                */
                 }else{
                     mash() // we're mashing
                     menuDisplay = false
