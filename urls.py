@@ -5,12 +5,14 @@ machine_list = [
     'commodorePET2001',
     'commodore64',
     'windows1',
+    'xedos81',
     'decvt320',
     'amstrad',
+    'oric1',
     'generic',
     '90s',
     'tandyDos90',
-    'xedos81',
+    
 ]
 
 #justajolt/

@@ -40,6 +40,8 @@ html{
     --bluebg:rgb(9, 9, 32);
     --blueshadow:0px 0px 200px 100px rgb(30, 15, 124) inset;
     --blackshadow:0px 0px 200px 100px rgb(37, 37, 37) inset;
+    --whitebg:rgb(215, 215, 215);
+    --whiteshadow:0px 0px 200px 100px rgb(207, 207, 207) inset;
     background-image: linear-gradient(to bottom left, rgb(30, 30, 30), black);
     
 }
@@ -488,6 +490,11 @@ transform:scale(0.000,0.0001) translate3d(0,0,0);
     text-shadow: 5px 3px 40px #8ea6fa;
 }
 
+.black{
+    color: black;
+    text-shadow: 5px 3px 40px black;
+}
+
 #boot2, #menu, #external, #hack1{
     margin-top:2ch;
 }
@@ -664,7 +671,6 @@ let verbs=[
     'Reading',
     'Re-writing'
 ]
-
 
 let hack_verbs=[
     'hack',
@@ -942,6 +948,85 @@ if(Math.floor(Math.random() *2)==1){
 }
 
 
+function oric1(){
+    // https://www.youtube.com/watch?v=k6b6Phq_3Sc
+    // oric1
+
+    let fonts=[
+        ['font-press','0.9rem','1.4'],
+    ]
+
+    let colors=[
+        // text colour, background colour and background shaddow
+        ['black',[['var(--blackbg)','var(--blackshadow)']]],
+    ];
+
+    var styleDict = getRandomBackgroundShaddowClassText(fonts, colors)
+    changeStyleTo(styleDict['background'],styleDict['shaddow'],styleDict['classText'])
+
+    document.getElementsByTagName('body')[0].style.backgroundColor = 'black'
+    document.getElementsByClassName('terminal')[0].style.backgroundColor = 'white'
+    document.getElementsByClassName('terminal')[0].style.boxShadow='var(--whiteshadow)';
+
+    var basicVersions = ['',' v2',' v3']
+    var basicVersion=basicVersions[Math.floor(Math.random() * basicVersions.length)]
+
+    var memorySizes = ['37','38']
+    var memorySize=memorySizes[Math.floor(Math.random() * memorySizes.length)] + Math.floor(Math.random() * 800).toString()
+    document.getElementsByTagName('html')[0].style.textTransform = 'none'
+
+    new TypeIt("#boot1", {
+        speed: 0,
+        waitUntilVisible: true,
+        lifeLike: true,
+        startDelay: 2000,
+        cursor:true,
+        cursorChar: "■"
+        })   
+        .type('&nbsp;&nbsp;ORIC EXTENDED BASIC V1.1', { delay: 0 }).break()
+        .type('&nbsp;&nbsp;&copy; 1983 TANGERINE', { delay: 0 }).break().break().break()
+        .type('&nbsp;&nbsp;&nbsp;'+memorySize+' BYTES FREE', { delay: 0 }).break().break()
+        .type('&nbsp;&nbsp;Ready', { delay: 0 }).break().type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 1500 })
+        .options({cursor:true})
+        .options({speed:200})
+        .type('&nbsp;&nbsp;CLOAD""', { delay: 0 }).break().type('&nbsp;', { delay: 0 }).delete(1).type('', { delay: 500 }).break()
+        .options({speed:1})
+        .options({cursor:false})
+        .type('&nbsp;&nbsp;Searching')
+        .options({speed:50})
+        .type('........................').break().break()
+        .empty()
+        .go()
+
+
+    // after a certain period of time, revert to a black background and white text
+    setInterval( function(){
+        if (6<time & time<9){
+            console.log('time here',time)
+            console.log('back to black')
+            
+            let colors=[
+            // text colour, background colour and background shaddow
+                ['white',[['var(--blackbg)','var(--blackshadow)']]],
+            ];  
+
+            var styleDict = getRandomBackgroundShaddowClassText(fonts, colors)
+            changeStyleTo(styleDict['background'],styleDict['shaddow'],styleDict['classText'])
+
+            document.getElementsByTagName('body')[0].style.backgroundColor = 'black'
+            document.getElementsByClassName('terminal')[0].style.backgroundColor = 'black';
+            document.getElementsByClassName('terminal')[0].style.boxShadow='var(--blackshadow)';
+        }
+    }, 2000);
+    return styleDict
+
+    
+
+}
+bootDict['oric1'] = [oric1, 7000, 'joltnet on Oric-1 1983']
+
+
+
 function commodore64(){
     // https://www.youtube.com/watch?v=qtcrv2pfnsE
     // commodorePET2001
@@ -951,12 +1036,14 @@ function commodore64(){
     ]
 
     let colors=[
+        // text colour, background colour and background shaddow
         ['mediumslateblue',[['var(--bluebg)','var(--blueshadow)']]],
     ];
 
     var styleDict = getRandomBackgroundShaddowClassText(fonts, colors)
     changeStyleTo(styleDict['background'],styleDict['shaddow'],styleDict['classText'])
 
+    // background colour of area behind terminal
     document.getElementsByTagName('body')[0].style.backgroundColor = 'mediumslateblue'
     document.getElementsByClassName('terminal')[0].style.backgroundColor = 'var(--bluebg)'
     document.getElementsByClassName('terminal')[0].style.boxShadow='var(--blueshadow)';
@@ -1071,7 +1158,7 @@ function windows1(){
                         document.getElementById("memorySpan").innerHTML=640;
                     }catch{}
                 
-                }
+                }   
             } else if (8<time){
                 try{
                     document.getElementById("memorySpan").style.display = 'none'
@@ -1483,11 +1570,16 @@ function xedos81(){
 }
 bootDict['xedos81']=[xedos81, 9500, 'joltnet on XEDOS']
 
+//var chosenSystemStr = '{{ machine }}';
+//    var chosenSystem = bootDict[chosenSystemStr] // access dict
+//    var styleDict = chosenSystem[0]() // this line throws an error if machine isn't in dict!
+
 try{
     var chosenSystemStr = '{{ machine }}';
     var chosenSystem = bootDict[chosenSystemStr] // access dict
     var styleDict = chosenSystem[0]() // this line throws an error if machine isn't in dict!
 }catch{
+    console.log('{{ machine }}', 'not working')
     var bootDictKeys = Object.keys(bootDict); // make a list of all keys in dict
     var chosenSystemStr = bootDictKeys[Math.floor(Math.random()*bootDictKeys.length)]; // pick one of the keys
     var chosenSystem = bootDict[chosenSystemStr]
