@@ -26,3 +26,6 @@ def target_range(request):
 def portfolio(request):
     return render(request, 'justajolt_home/portfolio.html')
 
+def leeds(request):
+    return render(request, 'justajolt_home/leeds.html')
+
