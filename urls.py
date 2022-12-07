@@ -3,16 +3,15 @@ from . import views
 
 machine_list = [
     'commodorePET2001',
+    'tandyDos90',
+    'xedos81',
     'commodore64',
     'windows1',
-    'xedos81',
-    'decvt320',
     'amstrad',
+    'decvt320',
     'oric1',
     'generic',
-    '90s',
-    'tandyDos90',
-    
+    '90s',  
 ]
 
 #justajolt/
